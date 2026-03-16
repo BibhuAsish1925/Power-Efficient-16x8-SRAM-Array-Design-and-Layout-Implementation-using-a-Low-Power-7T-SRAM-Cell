@@ -332,10 +332,10 @@ SNM = \min(SNM_H, SNM_L)
 $$
 
 Where:
-
+$
 SNM_H → Static Noise Margin High  
 SNM_L → Static Noise Margin Low
-
+$
 ### SNM Results
 
 | SRAM Type | SNM_L | SNM_H | SNM = min(SNM_L,SNM_H) |
