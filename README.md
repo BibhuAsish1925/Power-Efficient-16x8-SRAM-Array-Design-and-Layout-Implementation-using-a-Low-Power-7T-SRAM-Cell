@@ -79,8 +79,7 @@ The cross-coupled inverters store the data, while the access transistors allow t
 ### SRAM Operations
 
 #### Hold Operation
-When the **wordline (WL) = 0**, the access transistors are OFF and the cell is isolated from the bitlines.  
-The cross-coupled inverters maintain the stored value using positive feedback.
+When the **wordline (WL) = 0**, the access transistors are OFF and the cell is isolated from the bitlines. The cross-coupled inverters maintain the stored value using positive feedback.
 
 #### Write Operation
 1. The write driver forces **BL and BLB** according to the input data.
@@ -113,9 +112,7 @@ Due to these limitations, alternative SRAM architectures such as **7T SRAM** are
 
 ## Transistor Sizing Analysis
 
-Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell.
-
-The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
+Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell. The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
 
 ### MOSFET Saturation Current Equation
 
@@ -125,13 +122,7 @@ $$
 I_D = \frac{1}{2} \mu C_{ox}\left(\frac{W}{L}\right)(V_{GS}-V_T)^2
 $$
 
-Where:
-
-μ → Carrier mobility  
-Cox → Oxide capacitance per unit area  
-W/L → Transistor aspect ratio  
-VGS → Gate-to-source voltage  
-VT → Threshold voltage  
+Where: ( μ → Carrier mobility, Cox → Oxide capacitance per unit area, W/L → Transistor aspect ratio, VGS → Gate-to-source voltage, and VT → Threshold voltage )
 
 The parameter **β (beta)** represents the transistor strength:
 
@@ -152,10 +143,7 @@ $$
 \beta_{PD} > \beta_{AX}
 $$
 
-Where:
-
-βPD → Pull-down NMOS strength  
-βAX → Access transistor strength  
+Where: ( βPD → Pull-down NMOS strength, and βAX → Access transistor strength )
 
 The **Cell Ratio (CR)** is defined as:
 
@@ -163,9 +151,7 @@ $$
 CR = \frac{(W/L)_{pull-down}}{(W/L)_{access}}
 $$
 
-Typical design requirement:
-
-CR ≥ 1.5
+Typical design requirement: ` CR ≥ 1.5 `
 
 This ensures that the internal node storing logic '0' remains stable during read operation.
 
@@ -181,9 +167,7 @@ $$
 \beta_{AX} > \beta_{PU}
 $$
 
-Where:
-
-βPU → Pull-up PMOS strength  
+Where: βPU → Pull-up PMOS strength  
 
 The **Pull-up Ratio (PR)** is defined as:
 
@@ -191,10 +175,7 @@ $$
 PR = \frac{(W/L)_{access}}{(W/L)_{pull-up}}
 $$
 
-
-Typical requirement:
-
-PR ≥ 1
+Typical requirement: `PR ≥ 1`
 
 This allows the bitline driver to successfully change the stored data.
 
@@ -215,9 +196,9 @@ This allows the bitline driver to successfully change the stored data.
 
 | Transistor | Function | Width (W) |
 |-----------|----------|----------|
-| Pull-Up PMOS (P1, P2) | Maintain stored value | 400nm |
-| Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um |
-| Access NMOS (N3, N4) | Connect cell to bitlines | 600nm |
+| Pull-Up PMOS (P1, P2) | Maintain stored value | 400nm (Wpu)|
+| Access NMOS (N3, N4) | Connect cell to bitlines | 600nm (Wa = 1.5 x Wpu) |
+| Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um (Wpd = 2 x Wa)|
 
 ---
 
@@ -286,15 +267,11 @@ $$
 Power_{avg} = V_{DD} \times I_{avg}
 $$
 
-Where:
-
-VDD → Supply voltage applied to the SRAM cell  
-Iavg → Average current drawn from the supply
+Where: ( VDD → Supply voltage applied to the SRAM cell and Iavg → Average current drawn from the supply
 
 ### Simulation Parameters
 
-Supply Voltage (VDD): 1.8 V  
-Technology Node: 180 nm CMOS
+Supply Voltage (VDD): 1.8 V and Technology Node: 180 nm CMOS
 
 ### Power Analysis Results
 
@@ -309,9 +286,7 @@ The proposed **7T SRAM cell consumes less average current**, which directly redu
 
 ### Power Reduction
 
-The 7T SRAM design achieves approximately **30.36% reduction in power consumption** compared to the conventional 6T SRAM cell.
-
-This reduction is achieved due to the **additional transistor that controls current flow**, thereby reducing unnecessary leakage paths.
+The 7T SRAM design achieves approximately **30.36% reduction in power consumption** compared to the conventional 6T SRAM cell. This reduction is achieved due to the **additional transistor that controls current flow**, thereby reducing unnecessary leakage paths.
 
 ---
 
@@ -331,11 +306,8 @@ $$
 SNM = \min(SNM_H, SNM_L)
 $$
 
-Where:
-$$
-SNM_H → Static Noise Margin High  
-SNM_L → Static Noise Margin Low
-$$
+Where: ( SNM_H → Static Noise Margin High and SNM_L → Static Noise Margin Low )
+
 ### SNM Results
 
 | SRAM Type | SNM_L | SNM_H | SNM = min(SNM_L,SNM_H) |
@@ -345,9 +317,7 @@ $$
 
 ### SNM Improvement
 
-The proposed **7T SRAM cell shows a significant improvement in SNM** compared to the conventional 6T SRAM.
-
-SNM Increase ≈ **25.98%**
+The proposed **7T SRAM cell shows a significant improvement in SNM** compared to the conventional 6T SRAM. SNM Increase ≈ **25.98%**
 
 ### Observation
 
@@ -392,25 +362,17 @@ To verify the correct functionality of the SRAM design, transient simulations we
 
 During the write operation, the data input is forced onto the bitlines through the write driver and stored in the SRAM cell.
 
-Operation conditions:
-
-WE = 1  
-WL = 1  
+Operation conditions: `WE = 1, WL = 1 ` 
 
 Working principle:
 
 • The write driver receives the input data signal (DATA_IN).  
-• Complementary signals are driven onto the bitlines:
-
-BL = DATA  
-BLB = DATA̅  
+• Complementary signals are driven onto the bitlines: `BL = DATA, BLB = DATA̅ ` 
 
 • When the **wordline (WL)** becomes HIGH, the access transistors turn ON.  
 • The internal storage nodes of the cross-coupled inverter latch are overwritten by the bitline values.
 
-Result:
-
-The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
+Result: The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
 
 ---
 
@@ -418,10 +380,7 @@ The SRAM cell successfully captures the input data and stores it at the internal
 
 The read operation retrieves the stored data from the SRAM cell without intentionally modifying the stored value.
 
-Operation conditions:
-
-WE = 0  
-WL = 1  
+Operation conditions: `WE = 0, WL = 1` 
 
 Working principle:
 
@@ -430,13 +389,9 @@ Working principle:
 
 Depending on the stored data:
 
-If **Q = 1**
+If **Q = 1** --> BL remains HIGH while BLB discharges slightly.
 
-BL remains HIGH while BLB discharges slightly.
-
-If **Q = 0**
-
-BL discharges slightly while BLB remains HIGH.
+If **Q = 0** --> BL discharges slightly while BLB remains HIGH.
 
 This creates a small differential voltage between BL and BLB which is sensed by the sense amplifier.
 
@@ -444,9 +399,7 @@ This creates a small differential voltage between BL and BLB which is sensed by 
 
 ### Subthreshold Leakage Effect During Read
 
-During the read operation, a small leakage current can flow through the access transistors even when the cell is trying to hold its stored value.
-
-This occurs due to **subthreshold conduction** in MOSFETs, where a small current flows even when the transistor operates below its threshold voltage.
+During the read operation, a small leakage current can flow through the access transistors even when the cell is trying to hold its stored value. This occurs due to **subthreshold conduction** in MOSFETs, where a small current flows even when the transistor operates below its threshold voltage.
 
 Leakage current equation:
 
@@ -454,23 +407,16 @@ $$
 I_{sub} \approx I_0 \cdot e^{\frac{V_{GS}-V_{TH}}{nV_T}}
 $$
 
-Where:
-
-VGS → Gate-to-Source Voltage  
-VTH → Threshold Voltage  
-V_T → Thermal Voltage  
-n → Subthreshold slope factor
+Where: ( VGS → Gate-to-Source Voltage, VTH → Threshold Voltage, V_T → Thermal Voltage, and n → Subthreshold slope factor )
 
 During the read operation:
 
 • The access transistor slightly pulls one of the internal nodes toward the bitline voltage.  
 • This can disturb the stored node voltage inside the SRAM cell.
 
-This phenomenon is known as **read disturb**.
+This phenomenon is known as **read disturb**. Proper transistor sizing ensures that:
 
-Proper transistor sizing ensures that:
-
-Pull-down transistor strength > Access transistor strength
+`Pull-down transistor strength > Access transistor strength`
 
 This prevents the stored data from flipping during read operation.
 
@@ -492,9 +438,7 @@ These results validate the correct functionality and stability of the SRAM read 
 
 ## Peripheral Circuits of the SRAM Array
 
-In addition to the SRAM cell array, several **supporting peripheral circuits** are required to perform reliable read and write operations. These circuits control the addressing, data transfer, and signal amplification within the memory system.
-
-The major peripheral circuits used in the proposed SRAM architecture are:
+In addition to the SRAM cell array, several **supporting peripheral circuits** are required to perform reliable read and write operations. These circuits control the addressing, data transfer, and signal amplification within the memory system. The major peripheral circuits used in the proposed SRAM architecture are:
 
 1. Row Decoder  
 2. Precharge Circuit  
@@ -507,9 +451,7 @@ These circuits work together with the **16×8 SRAM array** to enable proper memo
 
 ### 1. Row Decoder (4×16 Decoder)
 
-The row decoder is responsible for selecting one of the multiple wordlines in the SRAM array based on the input address.
-
-For a **4-bit address input**, the decoder generates **16 wordline outputs**, ensuring that only one row of SRAM cells is activated at a time.
+The row decoder is responsible for selecting one of the multiple wordlines in the SRAM array based on the input address. For a **4-bit address input**, the decoder generates **16 wordline outputs**, ensuring that only one row of SRAM cells is activated at a time.
 
 #### Working Principle
 
@@ -551,10 +493,7 @@ The write driver circuit is responsible for forcing data onto the bitlines durin
 
 Operation:
 
-• If **WE = 1**,  
-  BL = DATA  
-  BLB = DATA̅  
-
+• If **WE = 1**,  `BL = DATA, BLB = DATA̅  `
 • When **WL = 1**, the SRAM cell captures the data from the bitlines and stores it internally.
 
 This circuit ensures strong drive capability to overwrite the previously stored value inside the SRAM cell.
@@ -571,9 +510,7 @@ The sense amplifier is used to detect and amplify the small voltage difference b
 • This creates a small voltage difference between **BL and BLB**.  
 • The sense amplifier detects this difference and amplifies it to produce a full digital output.
 
-The output is then provided as **DATA_OUT**.
-
-Sense amplifiers significantly improve the **speed and reliability of read operations** in SRAM arrays.
+The output is then provided as **DATA_OUT**. Sense amplifiers significantly improve the **speed and reliability of read operations** in SRAM arrays.
 
 ---
 
@@ -592,9 +529,7 @@ These peripheral circuits together enable the **efficient operation of the 16×8
 
 ## Single-Bit SRAM Cell Test with Peripheral Circuits
 
-To validate the complete memory architecture, a **single-bit 7T SRAM cell** was integrated with all the required peripheral circuits and simulated.
-
-The test setup includes the following components:
+To validate the complete memory architecture, a **single-bit 7T SRAM cell** was integrated with all the required peripheral circuits and simulated. The test setup includes the following components:
 
 • 7T SRAM Cell  
 • Precharge Circuit  
@@ -611,13 +546,9 @@ All circuits are connected to a common **VDD supply and Ground reference**.
 
 The peripheral circuits interact with the SRAM cell as follows:
 
-1. **Precharge Circuit**
+1. **Precharge Circuit** - Before every read operation, the precharge circuit charges both bitlines to logic HIGH.
 
-Before every read operation, the precharge circuit charges both bitlines to logic HIGH.
-
-Condition:
-
-PC = 0 → BL = 1 and BLB = 1
+Condition: `PC = 0 → BL = 1 and BLB = 1`
 
 This ensures both bitlines start from the same voltage level.
 
@@ -627,12 +558,7 @@ This ensures both bitlines start from the same voltage level.
 
 The write driver applies input data to the bitlines during write operation.
 
-Condition:
-
-WE = 1
-
-BL = DATA  
-BLB = DATA̅
+Condition: `WE = 1 with BL = DATA, BLB = DATA̅`
 
 This prepares the bitlines with the input data value.
 
@@ -640,29 +566,19 @@ This prepares the bitlines with the input data value.
 
 3. **Write Operation**
 
-When both write enable and wordline signals are active:
-
-WE = 1  
-WL = 1  
+When both write enable and wordline signals are active: `WE = 1, WL = 1 `
 
 The SRAM cell captures the input data from the bitlines and stores it in the internal latch.
 
-Result:
-
-Q = DATA_IN
+Result: `Q = DATA_IN`
 
 ---
 
 4. **Read Operation**
 
-For read operation:
+For read operation: `WE = 0, WL = 1`
 
-WE = 0  
-WL = 1
-
-The SRAM cell connects to the bitlines and transfers the stored data.
-
-BL reflects the stored value of node Q.
+The SRAM cell connects to the bitlines and transfers the stored data. BL reflects the stored value of node Q.
 
 ---
 
@@ -670,9 +586,7 @@ BL reflects the stored value of node Q.
 
 The sense amplifier detects the voltage difference between BL and BLB and amplifies it to generate a strong digital output signal.
 
-Output:
-
-DATA_OUT = Stored SRAM value
+Output: `DATA_OUT = Stored SRAM value`
 
 ---
 
@@ -690,9 +604,7 @@ The transient waveform confirms that:
 
 ### Conclusion
 
-The successful integration of the **7T SRAM cell with peripheral circuits** verifies the correct functionality of the proposed SRAM architecture.
-
-The simulation demonstrates reliable:
+The successful integration of the **7T SRAM cell with peripheral circuits** verifies the correct functionality of the proposed SRAM architecture. The simulation demonstrates reliable:
 
 • Data write operation  
 • Data retention  
@@ -704,11 +616,7 @@ This validates the feasibility of implementing the **complete SRAM array using t
 
 ## Layout Design and Physical Verification (Work in Progress)
 
-After validating the schematic-level functionality of the SRAM architecture, the next stage of the design flow involves **physical layout implementation and verification**.
-
-The layout stage converts the schematic design into a **geometrical representation of transistors, interconnections, and routing layers** suitable for fabrication.
-
-The layouts are designed using **Magic VLSI Layout Tool** and verified using **DRC and LVS checks**.
+After validating the schematic-level functionality of the SRAM architecture, the next stage of the design flow involves **physical layout implementation and verification**. The layout stage converts the schematic design into a **geometrical representation of transistors, interconnections, and routing layers** suitable for fabrication. The layouts are designed using **Magic VLSI Layout Tool** and verified using **DRC and LVS checks**.
 
 ---
 
