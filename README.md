@@ -121,7 +121,9 @@ The sizing constraints are derived using **MOSFET current equations and Kirchhof
 
 The drain current of a MOS transistor operating in saturation is given by:
 
-ID = (1/2) μ Cox (W/L) (VGS − VT)²
+$$
+I_D = \frac{1}{2} \mu C_{ox}\left(\frac{W}{L}\right)(V_{GS}-V_T)^2
+$$
 
 Where:
 
@@ -680,112 +682,6 @@ The simulation demonstrates reliable:
 • Data read operation
 
 This validates the feasibility of implementing the **complete SRAM array using the proposed 7T SRAM cell design**.
-
----
-
-## Read and Write Operation Verification of SRAM Cell
-
-To verify the correct functionality of the SRAM design, transient simulations were performed to analyze the read and write operations. The objective of this test is to confirm that the SRAM cell correctly stores, retains, and retrieves data based on the control signals.
-
----
-
-### Write Operation
-
-During the write operation, the data input is forced onto the bitlines through the write driver and stored in the SRAM cell.
-
-Operation conditions:
-
-WE = 1  
-WL = 1  
-
-Working principle:
-
-• The write driver receives the input data signal (DATA_IN).  
-• Complementary signals are driven onto the bitlines:
-
-BL = DATA  
-BLB = DATA̅  
-
-• When the **wordline (WL)** becomes HIGH, the access transistors turn ON.  
-• The internal storage nodes of the cross-coupled inverter latch are overwritten by the bitline values.
-
-Result:
-
-The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
-
----
-
-### Read Operation
-
-The read operation retrieves the stored data from the SRAM cell without intentionally modifying the stored value.
-
-Operation conditions:
-
-WE = 0  
-WL = 1  
-
-Working principle:
-
-• Before the read operation, both **BL and BLB are precharged to VDD**.  
-• When the wordline becomes HIGH, the access transistors connect the internal nodes to the bitlines.
-
-Depending on the stored data:
-
-If **Q = 1**
-
-BL remains HIGH while BLB discharges slightly.
-
-If **Q = 0**
-
-BL discharges slightly while BLB remains HIGH.
-
-This creates a small differential voltage between BL and BLB which is sensed by the sense amplifier.
-
----
-
-### Subthreshold Leakage Effect During Read
-
-During the read operation, a small leakage current can flow through the access transistors even when the cell is trying to hold its stored value.
-
-This occurs due to **subthreshold conduction** in MOSFETs, where a small current flows even when the transistor operates below its threshold voltage.
-
-Leakage current equation:
-
-I_sub ≈ I₀ · e^{(VGS − VTH)/(nV_T)}
-
-Where:
-
-VGS → Gate-to-Source Voltage  
-VTH → Threshold Voltage  
-V_T → Thermal Voltage  
-n → Subthreshold slope factor
-
-During the read operation:
-
-• The access transistor slightly pulls one of the internal nodes toward the bitline voltage.  
-• This can disturb the stored node voltage inside the SRAM cell.
-
-This phenomenon is known as **read disturb**.
-
-Proper transistor sizing ensures that:
-
-Pull-down transistor strength > Access transistor strength
-
-This prevents the stored data from flipping during read operation.
-
----
-
-### Verification Result
-
-The transient simulation confirms that:
-
-• Data is correctly written into the SRAM cell during the write cycle.  
-• The stored value is retained inside the cross-coupled inverter latch.  
-• During read operation, only a small differential voltage is created between BL and BLB.  
-• The sense amplifier successfully amplifies this small voltage difference to generate DATA_OUT.  
-• Proper transistor sizing prevents read disturb caused by subthreshold leakage.
-
-These results validate the correct functionality and stability of the SRAM read and write operations.
 
 ---
 
