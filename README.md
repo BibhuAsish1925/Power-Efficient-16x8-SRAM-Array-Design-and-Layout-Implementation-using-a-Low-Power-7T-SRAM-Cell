@@ -135,7 +135,9 @@ VT → Threshold voltage
 
 The parameter **β (beta)** represents the transistor strength:
 
-β = μ Cox (W/L)
+$$
+\beta = \mu C_{ox}\left(\frac{W}{L}\right)
+$$
 
 ---
 
@@ -146,7 +148,9 @@ To avoid flipping the stored data, the **pull-down transistor must be stronger t
 
 Condition:
 
-βPD > βAX
+$$
+\beta_{PD} > \beta_{AX}
+$$
 
 Where:
 
@@ -155,7 +159,9 @@ Where:
 
 The **Cell Ratio (CR)** is defined as:
 
-CR = (W/L)pull-down / (W/L)access
+$$
+CR = \frac{(W/L)_{pull-down}}{(W/L)_{access}}
+$$
 
 Typical design requirement:
 
@@ -171,7 +177,9 @@ During write operation, the access transistor must be strong enough to overwrite
 
 Condition:
 
-βAX > βPU
+$$
+\beta_{AX} > \beta_{PU}
+$$
 
 Where:
 
@@ -179,7 +187,10 @@ Where:
 
 The **Pull-up Ratio (PR)** is defined as:
 
-PR = (W/L)access / (W/L)pull-up
+$$
+PR = \frac{(W/L)_{access}}{(W/L)_{pull-up}}
+$$
+
 
 Typical requirement:
 
@@ -271,7 +282,9 @@ Power consumption is an important design parameter in SRAM circuits, especially 
 
 The average power consumed by the SRAM cell is calculated using the relation:
 
-Average Power = VDD × Iavg
+$$
+Power_{avg} = V_{DD} \times I_{avg}
+$$
 
 Where:
 
@@ -314,16 +327,18 @@ SNM is defined as the side length of the largest square that can be fitted betwe
 
 Mathematically:
 
-SNM = min(SNMH , SNML)
+$$
+SNM = \min(SNM_H, SNM_L)
+$$
 
 Where:
 
-SNMH → Static Noise Margin High  
-SNML → Static Noise Margin Low
+SNM_H → Static Noise Margin High  
+SNM_L → Static Noise Margin Low
 
 ### SNM Results
 
-| SRAM Type | SNML | SNMH | SNM = min(SNML,SNMH) |
+| SRAM Type | SNM_L | SNM_H | SNM = min(SNM_L,SNM_H) |
 |-----------|------|------|------|
 | 6T SRAM | 692.53 mV | 674.375 mV | 674.375 mV |
 | 7T SRAM | 850.2 mV | 849.6 mV | 849.6 mV |
@@ -435,7 +450,9 @@ This occurs due to **subthreshold conduction** in MOSFETs, where a small current
 
 Leakage current equation:
 
-I_sub ≈ I₀ · e^{(VGS − VTH)/(nV_T)}
+$$
+I_{sub} \approx I_0 \cdot e^{\frac{V_{GS}-V_{TH}}{nV_T}}
+$$
 
 Where:
 
