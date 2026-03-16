@@ -53,33 +53,156 @@ The complete SRAM system consists of the following blocks:
 - **Sense Amplifier** – Detects and amplifies small voltage difference during read  
 
 ---
-.
+
+## Conventional 6T SRAM Cell Architecture
+
+The conventional Static Random Access Memory (SRAM) cell consists of **six transistors (6T)** forming a bistable latch capable of storing one bit of data. The structure is composed of **two cross-coupled CMOS inverters** and **two access transistors** that connect the cell to the bitlines during read and write operations.
+
+### 6T SRAM Structure
+
+The 6T SRAM cell consists of:
+
+- **2 Pull-Up PMOS Transistors (P1, P2)**
+- **2 Pull-Down NMOS Transistors (N1, N2)**
+- **2 Access NMOS Transistors (N3, N4)**
+
+The cross-coupled inverters store the data, while the access transistors allow the memory cell to communicate with the bitlines.
+
+### Main Nodes
+
+- **Q** – Stored data node  
+- **QB (Q̅)** – Complementary data node  
+- **BL** – Bitline  
+- **BLB** – Complementary bitline  
+- **WL** – Wordline
+
+### SRAM Operations
+
+#### Hold Operation
+When the **wordline (WL) = 0**, the access transistors are OFF and the cell is isolated from the bitlines.  
+The cross-coupled inverters maintain the stored value using positive feedback.
+
+#### Write Operation
+1. The write driver forces **BL and BLB** according to the input data.
+2. **WL is asserted (WL = 1)** enabling the access transistors.
+3. The forced bitline values overpower the internal node and change the stored data.
+
+Example:
+- BL = 1, BLB = 0 → Q = 1
+- BL = 0, BLB = 1 → Q = 0
+
+#### Read Operation
+1. Bitlines are **precharged to VDD**.
+2. **WL = 1** activates the access transistors.
+3. The internal node storing **0 discharges one bitline slightly**.
+4. The **sense amplifier detects the small voltage difference** and amplifies it to produce the output data.
+
+### Limitations of 6T SRAM
+
+Although the 6T SRAM cell is widely used, it suffers from several challenges in scaled technologies:
+
+- Read disturb problem
+- Reduced Static Noise Margin (SNM)
+- Increased leakage current
+- Sensitivity to process variations
+- Higher power consumption in large arrays
+
+Due to these limitations, alternative SRAM architectures such as **7T SRAM** are proposed to improve stability and reduce power consumption.
 
 ---
 
-## Key Features
-- Design of **6T and 7T SRAM cells**
-- Implementation of **16×8 SRAM memory array**
-- Integration of peripheral circuits:
-  - 4×16 Row Decoder
-  - Precharge Circuit
-  - Write Driver
-  - Sense Amplifier
-- **Read and Write functional verification**
-- **Static Noise Margin (SNM) analysis**
-- **Power consumption comparison**
-- **Layout implementation of basic logic circuits**
+## Transistor Sizing Analysis
+
+Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell.
+
+The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
+
+### MOSFET Saturation Current Equation
+
+The drain current of a MOS transistor operating in saturation is given by:
+
+ID = (1/2) μ Cox (W/L) (VGS − VT)²
+
+Where:
+
+μ → Carrier mobility  
+Cox → Oxide capacitance per unit area  
+W/L → Transistor aspect ratio  
+VGS → Gate-to-source voltage  
+VT → Threshold voltage  
+
+The parameter **β (beta)** represents the transistor strength:
+
+β = μ Cox (W/L)
 
 ---
 
-## SRAM Architecture
+### Read Stability Condition
 
-The complete SRAM system consists of the following blocks:
+During the read operation, the access transistor connects the internal storage node to the bitline.  
+To avoid flipping the stored data, the **pull-down transistor must be stronger than the access transistor**.
 
-- **SRAM Cell Array** – Stores data using SRAM cells  
-- **Row Decoder** – Selects the wordline based on address input  
-- **Precharge Circuit** – Precharges and equalizes bitlines before read operation  
-- **Write Driver** – Drives data onto bitlines during write operation  
-- **Sense Amplifier** – Detects and amplifies small voltage difference during read  
+Condition:
+
+βPD > βAX
+
+Where:
+
+βPD → Pull-down NMOS strength  
+βAX → Access transistor strength  
+
+The **Cell Ratio (CR)** is defined as:
+
+CR = (W/L)pull-down / (W/L)access
+
+Typical design requirement:
+
+CR ≥ 1.5
+
+This ensures that the internal node storing logic '0' remains stable during read operation.
 
 ---
+
+### Write Ability Condition
+
+During write operation, the access transistor must be strong enough to overwrite the internal node.
+
+Condition:
+
+βAX > βPU
+
+Where:
+
+βPU → Pull-up PMOS strength  
+
+The **Pull-up Ratio (PR)** is defined as:
+
+PR = (W/L)access / (W/L)pull-up
+
+Typical requirement:
+
+PR ≥ 1
+
+This allows the bitline driver to successfully change the stored data.
+
+---
+
+### Summary of Sizing Constraints
+
+| Parameter | Condition | Purpose |
+|----------|-----------|--------|
+| Pull-Down > Access | βPD > βAX | Read stability |
+| Access > Pull-Up | βAX > βPU | Write ability |
+| Cell Ratio (CR) | ≥ 1.5 | Prevent read disturb |
+| Pull-up Ratio (PR) | ≥ 1 | Enable successful write |
+
+---
+
+### Transistor Width Configuration
+
+| Transistor | Function | Width (W) |
+|-----------|----------|----------|
+| Pull-Up PMOS (P1, P2) | Maintain stored value | 400nm |
+| Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um |
+| Access NMOS (N3, N4) | Connect cell to bitlines | 600nm |
+
