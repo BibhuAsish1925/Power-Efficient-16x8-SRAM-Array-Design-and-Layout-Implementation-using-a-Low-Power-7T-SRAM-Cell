@@ -223,7 +223,7 @@ This allows the bitline driver to successfully change the stored data.
 
 <table>
     <td align="center">
-          <img width="583" height="517" alt="image" src="https://github.com/user-attachments/assets/55b43569-b53d-4c06-bbd5-d3c5d86efb84" /><br/>
+          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
       <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
     </td>
 </table>table>
