@@ -621,6 +621,7 @@ Precharging the bitlines reduces sensing delay and improves reliability of the m
     </td>
 </table>
 
+
 ---
 
 ### 3. Write Driver
@@ -757,6 +758,7 @@ This prepares the bitlines with the input data value.
       <small>Fig 21. write enable condition</small>
     </td>
 </table>
+
 ---
 
 3. **Write Operation**
@@ -798,7 +800,7 @@ The sense amplifier detects the voltage difference between BL and BLB and amplif
 <table>
     <td align="center">
           <img width="1650" height="797" alt="image" src="https://github.com/user-attachments/assets/d0b2d444-0762-44d6-9f6c-25854936bb1d" /><br/>
-      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
+      <small>Fig 24. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
     </td>
 </table>
 
@@ -827,6 +829,73 @@ The successful integration of the **7T SRAM cell with peripheral circuits** veri
 • Data read operation
 
 This validates the feasibility of implementing the **complete SRAM array using the proposed 7T SRAM cell design**.
+
+---
+
+## 16×8 7T SRAM Array with Peripheral Circuits
+
+### Overview
+
+A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell architecture**, integrated with all necessary peripheral circuits for complete memory operation.
+
+---
+
+### Architecture Description
+
+- The array consists of **16 rows and 8 columns**, where each cell is a **7T SRAM bit-cell**.
+- Each row is controlled by a **wordline (WL)**, and each column is connected through **bitlines (BL, BLB)**.
+
+---
+
+### Peripheral Circuit Integration
+
+**Row Decoder (4×16)**  
+- Converts a **4-bit address input** into **16 wordlines (WL)**.  
+- Activates only one row at a time for read/write operation.
+
+**Write Driver**  
+- Receives input data (**DATA_IN**) and control signals (**WE, WEB**).  
+- Generates differential signals on **BL and BLB** for writing data into the selected cell.
+
+**Precharge Circuit**  
+- Precharges both **BL and BLB to VDD** before every read cycle.  
+- Ensures faster and reliable sensing during read operation.
+
+**7T SRAM Cell Array**  
+- Stores data using **cross-coupled inverters** and access transistors.  
+- The additional transistor in 7T improves **read stability and reduces leakage**.
+
+**Sense Amplifier**  
+- Detects small voltage differences between **BL and BLB** during read.  
+- Amplifies the signal and produces **DATA_OUT** based on control signal (**SAE**).
+
+---
+
+### Operation Summary
+
+- **Write Operation:**  
+  Data is driven onto BL/BLB by the write driver and stored in the selected cell via the activated wordline.
+
+- **Read Operation:**  
+  Precharged bitlines are discharged differentially based on stored data, and the sense amplifier converts this into a digital output.
+
+---
+
+### Power Network
+
+- All blocks share a common **VDD and GND supply**.
+- Optimized design ensures **reduced power consumption and improved stability** compared to conventional 6T SRAM.
+
+---
+
+### Figure
+
+<table>
+    <td align="center">
+          <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
+      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
+    </td>
+</table>
 
 ---
 
