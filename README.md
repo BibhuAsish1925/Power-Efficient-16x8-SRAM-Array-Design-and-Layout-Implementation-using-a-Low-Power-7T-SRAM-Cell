@@ -50,7 +50,14 @@ The complete SRAM system consists of the following blocks:
 - **Row Decoder** – Selects the wordline based on address input  
 - **Precharge Circuit** – Precharges and equalizes bitlines before read operation  
 - **Write Driver** – Drives data onto bitlines during write operation  
-- **Sense Amplifier** – Detects and amplifies small voltage difference during read  
+- **Sense Amplifier** – Detects and amplifies small voltage difference during read
+
+<table>
+    <td align="center">
+      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14" />"/><br/>
+      <small>(a). Exact HA, (b). Approx. HA</small>
+    </td>
+</table>
 
 ---
 
