@@ -75,6 +75,19 @@ The 6T SRAM cell consists of:
 
 The cross-coupled inverters store the data, while the access transistors allow the memory cell to communicate with the bitlines.
 
+<table>
+  <tr>
+    <td align="center">
+      <img width="856" height="287" alt="Circuit Diagram" src="https://github.com/user-attachments/assets/cb2249a1-6b24-49d3-a24f-0ce22a17b51c"/><br/>
+      <small>Fig 2a. 6T-SRAM schematic diagram</small>
+    </td>
+    <td align="center">
+      <img width="583" height="517" alt="image" src="https://github.com/user-attachments/assets/55b43569-b53d-4c06-bbd5-d3c5d86efb84" /><br/>
+      <small>Fig 2b. 6T-SRAM schematic design</small>
+    </td>
+  </tr>
+</table>
+
 ### Main Nodes
 
 - **Q** – Stored data node  
@@ -120,6 +133,13 @@ Due to these limitations, alternative SRAM architectures such as **7T SRAM** are
 ## Transistor Sizing Analysis
 
 Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell. The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
+
+<table>
+    <td align="center">
+      <img width="436" height="427" alt="image" src="https://github.com/user-attachments/assets/dee6b9d9-5e17-46ac-90cd-304a92619962" /><br/>
+      <small>Fig 3. SRAM sizing</small>
+    </td>
+</table>
 
 ### MOSFET Saturation Current Equation
 
@@ -200,6 +220,13 @@ This allows the bitline driver to successfully change the stored data.
 ---
 
 ### Transistor Width Configuration
+
+<table>
+    <td align="center">
+          <img width="583" height="517" alt="image" src="https://github.com/user-attachments/assets/55b43569-b53d-4c06-bbd5-d3c5d86efb84" /><br/>
+      <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
+    </td>
+</table>table>
 
 | Transistor | Function | Width (W) |
 |-----------|----------|----------|
