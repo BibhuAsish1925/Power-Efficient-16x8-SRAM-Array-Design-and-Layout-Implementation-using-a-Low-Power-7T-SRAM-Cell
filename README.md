@@ -226,7 +226,7 @@ This allows the bitline driver to successfully change the stored data.
           <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
       <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
     </td>
-</table>table>
+</table>
 
 | Transistor | Function | Width (W) |
 |-----------|----------|----------|
@@ -354,7 +354,27 @@ The 7T SRAM design achieves approximately **30.36% reduction in power consumptio
 
 Static Noise Margin (SNM) is an important parameter that determines the stability of an SRAM cell. It represents the **maximum noise voltage that the SRAM cell can tolerate without changing its stored state**.
 
+<table>
+    <td align="center">
+          <img width="503" height="432" alt="image" src="https://github.com/user-attachments/assets/1a94eb25-2291-447c-8f1f-d7217f17423f" /><br/>
+      <small>Fig 6. SRAM butterfly curve</small>
+    </td>
+</table>
+
 SNM is typically analyzed using the **butterfly curve method**, which is obtained by plotting the voltage transfer characteristics of the two cross-coupled inverters.
+
+<table>
+  <tr>
+    <td align="center">
+          <img width="809" height="579" alt="image" src="https://github.com/user-attachments/assets/87f13e78-9252-4fd4-a26b-0b0cb85e075e" /><br/>
+      <small>Fig 7a. 6T-SRAM Butterfly curve</small>
+    </td>
+    <td align="center">
+          <img width="796" height="579" alt="image" src="https://github.com/user-attachments/assets/95f5036c-20ca-4984-be2c-84aa1d6ece86" /><br/>
+      <small>Fig 7b. 7T-SRAM Butterfly curve</small>
+    </td>
+  </tr>
+</table>
 
 ### SNM Calculation
 
@@ -421,16 +441,27 @@ To verify the correct functionality of the SRAM design, transient simulations we
 ### Write Operation
 
 During the write operation, the data input is forced onto the bitlines through the write driver and stored in the SRAM cell.
-
 Operation conditions: `WE = 1, WL = 1 ` 
 
 Working principle:
 
 • The write driver receives the input data signal (DATA_IN).  
 • Complementary signals are driven onto the bitlines: `BL = DATA, BLB = DATA̅ ` 
-
 • When the **wordline (WL)** becomes HIGH, the access transistors turn ON.  
 • The internal storage nodes of the cross-coupled inverter latch are overwritten by the bitline values.
+
+<table>
+  <tr>
+    <td align="center">
+          <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
+      <small>Fig 8a. SRAM cell Write test circuit</small>
+    </td>
+    <td align="center">
+          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
+      <small>Fig 8b. SRAM cell Write test waveform</small>
+    </td>
+  </tr>
+</table>
 
 Result: The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
 
@@ -447,10 +478,21 @@ Working principle:
 • Before the read operation, both **BL and BLB are precharged to VDD**.  
 • When the wordline becomes HIGH, the access transistors connect the internal nodes to the bitlines.
 
+<table>
+  <tr>
+    <td align="center">
+          <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
+      <small>Fig 9a. SRAM cell Read test circuit</small>
+    </td>
+    <td align="center">
+          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
+      <small>Fig 9b. SRAM cell Read test waveform</small>
+    </td>
+  </tr>
+</table>
+
 Depending on the stored data:
-
 If **Q = 1** --> BL remains HIGH while BLB discharges slightly.
-
 If **Q = 0** --> BL discharges slightly while BLB remains HIGH.
 
 This creates a small differential voltage between BL and BLB which is sensed by the sense amplifier.
@@ -526,6 +568,25 @@ The 4×16 decoder is implemented using:
 • Inverter circuits  
 • 4-input AND gates
 
+<table>
+  <tr>
+    <td align="center">
+          <img width="1771" height="3391" alt="image" src="https://github.com/user-attachments/assets/976c8dab-f797-4fa0-9d69-6208c97cd633" /><br/>
+      <small>Fig 10a. 4×16 Row decoder diagram</small>
+    </td>
+    <td align="center">
+          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
+      <small>Fig 10b. 4×16 Row decoder schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table>
+    <td align="center">
+          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
+      <small>Fig 11. 4×16 Row decoder output waveform</small>
+    </td>
+</table>
 ---
 
 ### 2. Precharge Circuit
@@ -539,6 +600,26 @@ The precharge circuit prepares the bitlines before every read operation.
 • This ensures accurate sensing during the read operation.
 
 Precharging the bitlines reduces sensing delay and improves reliability of the memory read process.
+
+<table>
+  <tr>
+    <td align="center">
+          <img width="349" height="287" alt="image" src="https://github.com/user-attachments/assets/bd585699-d465-4ddf-9acc-7d1f204d292a" /><br/>
+      <small>Fig 12a. Precharge cell diagram</small>
+    </td>
+    <td align="center">
+          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
+      <small>Fig 12b. Precharge cell schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table>
+    <td align="center">
+          <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
+      <small>Fig 13. Precharge cell output waveform</small>
+    </td>
+</table>
 
 ---
 
@@ -556,6 +637,26 @@ Operation:
 • If **WE = 1**,  `BL = DATA, BLB = DATA̅  `
 • When **WL = 1**, the SRAM cell captures the data from the bitlines and stores it internally.
 
+<table>
+  <tr>
+    <td align="center">
+          <img width="452" height="239" alt="image" src="https://github.com/user-attachments/assets/f782c731-c55e-4025-86aa-95b001a867a5" /><br/>
+      <small>Fig 14a. Write Driver diagram</small>
+    </td>
+    <td align="center">
+          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
+      <small>Fig 14b. Write Driver schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table>
+    <td align="center">
+          <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
+      <small>Fig 15. Write Driver output waveform</small>
+    </td>
+</table>
+
 This circuit ensures strong drive capability to overwrite the previously stored value inside the SRAM cell.
 
 ---
@@ -569,6 +670,20 @@ The sense amplifier is used to detect and amplify the small voltage difference b
 • During read operation, one bitline discharges slightly depending on the stored data.  
 • This creates a small voltage difference between **BL and BLB**.  
 • The sense amplifier detects this difference and amplifies it to produce a full digital output.
+
+<table>
+    <td align="center">
+          <img width="879" height="537" alt="image" src="https://github.com/user-attachments/assets/90d38d4e-24f2-4072-afac-d1fd7720f3fb" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+</table>
+
+<table>
+    <td align="center">
+          <img width="882" height="372" alt="image" src="https://github.com/user-attachments/assets/a0daf12b-7013-41c1-a16b-4bc99ebc54f6" /><br/>
+      <small>Fig 17. Write Driver output waveform</small>
+    </td>
+</table>
 
 The output is then provided as **DATA_OUT**. Sense amplifiers significantly improve the **speed and reliability of read operations** in SRAM arrays.
 
@@ -587,7 +702,7 @@ These peripheral circuits together enable the **efficient operation of the 16×8
 
 ---
 
-## Single-Bit SRAM Cell Test with Peripheral Circuits
+## Single-Bit 7T-SRAM Cell Test with Peripheral Circuits
 
 To validate the complete memory architecture, a **single-bit 7T SRAM cell** was integrated with all the required peripheral circuits and simulated. The test setup includes the following components:
 
@@ -598,11 +713,25 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 • Wordline Control  
 • Data Input and Output Nodes
 
+<table>
+    <td align="center">
+          <img width="449" height="568" alt="image" src="https://github.com/user-attachments/assets/74ca2cd0-c950-48b0-a730-34ea82e74e30" /><br/>
+      <small>Fig 18. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
+    </td>
+</table>
+
 All circuits are connected to a common **VDD supply and Ground reference**.
 
 ---
 
 ### Test Architecture
+
+<table>
+    <td align="center">
+          <img width="1650" height="797" alt="image" src="https://github.com/user-attachments/assets/d0b2d444-0762-44d6-9f6c-25854936bb1d" /><br/>
+      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
+    </td>
+</table>
 
 The peripheral circuits interact with the SRAM cell as follows:
 
@@ -611,6 +740,13 @@ The peripheral circuits interact with the SRAM cell as follows:
 Condition: `PC = 0 → BL = 1 and BLB = 1`
 
 This ensures both bitlines start from the same voltage level.
+
+<table>
+    <td align="center">
+          <img width="1629" height="552" alt="image" src="https://github.com/user-attachments/assets/f0a7468e-6fa9-403b-ac03-6847c83818ae" /><br/>
+      <small>Fig 20. Precharge conditions</small>
+    </td>
+</table>
 
 ---
 
@@ -622,6 +758,12 @@ Condition: `WE = 1 with BL = DATA, BLB = DATA̅`
 
 This prepares the bitlines with the input data value.
 
+<table>
+    <td align="center">
+          <img width="1629" height="497" alt="image" src="https://github.com/user-attachments/assets/b5885a49-3988-4fb5-b818-ca3aab5b588b" /><br/>
+      <small>Fig 21. write enable condition</small>
+    </td>
+</table>
 ---
 
 3. **Write Operation**
@@ -629,6 +771,13 @@ This prepares the bitlines with the input data value.
 When both write enable and wordline signals are active: `WE = 1, WL = 1 `
 
 The SRAM cell captures the input data from the bitlines and stores it in the internal latch.
+
+<table>
+    <td align="center">
+          <img width="1629" height="497" alt="image" src="https://github.com/user-attachments/assets/ede3621f-38dc-4e86-8612-021f14520aa6" /><br/>
+      <small>Fig 22. Write conditions</small>
+    </td>
+</table> 
 
 Result: `Q = DATA_IN`
 
@@ -639,6 +788,13 @@ Result: `Q = DATA_IN`
 For read operation: `WE = 0, WL = 1`
 
 The SRAM cell connects to the bitlines and transfers the stored data. BL reflects the stored value of node Q.
+
+<table>
+    <td align="center">
+          <img width="1629" height="453" alt="image" src="https://github.com/user-attachments/assets/1e1b0373-d1f2-4e40-942e-bae958e034eb" /><br/>
+      <small>Fig 22. Write conditions</small>
+    </td>
+</table> 
 
 ---
 
