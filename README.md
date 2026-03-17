@@ -316,6 +316,19 @@ $$
 
 Where: ( VDD → Supply voltage applied to the SRAM cell and Iavg → Average current drawn from the supply
 
+<table>
+  <tr>
+    <td align="center">
+          <img width="766" height="491" alt="image" src="https://github.com/user-attachments/assets/6462c2f7-7b47-4c4a-9401-ae2dbb275a08" /><br/>
+      <small>Fig 5a. 6T-SRAM VTC curve</small>
+    </td>
+    <td align="center">
+          <img width="785" height="504" alt="image" src="https://github.com/user-attachments/assets/ad465116-ec1c-4b2a-a4ed-16752ef802d0" /><br/>
+      <small>Fig 5b. 7T-SRAM VTC curve</small>
+    </td>
+  </tr>
+</table>
+
 ### Simulation Parameters
 
 Supply Voltage (VDD): 1.8 V and Technology Node: 180 nm CMOS
