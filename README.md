@@ -54,7 +54,7 @@ The complete SRAM system consists of the following blocks:
 
 <table>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14" />"/><br/>
+      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
       <small> Fig. 1 SRAM system architecture
     </td>
 </table>
