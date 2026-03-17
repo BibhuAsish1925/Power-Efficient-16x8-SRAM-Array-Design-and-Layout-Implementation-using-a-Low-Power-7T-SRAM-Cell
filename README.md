@@ -247,7 +247,20 @@ The proposed 7T SRAM cell consists of:
 - 2 Pull-Up PMOS transistors
 - 2 Pull-Down NMOS transistors
 - 2 Access NMOS transistors
-- 1 Additional Bottom NMOS transistor(w=1.2um)
+- 1 Additional Bottom NMOS transistor[width(wb) = 1.2um]
+
+<table>
+  <tr>
+    <td align="center">
+          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5e3f31bb-4502-4a97-a01a-9976061786c7" /><br/>
+      <small>Fig 4a. Proposed 7T-SRAM schematic diagram</small>
+    </td>
+    <td align="center">
+          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
+      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
+    </td>
+  </tr>
+</table>
 
 The additional transistor acts as a **current gating device**, controlling the discharge path of the internal storage node.
 
