@@ -575,7 +575,7 @@ The 4×16 decoder is implemented using:
       <small>Fig 10a. 4×16 Row decoder diagram</small>
     </td>
     <td align="center">
-          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
+          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
       <small>Fig 10b. 4×16 Row decoder schematic design</small>
     </td>
   </tr>
@@ -726,13 +726,6 @@ All circuits are connected to a common **VDD supply and Ground reference**.
 
 ### Test Architecture
 
-<table>
-    <td align="center">
-          <img width="1650" height="797" alt="image" src="https://github.com/user-attachments/assets/d0b2d444-0762-44d6-9f6c-25854936bb1d" /><br/>
-      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
-    </td>
-</table>
-
 The peripheral circuits interact with the SRAM cell as follows:
 
 1. **Precharge Circuit** - Before every read operation, the precharge circuit charges both bitlines to logic HIGH.
@@ -774,7 +767,7 @@ The SRAM cell captures the input data from the bitlines and stores it in the int
 
 <table>
     <td align="center">
-          <img width="1629" height="497" alt="image" src="https://github.com/user-attachments/assets/ede3621f-38dc-4e86-8612-021f14520aa6" /><br/>
+          <img width="1629" height="453" alt="image" src="https://github.com/user-attachments/assets/1e1b0373-d1f2-4e40-942e-bae958e034eb" /><br/>
       <small>Fig 22. Write conditions</small>
     </td>
 </table> 
@@ -791,8 +784,8 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
 
 <table>
     <td align="center">
-          <img width="1629" height="453" alt="image" src="https://github.com/user-attachments/assets/1e1b0373-d1f2-4e40-942e-bae958e034eb" /><br/>
-      <small>Fig 22. Write conditions</small>
+          <img width="1629" height="637" alt="image" src="https://github.com/user-attachments/assets/6a4314e8-a883-42bc-acab-090f05cfaa23" /><br/>
+      <small>Fig 23. Read condition</small>
     </td>
 </table> 
 
@@ -801,6 +794,13 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
 5. **Sense Amplifier Operation**
 
 The sense amplifier detects the voltage difference between BL and BLB and amplifies it to generate a strong digital output signal.
+
+<table>
+    <td align="center">
+          <img width="1650" height="797" alt="image" src="https://github.com/user-attachments/assets/d0b2d444-0762-44d6-9f6c-25854936bb1d" /><br/>
+      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
+    </td>
+</table>
 
 Output: `DATA_OUT = Stored SRAM value`
 
