@@ -405,7 +405,7 @@ The additional transistor in the 7T architecture improves the stability of the i
 
 ---
 
-## Delay Analysis of 6T vs 7T SRAM Cell
+## Delay Analysis
 
 To evaluate the performance of the SRAM cells, delay analysis was carried out for both **6T and 7T SRAM architectures** during read and write operations.
 
@@ -455,8 +455,6 @@ Overall, the **7T SRAM design provides better stability and power efficiency**, 
 
 To verify the correct functionality of the SRAM design, transient simulations were performed to analyze the read and write operations. The objective of this test is to confirm that the SRAM cell correctly stores, retains, and retrieves data based on the control signals.
 
----
-
 ### Write Operation
 
 During the write operation, the data input is forced onto the bitlines through the write driver and stored in the SRAM cell.
@@ -483,8 +481,6 @@ Working principle:
 </table>
 
 Result: The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
-
----
 
 ### Read Operation
 
@@ -557,11 +553,19 @@ These results validate the correct functionality and stability of the SRAM read 
 
 ---
 
-### Conclusion
+## Conclusion
 
-• 7T SRAM achieves **faster write operation**.  
-• Read delay increases **slightly (~0.7%)** due to additional transistor resistance.  
-• Overall, 7T provides a better trade-off with **improved stability and reduced power consumption**.
+The proposed **7T SRAM cell architecture** demonstrates clear advantages over the conventional **6T SRAM** based on the performed analysis.
+
+- **Stability (SNM):** The 7T SRAM shows a significant improvement in Static Noise Margin, indicating better resistance to read disturbance and enhanced data stability.
+- **Power Consumption:** The 7T design achieves lower average power consumption due to reduced leakage current, making it more suitable for low-power applications.
+- **Write Performance:** A noticeable improvement in write delay (~3.4%) is observed, due to better write ability enabled by the modified cell structure.
+- **Read Performance:** A very small increase in read delay (~0.7%) is observed, caused by the additional transistor in the read path. This overhead is minimal and acceptable.
+
+### Final Remark
+
+Overall, the 7T SRAM provides a better trade-off between **power, stability, and performance**, making it a more efficient and reliable choice compared to the conventional 6T SRAM design, especially for **low-power and high-stability memory applications**.
+
 ---
 
 ## Peripheral Circuits of the SRAM Array
