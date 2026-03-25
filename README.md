@@ -431,13 +431,13 @@ To evaluate the effectiveness of the proposed design, a comparison is performed 
 | Parameter | 6T SRAM | 7T SRAM |
 |-----------|--------|--------|
 | Number of Transistors | 6 | 7 |
-| Static Noise Margin (SNM) | 674.375 mV | 849.6 mV (25.98% better than 6T) |
+| Static Noise Margin (SNM) | 674.375 mV | 849.6 mV **(25.98% better than 6T)** |
 | Stability | Moderate | Higher |
-| Average Power Consumption | 0.9135 µW | 0.63612 µW (30.36% less than 6T)|
+| Average Power Consumption | 0.9135 µW | 0.63612 µW **(30.36% less than 6T)**|
 | Leakage Power | Higher | Reduced |
 | Area Utilization | Smaller | Slightly Larger |
-| Write Delay | 274.86ps | 265.516ps (3.4% faster than 6T)|
-| Read Delay | 55.624ps | 56.009ps (0.693% slower than 6T)|
+| Write Delay | 274.86ps | 265.516ps **(3.4% faster than 6T)**|
+| Read Delay | 55.624ps | 56.009ps **(0.693% slower than 6T)**|
 | Design Complexity | Lower | Slightly Higher |
 | Applications | Standard SRAM arrays | Low power and high stability memory systems |
 
@@ -597,7 +597,7 @@ The 4×16 decoder is implemented using:
 <table>
   <tr>
     <td align="center">
-          <img width="1771" height="3391" alt="image" src="https://github.com/user-attachments/assets/976c8dab-f797-4fa0-9d69-6208c97cd633" /><br/>
+          <img width="465" height="705" alt="image" src="https://github.com/user-attachments/assets/9225a0df-9bcb-46ed-8007-c81e58f94bdf" /><br/>
       <small>Fig 10a. 4×16 Row decoder diagram</small>
     </td>
     <td align="center">
