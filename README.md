@@ -419,19 +419,8 @@ To evaluate the performance of the SRAM cells, delay analysis was carried out fo
 
 ### Observations
 
-• **Write Operation:**  
-7T SRAM shows reduced delay compared to 6T SRAM.
-
-\[
-\text{Write Improvement} = \frac{274.86 - 265.516}{274.86} \times 100 \approx 3.4\%
-\]
-
-• **Read Operation:**  
-7T SRAM shows a slight increase in delay due to the additional transistor in the read path.
-
-\[
-\text{Read Delay Increase} = \frac{56.0092 - 55.624}{55.624} \times 100 \approx 0.692\%
-\]
+• **Write Operation:** 7T SRAM shows reduced delay compared to 6T SRAM = approx 3.4%
+• **Read Operation:** 7T SRAM shows a slight increase in delay due to the additional transistor in the read path = approx 0.692%
 
 ---
 
