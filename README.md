@@ -103,7 +103,7 @@ When the **wordline (WL) = 0**, the access transistors are OFF and the cell is i
 
 #### Write Operation
 1. The write driver forces **BL and BLB** according to the input data.
-2. **WL is asserted (WL = 1)** enabling the access transistors.
+2 **WL is asserted (WL = 1)** enabling the access transistors.
 3. The forced bitline values overpower the internal node and change the stored data.
 
 Example:
@@ -247,7 +247,7 @@ The proposed 7T SRAM cell consists of:
 - 2 Pull-Up PMOS transistors
 - 2 Pull-Down NMOS transistors
 - 2 Access NMOS transistors
-- 1 Additional Bottom NMOS transistor[width(wb) = 1.2um]
+- 1 Additional Bottom NMOS transistor [width(wb) = 1.2um]
 
 <table>
   <tr>
@@ -405,6 +405,36 @@ The additional transistor in the 7T architecture improves the stability of the i
 
 ---
 
+## Delay Analysis of 6T vs 7T SRAM Cell
+
+To evaluate the performance of the SRAM cells, delay analysis was carried out for both **6T and 7T SRAM architectures** during read and write operations.
+
+### Delay Comparison Table
+
+| Parameter | Write – 6T (ps) | Write – 7T (ps) | Read – 6T (ps) | Read – 7T (ps) |
+|----------|----------------|----------------|---------------|---------------|
+| Rise     | 308.594         | 298.378        | 39.746       | 41.195       |
+| Fall     | 241.122         | 232.655        | 71.504       | 70.832        |
+| Average  | 274.862         | 265.516        | 55.624        | 56.009       |
+
+### Observations
+
+• **Write Operation:**  
+7T SRAM shows reduced delay compared to 6T SRAM.
+
+\[
+\text{Write Improvement} = \frac{274.86 - 265.516}{274.86} \times 100 \approx 3.4\%
+\]
+
+• **Read Operation:**  
+7T SRAM shows a slight increase in delay due to the additional transistor in the read path.
+
+\[
+\text{Read Delay Increase} = \frac{56.0092 - 55.624}{55.624} \times 100 \approx 0.692\%
+\]
+
+---
+
 ## Comparison Between 6T and 7T SRAM
 
 To evaluate the effectiveness of the proposed design, a comparison is performed between the conventional **6T SRAM cell** and the proposed **7T SRAM cell** based on important design parameters such as stability, power consumption, area, and delay.
@@ -412,13 +442,13 @@ To evaluate the effectiveness of the proposed design, a comparison is performed 
 | Parameter | 6T SRAM | 7T SRAM |
 |-----------|--------|--------|
 | Number of Transistors | 6 | 7 |
-| Cell Stability | Moderate | Improved |
-| Static Noise Margin (SNM) | 674.375 mV | 849.6 mV |
+| Static Noise Margin (SNM) | 674.375 mV | 849.6 mV (25.98% better than 6T) |
+| Stability | Moderate | Higher |
+| Average Power Consumption | 0.9135 µW | 0.63612 µW (30.36% less than 6T)|
 | Leakage Power | Higher | Reduced |
-| Average Power Consumption | 0.9135 µW | 0.63612 µW |
 | Area Utilization | Smaller | Slightly Larger |
-| Write Delay | Faster | Slightly Higher due to extra transistor |
-| Read Stability | Moderate | Higher |
+| Write Delay | 274.86ps | 265.516ps (3.4% faster than 6T)|
+| Read Delay | 55.624ps | 56.009ps (0.693% slower than 6T)|
 | Design Complexity | Lower | Slightly Higher |
 | Applications | Standard SRAM arrays | Low power and high stability memory systems |
 
@@ -536,6 +566,13 @@ The transient simulation confirms that:
 
 These results validate the correct functionality and stability of the SRAM read and write operations.
 
+---
+
+### Conclusion
+
+• 7T SRAM achieves **faster write operation**.  
+• Read delay increases **slightly (~0.7%)** due to additional transistor resistance.  
+• Overall, 7T provides a better trade-off with **improved stability and reduced power consumption**.
 ---
 
 ## Peripheral Circuits of the SRAM Array
