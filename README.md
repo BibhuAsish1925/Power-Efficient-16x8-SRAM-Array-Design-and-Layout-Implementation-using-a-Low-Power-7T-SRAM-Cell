@@ -54,7 +54,7 @@ The complete SRAM system consists of the following blocks:
 
 <table>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="745" height="793" alt="image" src="https://github.com/user-attachments/assets/a8186097-e683-45cf-9746-0e10b08eaa83" /><br/>
       <small> Fig. 1 SRAM system architecture
     </td>
 </table>
@@ -82,7 +82,7 @@ The cross-coupled inverters store the data, while the access transistors allow t
       <small>Fig 2a. 6T-SRAM schematic diagram</small>
     </td>
     <td align="center">
-      <img width="583" height="517" alt="image" src="https://github.com/user-attachments/assets/55b43569-b53d-4c06-bbd5-d3c5d86efb84" /><br/>
+      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
       <small>Fig 2b. 6T-SRAM schematic design</small>
     </td>
   </tr>
@@ -688,15 +688,15 @@ The sense amplifier is used to detect and amplify the small voltage difference b
 
 <table>
     <td align="center">
-          <img width="879" height="537" alt="image" src="https://github.com/user-attachments/assets/90d38d4e-24f2-4072-afac-d1fd7720f3fb" /><br/>
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
 </table>
 
 <table>
     <td align="center">
-          <img width="882" height="372" alt="image" src="https://github.com/user-attachments/assets/a0daf12b-7013-41c1-a16b-4bc99ebc54f6" /><br/>
-      <small>Fig 17. Write Driver output waveform</small>
+          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
+      <small>Fig 17. Sense Amplifier output waveform</small>
     </td>
 </table>
 
@@ -728,7 +728,7 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 
 <table>
     <td align="center">
-          <img width="449" height="568" alt="image" src="https://github.com/user-attachments/assets/74ca2cd0-c950-48b0-a730-34ea82e74e30" /><br/>
+          <img width="773" height="680" alt="image" src="https://github.com/user-attachments/assets/175f3c64-419b-4c33-844b-559d7ac0ae29" /><br/>
       <small>Fig 18. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
     </td>
 </table>
@@ -747,7 +747,7 @@ This ensures both bitlines start from the same voltage level.
 
 <table>
     <td align="center">
-          <img width="1629" height="552" alt="image" src="https://github.com/user-attachments/assets/f0a7468e-6fa9-403b-ac03-6847c83818ae" /><br/>
+          <img width="1565" height="488" alt="image" src="https://github.com/user-attachments/assets/32d7310c-44a2-4d2e-83d0-7043b7eb2b3e" /><br/>
       <small>Fig 20. Precharge conditions</small>
     </td>
 </table>
@@ -762,7 +762,7 @@ This prepares the bitlines with the input data value.
 
 <table>
     <td align="center">
-          <img width="1629" height="497" alt="image" src="https://github.com/user-attachments/assets/b5885a49-3988-4fb5-b818-ca3aab5b588b" /><br/>
+          <img width="1565" height="433" alt="image" src="https://github.com/user-attachments/assets/d21a93b5-390c-49a2-b9a8-cbc75f29c8e5" /><br/>
       <small>Fig 21. write enable condition</small>
     </td>
 </table>
@@ -775,7 +775,7 @@ The SRAM cell captures the input data from the bitlines and stores it in the int
 
 <table>
     <td align="center">
-          <img width="1629" height="453" alt="image" src="https://github.com/user-attachments/assets/1e1b0373-d1f2-4e40-942e-bae958e034eb" /><br/>
+          <img width="1565" height="389" alt="image" src="https://github.com/user-attachments/assets/897f3477-cde5-4652-b60e-c518f8f78040" /><br/>
       <small>Fig 22. Write conditions</small>
     </td>
 </table> 
@@ -790,7 +790,7 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
 
 <table>
     <td align="center">
-          <img width="1629" height="637" alt="image" src="https://github.com/user-attachments/assets/6a4314e8-a883-42bc-acab-090f05cfaa23" /><br/>
+          <img width="1565" height="573" alt="image" src="https://github.com/user-attachments/assets/d2a29a8c-d068-4dc8-8b77-a46c6fc5bf60" /><br/>
       <small>Fig 23. Read condition</small>
     </td>
 </table> 
@@ -801,7 +801,7 @@ The sense amplifier detects the voltage difference between BL and BLB and amplif
 
 <table>
     <td align="center">
-          <img width="1650" height="797" alt="image" src="https://github.com/user-attachments/assets/d0b2d444-0762-44d6-9f6c-25854936bb1d" /><br/>
+          <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
       <small>Fig 24. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
     </td>
 </table>
