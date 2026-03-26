@@ -157,8 +157,6 @@ $$
 \beta = \mu C_{ox}\left(\frac{W}{L}\right)
 $$
 
----
-
 ### Read Stability Condition
 
 During the read operation, the access transistor connects the internal storage node to the bitline.  
@@ -182,8 +180,6 @@ Typical design requirement: ` CR ≥ 1.5 `
 
 This ensures that the internal node storing logic '0' remains stable during read operation.
 
----
-
 ### Write Ability Condition
 
 During write operation, the access transistor must be strong enough to overwrite the internal node.
@@ -206,8 +202,6 @@ Typical requirement: `PR ≥ 1`
 
 This allows the bitline driver to successfully change the stored data.
 
----
-
 ### Summary of Sizing Constraints
 
 | Parameter | Condition | Purpose |
@@ -216,8 +210,6 @@ This allows the bitline driver to successfully change the stored data.
 | Access > Pull-Up | βAX > βPU | Write ability |
 | Cell Ratio (CR) | ≥ 1.5 | Prevent read disturb |
 | Pull-up Ratio (PR) | ≥ 1 | Enable successful write |
-
----
 
 ### Transistor Width Configuration
 
@@ -579,8 +571,6 @@ In addition to the SRAM cell array, several **supporting peripheral circuits** a
 
 These circuits work together with the **16×8 SRAM array** to enable proper memory operation.
 
----
-
 ### 1. Row Decoder (4×16 Decoder)
 
 The row decoder is responsible for selecting one of the multiple wordlines in the SRAM array based on the input address. For a **4-bit address input**, the decoder generates **16 wordline outputs**, ensuring that only one row of SRAM cells is activated at a time.
@@ -617,7 +607,6 @@ The 4×16 decoder is implemented using:
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
----
 
 ### 2. Precharge Circuit
 
@@ -650,9 +639,6 @@ Precharging the bitlines reduces sensing delay and improves reliability of the m
       <small>Fig 13. Precharge cell output waveform</small>
     </td>
 </table>
-
-
----
 
 ### 3. Write Driver
 
@@ -690,8 +676,6 @@ Operation:
 
 This circuit ensures strong drive capability to overwrite the previously stored value inside the SRAM cell.
 
----
-
 ### 4. Sense Amplifier
 
 The sense amplifier is used to detect and amplify the small voltage difference between the bitlines during read operation.
@@ -717,8 +701,6 @@ The sense amplifier is used to detect and amplify the small voltage difference b
 </table>
 
 The output is then provided as **DATA_OUT**. Sense amplifiers significantly improve the **speed and reliability of read operations** in SRAM arrays.
-
----
 
 ### Integration with SRAM Array
 
@@ -753,8 +735,6 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 
 All circuits are connected to a common **VDD supply and Ground reference**.
 
----
-
 ### Test Architecture
 
 The peripheral circuits interact with the SRAM cell as follows:
@@ -772,8 +752,6 @@ This ensures both bitlines start from the same voltage level.
     </td>
 </table>
 
----
-
 2. **Write Driver Operation**
 
 The write driver applies input data to the bitlines during write operation.
@@ -788,8 +766,6 @@ This prepares the bitlines with the input data value.
       <small>Fig 21. write enable condition</small>
     </td>
 </table>
-
----
 
 3. **Write Operation**
 
@@ -806,8 +782,6 @@ The SRAM cell captures the input data from the bitlines and stores it in the int
 
 Result: `Q = DATA_IN`
 
----
-
 4. **Read Operation**
 
 For read operation: `WE = 0, WL = 1`
@@ -820,8 +794,6 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
       <small>Fig 23. Read condition</small>
     </td>
 </table> 
-
----
 
 5. **Sense Amplifier Operation**
 
@@ -836,8 +808,6 @@ The sense amplifier detects the voltage difference between BL and BLB and amplif
 
 Output: `DATA_OUT = Stored SRAM value`
 
----
-
 ### Simulation Result
 
 The transient waveform confirms that:
@@ -847,8 +817,6 @@ The transient waveform confirms that:
 • The stored data remains stable inside the latch.  
 • The read operation retrieves the stored value correctly.  
 • The sense amplifier produces a clean digital output signal.
-
----
 
 ### Conclusion
 
@@ -875,8 +843,6 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 - The array consists of **16 rows and 8 columns**, where each cell is a **7T SRAM bit-cell**.
 - Each row is controlled by a **wordline (WL)**, and each column is connected through **bitlines (BL, BLB)**.
 
----
-
 ### Peripheral Circuit Integration
 
 **Row Decoder (4×16)**  
@@ -899,8 +865,6 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 - Detects small voltage differences between **BL and BLB** during read.  
 - Amplifies the signal and produces **DATA_OUT** based on control signal (**SAE**).
 
----
-
 ### Operation Summary
 
 - **Write Operation:**  
@@ -909,14 +873,10 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 - **Read Operation:**  
   Precharged bitlines are discharged differentially based on stored data, and the sense amplifier converts this into a digital output.
 
----
-
 ### Power Network
 
 - All blocks share a common **VDD and GND supply**.
 - Optimized design ensures **reduced power consumption and improved stability** compared to conventional 6T SRAM.
-
----
 
 ### Figure
 
@@ -929,69 +889,47 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 
 ---
 
-## Layout Design and Physical Verification (Work in Progress)
+## Layout Design and Physical Verification
 
-After validating the schematic-level functionality of the SRAM architecture, the next stage of the design flow involves **physical layout implementation and verification**. The layout stage converts the schematic design into a **geometrical representation of transistors, interconnections, and routing layers** suitable for fabrication. The layouts are designed using **Magic VLSI Layout Tool** and verified using **DRC and LVS checks**.
-
----
+After successful schematic design and functional verification, the SRAM architecture was implemented at the **layout level**, translating the circuit into a **physical representation** suitable for fabrication. The layouts were designed using the **Magic VLSI Layout Tool** and verified through industry-standard checks.
 
 ### Layout Design Flow
 
-The layout implementation follows the standard VLSI physical design procedure:
+The physical design follows a full-custom VLSI layout methodology:
 
 1. Transistor placement  
 2. Diffusion and poly layer formation  
-3. Metal routing for signal connections  
-4. Power and ground routing  
+3. Metal routing for interconnections  
+4. Power (VDD) and Ground (GND) routing  
 5. Design Rule Check (DRC)  
 6. Layout Versus Schematic (LVS)
 
----
+### Layout Blocks Implemented
 
-### Layout Blocks Designed So Far
-
-The following circuits have been implemented at layout level:
+The following circuit blocks were successfully designed and verified at layout level:
 
 • CMOS Inverter  
 • 4-Input AND Gate  
-• 4×16 Row Decoder
-
-These blocks serve as the fundamental components for implementing the memory architecture.
-
----
+• 4×16 Row Decoder  
+• 6T SRAM Cell  
+• Proposed 7T SRAM Cell  
+• Precharge Circuit  
+• Write Driver Circuit  
+• Sense Amplifier Circuit  
+• 16×8 7T SRAM Array with Peripheral Integration  
 
 ### Verification Process
 
-Two important verification steps are performed:
+Two critical physical verification steps were performed:
 
 **Design Rule Check (DRC)**  
-Ensures that the layout follows all manufacturing design rules.
+Ensures that the layout adheres to all fabrication constraints such as spacing, width, and alignment rules.
 
 **Layout Versus Schematic (LVS)**  
-Confirms that the physical layout matches the original schematic design.
+Validates that the extracted layout netlist matches the original schematic, ensuring functional correctness.
 
----
+### Result
 
-### Current Status
-
-The layout implementation of the **basic logic blocks and row decoder** has been completed and verified successfully.
-
-The layout design of the remaining blocks such as:
-
-• SRAM Cell Array  
-• Sense Amplifier  
-• Write Driver  
-• Precharge Circuit
-
-is currently **under development and optimization**.
-
----
-
-### Future Layout Work
-
-Future work will include:
-
-• Layout implementation of the **7T SRAM cell**  
-• Integration of the **16×8 SRAM array**  
-• Layout design of peripheral circuits  
-• Post-layout simulation and parasitic analysis
+• All layout blocks are **DRC clean and LVS verified**  
+• The complete SRAM system is successfully implemented at **layout level**  
+• The design is ready for **post-layout analysis and fabrication-level validation**
