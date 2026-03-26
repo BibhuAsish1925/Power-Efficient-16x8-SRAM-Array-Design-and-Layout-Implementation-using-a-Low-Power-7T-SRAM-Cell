@@ -52,7 +52,7 @@ The complete SRAM system consists of the following blocks:
 - **Write Driver** – Drives data onto bitlines during write operation  
 - **Sense Amplifier** – Detects and amplifies small voltage difference during read
 
-<table>
+<table align="center">
     <td align="center">
       <img width="745" height="793" alt="image" src="https://github.com/user-attachments/assets/a8186097-e683-45cf-9746-0e10b08eaa83" /><br/>
       <small> Fig. 1 SRAM system architecture
@@ -75,7 +75,7 @@ The 6T SRAM cell consists of:
 
 The cross-coupled inverters store the data, while the access transistors allow the memory cell to communicate with the bitlines.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <img width="856" height="287" alt="Circuit Diagram" src="https://github.com/user-attachments/assets/cb2249a1-6b24-49d3-a24f-0ce22a17b51c"/><br/>
@@ -134,7 +134,7 @@ Due to these limitations, alternative SRAM architectures such as **7T SRAM** are
 
 Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell. The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
 
-<table>
+<table align="center">
     <td align="center">
       <img width="436" height="427" alt="image" src="https://github.com/user-attachments/assets/dee6b9d9-5e17-46ac-90cd-304a92619962" /><br/>
       <small>Fig 3. SRAM sizing</small>
@@ -213,7 +213,7 @@ This allows the bitline driver to successfully change the stored data.
 
 ### Transistor Width Configuration
 
-<table>
+<table align="center">
     <td align="center">
           <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
       <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
@@ -308,7 +308,7 @@ $$
 
 Where: ( VDD → Supply voltage applied to the SRAM cell and Iavg → Average current drawn from the supply
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="766" height="491" alt="image" src="https://github.com/user-attachments/assets/6462c2f7-7b47-4c4a-9401-ae2dbb275a08" /><br/>
@@ -355,7 +355,7 @@ Static Noise Margin (SNM) is an important parameter that determines the stabilit
 
 SNM is typically analyzed using the **butterfly curve method**, which is obtained by plotting the voltage transfer characteristics of the two cross-coupled inverters.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="809" height="579" alt="image" src="https://github.com/user-attachments/assets/87f13e78-9252-4fd4-a26b-0b0cb85e075e" /><br/>
@@ -459,7 +459,7 @@ Working principle:
 • When the **wordline (WL)** becomes HIGH, the access transistors turn ON.  
 • The internal storage nodes of the cross-coupled inverter latch are overwritten by the bitline values.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
@@ -485,7 +485,7 @@ Working principle:
 • Before the read operation, both **BL and BLB are precharged to VDD**.  
 • When the wordline becomes HIGH, the access transistors connect the internal nodes to the bitlines.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
@@ -588,7 +588,7 @@ The 4×16 decoder is implemented using:
 • Inverter circuits  
 • 4-input AND gates
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="465" height="705" alt="image" src="https://github.com/user-attachments/assets/9225a0df-9bcb-46ed-8007-c81e58f94bdf" /><br/>
@@ -601,7 +601,7 @@ The 4×16 decoder is implemented using:
   </tr>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
       <small>Fig 11. 4×16 Row decoder output waveform</small>
@@ -654,7 +654,7 @@ Operation:
 • If **WE = 1**,  `BL = DATA, BLB = DATA̅  `
 • When **WL = 1**, the SRAM cell captures the data from the bitlines and stores it internally.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="452" height="239" alt="image" src="https://github.com/user-attachments/assets/f782c731-c55e-4025-86aa-95b001a867a5" /><br/>
@@ -667,7 +667,7 @@ Operation:
   </tr>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
           <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
       <small>Fig 15. Write Driver output waveform</small>
@@ -686,14 +686,14 @@ The sense amplifier is used to detect and amplify the small voltage difference b
 • This creates a small voltage difference between **BL and BLB**.  
 • The sense amplifier detects this difference and amplifies it to produce a full digital output.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
           <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
       <small>Fig 17. Sense Amplifier output waveform</small>
@@ -726,7 +726,7 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 • Wordline Control  
 • Data Input and Output Nodes
 
-<table>
+<table align="center">
     <td align="center">
           <img width="773" height="680" alt="image" src="https://github.com/user-attachments/assets/175f3c64-419b-4c33-844b-559d7ac0ae29" /><br/>
       <small>Fig 18. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
@@ -745,7 +745,7 @@ Condition: `PC = 0 → BL = 1 and BLB = 1`
 
 This ensures both bitlines start from the same voltage level.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1565" height="488" alt="image" src="https://github.com/user-attachments/assets/32d7310c-44a2-4d2e-83d0-7043b7eb2b3e" /><br/>
       <small>Fig 20. Precharge conditions</small>
@@ -760,7 +760,7 @@ Condition: `WE = 1 with BL = DATA, BLB = DATA̅`
 
 This prepares the bitlines with the input data value.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1565" height="433" alt="image" src="https://github.com/user-attachments/assets/d21a93b5-390c-49a2-b9a8-cbc75f29c8e5" /><br/>
       <small>Fig 21. write enable condition</small>
@@ -773,7 +773,7 @@ When both write enable and wordline signals are active: `WE = 1, WL = 1 `
 
 The SRAM cell captures the input data from the bitlines and stores it in the internal latch.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1565" height="389" alt="image" src="https://github.com/user-attachments/assets/897f3477-cde5-4652-b60e-c518f8f78040" /><br/>
       <small>Fig 22. Write conditions</small>
@@ -788,7 +788,7 @@ For read operation: `WE = 0, WL = 1`
 
 The SRAM cell connects to the bitlines and transfers the stored data. BL reflects the stored value of node Q.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1565" height="573" alt="image" src="https://github.com/user-attachments/assets/d2a29a8c-d068-4dc8-8b77-a46c6fc5bf60" /><br/>
       <small>Fig 23. Read condition</small>
@@ -799,7 +799,7 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
 
 The sense amplifier detects the voltage difference between BL and BLB and amplifies it to generate a strong digital output signal.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
       <small>Fig 24. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
@@ -880,7 +880,7 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 
 ### Figure
 
-<table>
+<table align="center">
     <td align="center">
           <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
       <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
@@ -918,7 +918,7 @@ The following circuit blocks were successfully designed and verified at layout l
 • Sense Amplifier Circuit  
 • 16×8 7T SRAM Array with Peripheral Integration  
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <img width="468" height="639" alt="image" src="https://github.com/user-attachments/assets/0e8e34db-5d65-4f1f-8fd6-27bb2fbedbb6" /><br/>
@@ -951,28 +951,28 @@ The following circuit blocks were successfully designed and verified at layout l
   </tr>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
       <img width="759" height="384" alt="image" src="https://github.com/user-attachments/assets/54aafecf-718a-400d-a187-681de9dc91a3" /><br/>
       <small> Fig 31. Precharge Circuit </small>
     </td>
 </table>
         
-<table>
+<table align="center">
     <td align="center">
       <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
       <small> Fig 32. Write Driver Circuit </small>
     </td>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
       <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
       <small> Fig 33. Sense Amplifier Circuit </small>
     </td>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
       <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
       <small> Fig 34. 16×8 7T SRAM Array with Peripheral Integration </small>
