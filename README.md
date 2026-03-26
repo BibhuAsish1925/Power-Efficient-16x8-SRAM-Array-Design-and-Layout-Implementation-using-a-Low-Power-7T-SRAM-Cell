@@ -346,7 +346,7 @@ The 7T SRAM design achieves approximately **30.36% reduction in power consumptio
 
 Static Noise Margin (SNM) is an important parameter that determines the stability of an SRAM cell. It represents the **maximum noise voltage that the SRAM cell can tolerate without changing its stored state**.
 
-<table>
+<table align="center">
     <td align="center">
           <img width="503" height="432" alt="image" src="https://github.com/user-attachments/assets/1a94eb25-2291-447c-8f1f-d7217f17423f" /><br/>
       <small>Fig 6. SRAM butterfly curve</small>
@@ -931,14 +931,14 @@ The following circuit blocks were successfully designed and verified at layout l
   </tr>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
       <img width="316" height="889" alt="image" src="https://github.com/user-attachments/assets/31b81b78-255f-42f3-a827-1a6a4b8b1239" /><br/>
       <small> Fig 28. 4×16 Row Decoder </small>
     </td>
 </table>
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
