@@ -921,7 +921,7 @@ The following circuit blocks were successfully designed and verified at layout l
 <table>
   <tr>
     <td align="center">
-      <img width="856" height="287" alt="Circuit Diagram" src="https://github.com/user-attachments/assets/cb2249a1-6b24-49d3-a24f-0ce22a17b51c"/><br/>
+      ![inverter](https://github.com/user-attachments/assets/8cf1a009-c7fc-496e-86be-0a62775b6361)<br/>
       <small>Fig 26. CMOS Inverter </small>
     </td>
     <td align="center">
