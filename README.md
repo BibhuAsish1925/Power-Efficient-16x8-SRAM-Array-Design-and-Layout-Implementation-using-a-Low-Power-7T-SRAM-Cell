@@ -921,11 +921,11 @@ The following circuit blocks were successfully designed and verified at layout l
 <table>
   <tr>
     <td align="center">
-      ![inverter](https://github.com/user-attachments/assets/8cf1a009-c7fc-496e-86be-0a62775b6361)<br/>
+      <img width="468" height="639" alt="image" src="https://github.com/user-attachments/assets/0e8e34db-5d65-4f1f-8fd6-27bb2fbedbb6" /><br/>
       <small>Fig 26. CMOS Inverter </small>
     </td>
     <td align="center">
-      <img width="583" height="517" alt="image" src="https://github.com/user-attachments/assets/55b43569-b53d-4c06-bbd5-d3c5d86efb84" /><br/>
+      <img width="686" height="639" alt="image" src="https://github.com/user-attachments/assets/d87beefd-7d6b-430e-8067-286027e23c9a" /><br/>
       <small>Fig 27. 4-Input AND Gate </small>
     </td>
   </tr>
@@ -933,7 +933,7 @@ The following circuit blocks were successfully designed and verified at layout l
 
 <table>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="316" height="889" alt="image" src="https://github.com/user-attachments/assets/31b81b78-255f-42f3-a827-1a6a4b8b1239" /><br/>
       <small> Fig 28. 4×16 Row Decoder </small>
     </td>
 </table>
@@ -945,7 +945,7 @@ The following circuit blocks were successfully designed and verified at layout l
       <small> Fig 29. 6T SRAM Cell </small>
     </td>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="682" height="690" alt="image" src="https://github.com/user-attachments/assets/db23eb81-1b9b-4ea7-83fe-141ba1089824" /><br/>
       <small> Fig 30. Proposed 7T SRAM Cell </small>
     </td>
   </tr>
@@ -953,7 +953,7 @@ The following circuit blocks were successfully designed and verified at layout l
 
 <table>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="759" height="384" alt="image" src="https://github.com/user-attachments/assets/54aafecf-718a-400d-a187-681de9dc91a3" /><br/>
       <small> Fig 31. Precharge Circuit </small>
     </td>
 </table>
@@ -969,6 +969,13 @@ The following circuit blocks were successfully designed and verified at layout l
     <td align="center">
       <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
       <small> Fig 33. Sense Amplifier Circuit </small>
+    </td>
+</table>
+
+<table>
+    <td align="center">
+      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <small> Fig 34. 16×8 7T SRAM Array with Peripheral Integration </small>
     </td>
 </table>
 
