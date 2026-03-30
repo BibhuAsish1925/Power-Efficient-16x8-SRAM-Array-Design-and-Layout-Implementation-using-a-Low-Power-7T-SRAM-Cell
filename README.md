@@ -4,6 +4,59 @@
 This project presents the design and analysis of a **power-efficient 16×8 SRAM memory array** using a **7-Transistor (7T) SRAM cell** architecture. The objective is to improve **read stability and reduce power consumption** compared to the conventional **6T SRAM cell**. The design integrates SRAM cells with essential **peripheral circuits** such as row decoder, precharge circuit, write driver, and sense amplifier to demonstrate complete memory functionality. All circuits are designed and simulated using **Cadence Virtuoso in 180 nm CMOS technology**.
 
 ---
+## Contents
+
+1. [Problem Statement](#Problem-Statement)
+2. [SRAM Architecture](#SRAM-Architecture)
+3. [Conventional 6T SRAM Cell Architecture](#Conventional-6T-SRAM-Cell-Architecture) <br>
+   - [6T SRAM Structure](#6T-SRAM-Structure)  
+   - [Main Nodes](#Main-Nodes)  
+   - [SRAM Operations](#SRAM-Operations)  <br>
+     - [Hold Operation](#Hold-Operation)  
+     - [Write Operation](#Write-Operation)  
+     - [Read Operation](#Read-Operation)  
+   - [Limitations of 6T SRAM](#Limitations-of-6T-SRAM)
+4. [Transistor Sizing Analysis](#Transistor-Sizing-Analysis) <br>
+   - [MOSFET Saturation Current Equation](#MOSFET-Saturation-Current-Equation)  
+   - [Read Stability Condition](#Read-Stability-Condition)  
+   - [Write Ability Condition](#Write-Ability-Condition)  
+   - [Summary of Sizing Constraints](#Summary-of-Sizing-Constraints)  
+   - [Transistor Width Configuration](#Transistor-Width-Configuration)
+5. [Proposed 7T SRAM Cell Architecture](#Proposed-7T-SRAM-Cell-Architecture) <br>
+   - [Structure of 7T SRAM Cell](#Structure-of-7T-SRAM-Cell)  
+   - [Key Idea of the Proposed Design](#Key-Idea-of-the-Proposed-Design)  
+   - [Operation of 7T SRAM Cell](#Operation-of-7T-SRAM-Cell)  <br>
+     - [Hold Operation](#Hold-Operation-1)  
+     - [Write Operation](#Write-Operation-1)  
+     - [Read Operation](#Read-Operation-1)  
+   - [Advantages of the 7T SRAM Cell](#Advantages-of-the-7T-SRAM-Cell)  
+   - [Design Trade-off](#Design-Trade-off)
+6. [Power Analysis](#Power-Analysis)
+7. [Static Noise Margin (SNM) Analysis](#Static-Noise-Margin-SNM-Analysis)
+8. [Delay Analysis](#Delay-Analysis)
+9. [Comparison Between 6T and 7T SRAM](#Comparison-Between-6T-and-7T-SRAM)
+10. [Read and Write Operation Verification of 7T-SRAM Cell](#Read-and-Write-Operation-Verification-of-7T-SRAM-Cell) <br>
+    - [Read Operation](#Read-Operation-2)  
+    - [Subthreshold Leakage Effect During Read](#Subthreshold-Leakage-Effect-During-Read)
+11. [Peripheral Circuits of the SRAM Array](#Peripheral-Circuits-of-the-SRAM-Array) <br>
+    - [Row Decoder (4×16 Decoder)](#1-Row-Decoder-4×16-Decoder)  
+    - [Precharge Circuit](#2-Precharge-Circuit)  
+    - [Write Driver](#3-Write-Driver)  
+    - [Sense Amplifier](#4-Sense-Amplifier)  
+    - [Integration with SRAM Array](#Integration-with-SRAM-Array)
+12. [Single-Bit 7T-SRAM Cell Test with Peripheral Circuits](#Single-Bit-7T-SRAM-Cell-Test-with-Peripheral-Circuits)
+13. [16×8 7T SRAM Array with Peripheral Circuits](#16×8-7T-SRAM-Array-with-Peripheral-Circuits) <br>
+    - [Architecture Description](#Architecture-Description)  
+    - [Operation Summary](#Operation-Summary)  
+    - [Figure](#Figure)
+14. [Layout Design and Physical Verification](#Layout-Design-and-Physical-Verification) <br>
+    - [Layout Design Flow](#Layout-Design-Flow)  
+    - [Layout Blocks Implemented](#Layout-Blocks-Implemented)  
+    - [Verification Process](#Verification-Process)  
+    - [Result](#Result)
+15. [Conclusion](#Conclusion)
+
+---
 
 ## Problem Statement
 
