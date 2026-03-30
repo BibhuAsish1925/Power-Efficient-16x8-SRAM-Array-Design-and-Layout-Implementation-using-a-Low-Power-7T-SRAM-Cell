@@ -881,10 +881,16 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 ### Figure
 
 <table align="center">
+ <tr>
     <td align="center">
           <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
-      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
+      <small>Fig 25a. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
     </td>
+   <td align="center">
+          <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
+      <small>Fig 25b. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
+    </td>
+   </tr>
 </table>
 
 ---
