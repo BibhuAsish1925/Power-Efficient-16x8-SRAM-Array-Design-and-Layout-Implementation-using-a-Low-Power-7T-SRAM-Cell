@@ -49,12 +49,13 @@ This project presents the design and analysis of a **power-efficient 16×8 SRAM 
     - [Architecture Description](#Architecture-Description)  
     - [Operation Summary](#Operation-Summary)  
     - [Figure](#Figure)
-14. [Layout Design and Physical Verification](#Layout-Design-and-Physical-Verification) <br>
+14. [16×8 7T SRAM Array Testing with Peripheral Circuits](#16×8-7T-SRAM-Array-Testing-with-Peripheral-Circuits)
+15. [Layout Design and Physical Verification](#Layout-Design-and-Physical-Verification) <br>
     - [Layout Design Flow](#Layout-Design-Flow)  
     - [Layout Blocks Implemented](#Layout-Blocks-Implemented)  
     - [Verification Process](#Verification-Process)  
     - [Result](#Result)
-15. [Conclusion](#Conclusion)
+16. [Conclusion](#Conclusion)
 
 ---
 
