@@ -958,7 +958,7 @@ The complete system includes:
 <table align="center">
     <td align="center">
           <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
-      <small>Fig 25b. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
+      <small>Fig 26. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
     </td>
 </table>
 
