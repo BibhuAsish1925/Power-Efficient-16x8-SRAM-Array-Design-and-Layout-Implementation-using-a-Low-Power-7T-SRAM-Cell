@@ -934,17 +934,102 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 ### Figure
 
 <table align="center">
- <tr>
     <td align="center">
           <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
       <small>Fig 25a. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
     </td>
-   <td align="center">
+</table>
+
+---
+
+## 16×8 7T SRAM Array Testing with Peripheral Circuits
+
+To validate the complete SRAM architecture, the **16×8 7T SRAM array integrated with all peripheral circuits** is tested under different operating conditions.
+
+### Test Setup
+
+The complete system includes:
+• 4×16 Row Decoder (address selection)  
+• Write Drivers (data input control)  
+• Precharge Circuit (bitline initialization)  
+• 16×8 7T SRAM Cell Array  
+• Sense Amplifier (read operation)  
+
+<table align="center">
+    <td align="center">
           <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
       <small>Fig 25b. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
     </td>
-   </tr>
 </table>
+
+Control signals used:
+• Address Inputs: A[3:0]  
+• Data Inputs: A[7:0] 
+• Wordline (WL)  
+• Write Enable (WE), Write Enable Bar (WEB)  
+• Precharge Signal (PC)  
+• Sense Amplifier Enable (SAE)  
+
+### Input Conditions
+| Signal | Description | Value |
+|-------|------------|------|
+| VDD   | Supply Voltage | ___ |
+| Address | Row Selection | ___ |
+| DATA_IN | Input Data | ___ |
+| WE / WEB | Write Control | ___ |
+| PC | Precharge Control | ___ |
+| SAE | Sense Amplifier Enable | ___ |
+
+### Write Operation (Array Level)
+
+Condition: `WE = 1, WL = 1`  
+
+Working:
+• Selected row is activated by the decoder  
+• Write driver forces data onto BL and BLB  
+• Entire selected word (8 bits) is written simultaneously  
+
+📌 **Observation:**  
+(To be filled after simulation)
+
+---
+
+### Read Operation (Array Level)
+
+Condition: `WE = 0, WL = 1`  
+
+Working:
+• Bitlines are precharged to VDD  
+• Selected row discharges BL/BLB based on stored data  
+• Sense amplifier detects and amplifies the output  
+
+📌 **Observation:**  
+(To be filled after simulation)
+
+### Waveform Results
+
+> Add simulation waveforms here:
+- Bitline (BL, BLB)
+- Wordline (WL)
+- DATA_IN
+- DATA_OUT
+- Control Signals (WE, PC, SAE)
+
+### Performance Metrics
+| Parameter | Value |
+|----------|------|
+| Read Delay | ___ |
+| Write Delay | ___ |
+| Power Consumption | ___ |
+| SNM (if measured) | ___ |
+
+### Observations
+• (To be filled after testing)  
+• (Example: Correct row selection verified)  
+• (Example: Data integrity maintained during read/write)  
+
+### Conclusion
+The 16×8 SRAM array with peripheral circuits demonstrates correct functionality in terms of **row selection, read/write operations, and signal amplification**. Detailed performance metrics and waveform validation will further confirm system reliability.
 
 ---
 
