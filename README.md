@@ -789,7 +789,14 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 
 All circuits are connected to a common **VDD supply and Ground reference**.
 
-### Test Architecture
+<table align="center">
+    <td align="center">
+          <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
+      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
+    </td>
+</table>
+
+### Test Analysis
 
 The peripheral circuits interact with the SRAM cell as follows:
 
@@ -848,17 +855,6 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
       <small>Fig 23. Read condition</small>
     </td>
 </table> 
-
-5. **Sense Amplifier Operation**
-
-The sense amplifier detects the voltage difference between BL and BLB and amplifies it to generate a strong digital output signal.
-
-<table align="center">
-    <td align="center">
-          <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
-      <small>Fig 24. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
-    </td>
-</table>
 
 Output: `DATA_OUT = Stored SRAM value`
 
@@ -937,7 +933,7 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 <table align="center">
     <td align="center">
           <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
-      <small>Fig 25a. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
+      <small>Fig 24. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
     </td>
 </table>
 
@@ -959,7 +955,7 @@ The complete system includes:
 <table align="center">
     <td align="center">
           <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
-      <small>Fig 26. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
+      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
     </td>
 </table>
 
