@@ -780,6 +780,8 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
 • Wordline Control  
 • Data Input and Output Nodes
 
+All circuits are connected to a common **VDD supply and Ground reference**.
+
 <table align="center">
     <td align="center">
           <img width="773" height="680" alt="image" src="https://github.com/user-attachments/assets/175f3c64-419b-4c33-844b-559d7ac0ae29" /><br/>
@@ -787,14 +789,14 @@ To validate the complete memory architecture, a **single-bit 7T SRAM cell** was 
     </td>
 </table>
 
-All circuits are connected to a common **VDD supply and Ground reference**.
-
 <table align="center">
     <td align="center">
           <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
       <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
     </td>
 </table>
+
+---
 
 ### Test Analysis
 
