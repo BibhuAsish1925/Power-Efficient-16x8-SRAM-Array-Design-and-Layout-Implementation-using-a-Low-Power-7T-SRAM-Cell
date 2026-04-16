@@ -1096,17 +1096,16 @@ The following circuit blocks were successfully designed and verified at layout l
 </table>
 
 <table align="center">
+   <tr>
     <td align="center">
       <img width="759" height="384" alt="image" src="https://github.com/user-attachments/assets/54aafecf-718a-400d-a187-681de9dc91a3" /><br/>
       <small> Fig 31. Precharge Circuit </small>
     </td>
-</table>
-
-<table align="center">
     <td align="center">
       <img width="266" height="282" alt="image" src="https://github.com/user-attachments/assets/e34bb3cd-d6d2-481b-8896-ba87a9ddc9f1" /><br/>
       <small> Fig 31. Isolation Circuit </small>
     </td>
+      </tr>
 </table>
 
 <table align="center">
