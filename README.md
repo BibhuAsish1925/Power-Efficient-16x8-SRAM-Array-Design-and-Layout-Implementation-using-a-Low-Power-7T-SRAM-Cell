@@ -1115,8 +1115,6 @@ The following circuit blocks were successfully designed and verified at layout l
       <img width="473" height="610" alt="image" src="https://github.com/user-attachments/assets/3b78a449-e59b-4069-a986-eed3b3a6d8f9" /><br/>
       <small> Fig 32. Write Driver Circuit </small>
     </td>
-</tr>
-<tr>
     <td align="center">
       <img width="472" height="606" alt="image" src="https://github.com/user-attachments/assets/4ccaf163-b3f6-4143-b227-7072500f82a1" /><br/>
       <small> Fig 33. Sense Amplifier Circuit </small>
