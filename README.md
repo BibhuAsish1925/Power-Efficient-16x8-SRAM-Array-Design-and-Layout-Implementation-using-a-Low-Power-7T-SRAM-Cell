@@ -1117,7 +1117,6 @@ The following circuit blocks were successfully designed and verified at layout l
     </td>
 </tr>
 <tr>
-<table align="center">
     <td align="center">
       <img width="472" height="606" alt="image" src="https://github.com/user-attachments/assets/4ccaf163-b3f6-4143-b227-7072500f82a1" /><br/>
       <small> Fig 33. Sense Amplifier Circuit </small>
