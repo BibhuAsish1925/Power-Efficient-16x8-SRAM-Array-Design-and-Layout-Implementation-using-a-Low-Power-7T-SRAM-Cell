@@ -1098,7 +1098,7 @@ The following circuit blocks were successfully designed and verified at layout l
 <table align="center">
    <tr>
     <td align="center">
-      <img width="759" height="384" alt="image" src="https://github.com/user-attachments/assets/54aafecf-718a-400d-a187-681de9dc91a3" /><br/>
+      <img width="425" height="407" alt="image" src="https://github.com/user-attachments/assets/46ab1c71-20d4-4883-abfa-cb305f04b0c9" /><br/>
       <small> Fig 31. Precharge Circuit </small>
     </td>
     <td align="center">
