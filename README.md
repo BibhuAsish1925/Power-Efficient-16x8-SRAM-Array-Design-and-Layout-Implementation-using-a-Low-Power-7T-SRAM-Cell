@@ -1056,7 +1056,8 @@ The following circuit blocks were successfully designed and verified at layout l
 • 4×16 Row Decoder  
 • 6T SRAM Cell  
 • Proposed 7T SRAM Cell  
-• Precharge Circuit  
+• Precharge Circuit 
+• Isolation Circuit 
 • Write Driver Circuit  
 • Sense Amplifier Circuit  
 • 16×8 7T SRAM Array with Peripheral Integration  
@@ -1076,7 +1077,7 @@ The following circuit blocks were successfully designed and verified at layout l
 
 <table align="center">
     <td align="center">
-      <img width="316" height="889" alt="image" src="https://github.com/user-attachments/assets/31b81b78-255f-42f3-a827-1a6a4b8b1239" /><br/>
+      <img width="418" height="781" alt="image" src="https://github.com/user-attachments/assets/a51bb3b1-6974-4d30-9cce-79e7e9022847" /><br/>
       <small> Fig 28. 4×16 Row Decoder </small>
     </td>
 </table>
@@ -1084,7 +1085,7 @@ The following circuit blocks were successfully designed and verified at layout l
 <table align="center">
   <tr>
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="454" height="477" alt="image" src="https://github.com/user-attachments/assets/2c2b11c9-82d9-444a-977b-eaf7c763c95e" /><br/>
       <small> Fig 29. 6T SRAM Cell </small>
     </td>
     <td align="center">
@@ -1100,24 +1101,31 @@ The following circuit blocks were successfully designed and verified at layout l
       <small> Fig 31. Precharge Circuit </small>
     </td>
 </table>
+
+<table align="center">
+    <td align="center">
+      <img width="266" height="282" alt="image" src="https://github.com/user-attachments/assets/e34bb3cd-d6d2-481b-8896-ba87a9ddc9f1" /><br/>
+      <small> Fig 31. Isolation Circuit </small>
+    </td>
+</table>
         
 <table align="center">
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="473" height="610" alt="image" src="https://github.com/user-attachments/assets/3b78a449-e59b-4069-a986-eed3b3a6d8f9" /><br/>
       <small> Fig 32. Write Driver Circuit </small>
     </td>
 </table>
 
 <table align="center">
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="472" height="606" alt="image" src="https://github.com/user-attachments/assets/4ccaf163-b3f6-4143-b227-7072500f82a1" /><br/>
       <small> Fig 33. Sense Amplifier Circuit </small>
     </td>
 </table>
 
 <table align="center">
     <td align="center">
-      <img width="809" height="845" alt="Fig. 1 SRAM system architecture" src="https://github.com/user-attachments/assets/75df7360-bc9c-4a8e-a6d4-ee598d1a3f14"/><br/>
+      <img width="488" height="1027" alt="image" src="https://github.com/user-attachments/assets/df6e102d-cd10-45ec-982b-156ed0b5d010" /><br/>
       <small> Fig 34. 16×8 7T SRAM Array with Peripheral Integration </small>
     </td>
 </table>
