@@ -228,6 +228,8 @@ Proper transistor sizing is essential for reliable SRAM operation. The dimension
     </td>
 </table>
 
+---
+
 ### MOSFET Current Equation
 
 The drain current in saturation is given by:
@@ -241,6 +243,8 @@ The transistor strength parameter is:
 $$
 \beta = \mu C_{ox}\left(\frac{W}{L}\right)
 $$
+
+---
 
 ### Read Stability Condition
 
@@ -264,6 +268,8 @@ $$
 
 This prevents the stored logic ‘0’ from being disturbed during read.
 
+---
+
 ### Write Ability Condition
 
 For successful writing, the access transistor must be stronger than the pull-up transistor:
@@ -285,6 +291,8 @@ PR \geq 1
 $$
 
 This ensures that new data can overwrite the previous state.
+
+---
 
 ### Transistor Width Configuration
 
