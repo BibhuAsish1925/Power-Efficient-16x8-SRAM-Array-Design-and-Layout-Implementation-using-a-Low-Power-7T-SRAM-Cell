@@ -667,7 +667,7 @@ The main peripheral blocks are:
 
 ---
 
-### 4.1 Inverter Circuit
+### 1 Inverter Circuit
 
 The CMOS inverter is used to generate complementary control signals required in the SRAM system. It consists of one PMOS and one NMOS transistor connected in a pull-up and pull-down configuration.
 
@@ -693,7 +693,7 @@ For proper switching, the transistor sizes are chosen as:
     </td>
      <td align="center">
           <img width="358" height="800" alt="inverter circuit layout" src="https://github.com/user-attachments/assets/6ae8a74f-9a78-416c-86d4-3218fbb6d1ac" /><br/>
-      <small>Fig 10c. Inverter schematic design</small>
+      <small>Fig 10c. Inverter layout</small>
     </td>
   </tr>
 </table>
@@ -707,7 +707,7 @@ For proper switching, the transistor sizes are chosen as:
 
 ---
 
-### 4.2 4-Input AND Gate
+### 2 4-Input AND Gate
 
 The 4-input AND gate is used in the row decoding logic to generate a HIGH output for one specific address combination.
 
@@ -734,7 +734,7 @@ The larger inverter sizing improves the drive strength required for highly capac
     </td>
      <td align="center">
           <img width="578" height="900" alt="4-input AND gate layout" src="https://github.com/user-attachments/assets/1e6e6bd3-2122-41e4-adac-0ad82e1e3a7f" /><br/>
-      <small>Fig 10c. 4-input AND gate schematic design</small>
+      <small>Fig 10c. 4-input AND gate layout</small>
     </td>
   </tr>
 </table>
@@ -746,10 +746,9 @@ The larger inverter sizing improves the drive strength required for highly capac
     </td>
 </table>
 
-
 ---
 
-### 4.3 4×16 Row Decoder
+### 3 4×16 Row Decoder
 
 The row decoder converts a **4-bit address input** into **16 wordlines**, ensuring only one row is selected at a time.
 
@@ -773,7 +772,7 @@ Proper decoder design improves access reliability and prevents row conflicts.
     </td>
      <td align="center">
           <img width="559" height="1600" alt="4×16 Row decoder layout" src="https://github.com/user-attachments/assets/ff52dd08-955f-4915-90f9-8fd482b83b7f" /><br/>
-      <small>Fig 10c. 4×16 Row decoder schematic design</small>
+      <small>Fig 10c. 4×16 Row decoder layout</small>
     </td>
   </tr>
 </table>
@@ -787,7 +786,7 @@ Proper decoder design improves access reliability and prevents row conflicts.
 
 ---
 
-### 4.4 Precharge Circuit
+### 4 Precharge Circuit
 
 The precharge circuit initializes both bitlines before every read operation.
 
@@ -815,7 +814,7 @@ This sizing provides faster charging of the highly capacitive bitlines.
     </td>
      <td align="center">
           <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
-      <small>Fig 12c. Precharge cell schematic design</small>
+      <small>Fig 12c. Precharge cell layout</small>
     </td>
   </tr>
 </table>
@@ -829,7 +828,7 @@ This sizing provides faster charging of the highly capacitive bitlines.
 
 ---
 
-### 4.5 Write Driver
+### 5 Write Driver
 
 The write driver forces input data onto the bitlines during the write cycle.
 
@@ -850,12 +849,12 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
       <small>Fig 14a. Write Driver diagram</small>
     </td>
     <td align="center">
-          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
+          <img width="1623" height="1200" alt="Write Driver schematic design" src="https://github.com/user-attachments/assets/9748ec46-90bc-44e5-ab87-b6148adcd6ab" /><br/>
       <small>Fig 14b. Write Driver schematic design</small>
     </td>
      <td align="center">
-          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
-      <small>Fig 14b. Write Driver schematic design</small>
+          <img width="560" height="1200" alt="Write Driver layout" src="https://github.com/user-attachments/assets/380ccff8-840f-4ee7-b3d5-ca5cbec6b85e" /><br/>
+      <small>Fig 14b. Write Driver layout</small>
     </td>
   </tr>
 </table>
@@ -869,7 +868,7 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
 
 ---
 
-### 4.6 Sense Amplifier
+### 6 Sense Amplifier
 
 The sense amplifier detects the small voltage difference between BL and BLB during read operation and converts it into a full digital output.
 
@@ -888,11 +887,11 @@ Careful transistor matching is required to minimize offset errors and improve se
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+          <img width="2188" height="1200" alt="Sense Amplifier schematic design" src="https://github.com/user-attachments/assets/dda274c3-ccf2-4a0c-9517-210198c5bdb1" /><br/>
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+          <img width="550" height="1200" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/7de153fc-6dd6-4caa-8074-d0642795a3e2" /><br/>
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
       </tr>
@@ -907,7 +906,7 @@ Careful transistor matching is required to minimize offset errors and improve se
 
 ---
 
-### 4.7 Isolation Circuit
+### 7 Isolation Circuit
 
 The isolation circuit controls the connection between the bitlines and the sense amplifier.
 
@@ -924,26 +923,25 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
    <tr>
     <td align="center">
           <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+      <small>Fig 16. Isolation Circuit diagram</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="1090" height="700" alt="Isolation Circuit schematic" src="https://github.com/user-attachments/assets/f1058ff8-8a98-4ef0-85cd-72af32e1dc17" /><br/>
+      <small>Fig 16. Isolation Circuit schematic design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="1390" height="700" alt="Isolation Circuit layout" src="https://github.com/user-attachments/assets/75c3e48b-2448-44f7-a50d-fa2c29dead35" /><br/>
+      <small>Fig 16. Isolation Circuit layout</small>
     </td>
       </tr>
 </table>
 
 <table align="center">
     <td align="center">
-          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
-      <small>Fig 17. Sense Amplifier output waveform</small>
+          <img width="1590" height="631" alt="Isolation" src="https://github.com/user-attachments/assets/620e0228-c96a-4b16-b136-43a58d5ef2ea" /><br/>
+      <small>Fig 17. Isolation Circuit output waveform</small>
     </td>
 </table>
-
 
 ---
 
@@ -962,28 +960,16 @@ This arrangement allows structured data storage and retrieval while maintaining 
 
 <table align="center">
    <tr>
-    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+   <td align="center">
+          <img width="763" height="1500" alt="16x8 7T SRAM Array" src="https://github.com/user-attachments/assets/40f7df68-6eb6-42f3-a9dc-0b85cb89babf" /><br/>
+      <small>Fig 16. 16x8 7T SRAM Array schematic design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
-    </td>
-   <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="524" height="1500" alt="16x8 7T SRAM Array layout" src="https://github.com/user-attachments/assets/43abe6ac-0392-4fa5-90e0-74a33b387421" /><br/>
+      <small>Fig 16. 16x8 7T SRAM Array layout</small>
     </td>
       </tr>
 </table>
-
-<table align="center">
-    <td align="center">
-          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
-      <small>Fig 17. Sense Amplifier output waveform</small>
-    </td>
-</table>
-
 
 ---
 
@@ -1003,26 +989,19 @@ This integration ensures proper operation of the complete SRAM memory.
 
 <table align="center">
    <tr>
-    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+      <td align="center">
+          <img width="797" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated schematic design" src="https://github.com/user-attachments/assets/aa069191-b77d-44d6-8c04-9aef95218194" /><br/>
+      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="765" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated schematic block design" src="https://github.com/user-attachments/assets/d6c0618e-6973-462f-8680-ba1e665aeb63" /><br/>
+      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic block design</small>
     </td>
    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="744" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated layout" src="https://github.com/user-attachments/assets/e8f88623-20f6-47ec-85eb-506e6a7bae57" /><br/>
+      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated layout </small>
     </td>
       </tr>
-</table>
-
-<table align="center">
-    <td align="center">
-          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
-      <small>Fig 17. Sense Amplifier output waveform</small>
-    </td>
 </table>
 
 ---
