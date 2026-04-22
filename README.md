@@ -95,135 +95,6 @@ This project presents the design and analysis of a **power-efficient 16×8 SRAM 
 15. [Conclusion](#conclusion)  
 
 ---
----
----
-
-## Problem Statement
-
-Conventional **6T SRAM cells** are widely used in memory architectures due to their compact structure and fast operation. However, with the continuous scaling of CMOS technology, several design challenges have emerged that affect the reliability and efficiency of SRAM-based memory systems.
-
-One of the major issues in conventional SRAM cells is **read stability degradation**. During a read operation, the access transistor connects the internal storage node to the bitline, which can disturb the stored data. This disturbance reduces the **Static Noise Margin (SNM)** of the cell and may lead to read failures.
-
-Another significant concern is **leakage power consumption**. As transistor dimensions shrink and threshold voltages decrease, **subthreshold leakage currents** increase considerably. Since SRAM arrays contain thousands or millions of cells, leakage currents accumulate and lead to significant standby power consumption.
-
-Additionally, conventional SRAM cells face the following challenges:
-
-- **Reduced static noise margin (SNM)** due to device scaling
-- **Increased leakage current** in deep submicron technologies
-- **Sensitivity to process variations**
-- **Read disturb problems**
-- **Higher power consumption during operation**
-
-To overcome these limitations, this project proposes a **7T SRAM cell architecture** that introduces an additional transistor to improve cell stability and reduce power dissipation. The additional transistor helps isolate the storage nodes during certain operations, thereby improving **read stability and reducing leakage paths**.
-
-The objective of this project is to design and analyze a **power-efficient 7T SRAM memory system** integrated with peripheral circuits and compare its performance with the conventional **6T SRAM architecture** in terms of **stability, power consumption, and reliability**.
-
----
-
-## Key Features
-- Design of **6T and 7T SRAM cells**
-- Implementation of **16×8 SRAM memory array**
-- Integration of peripheral circuits:
-  - 4×16 Row Decoder
-  - Precharge Circuit
-  - Write Driver
-  - Sense Amplifier
-- **Read and Write functional verification**
-- **Static Noise Margin (SNM) analysis**
-- **Power consumption comparison**
-- **Layout implementation of basic logic circuits**
-
----
-
-## SRAM Architecture
-
-The complete SRAM system consists of the following blocks:
-
-- **SRAM Cell Array** – Stores data using SRAM cells  
-- **Row Decoder** – Selects the wordline based on address input  
-- **Precharge Circuit** – Precharges and equalizes bitlines before read operation  
-- **Write Driver** – Drives data onto bitlines during write operation  
-- **Sense Amplifier** – Detects and amplifies small voltage difference during read
-
-<table align="center">
-    <td align="center">
-      <img width="745" height="793" alt="image" src="https://github.com/user-attachments/assets/a8186097-e683-45cf-9746-0e10b08eaa83" /><br/>
-      <small> Fig. 1 SRAM system architecture
-    </td>
-</table>
-
----
-
-## Conventional 6T SRAM Cell Architecture
-
-The conventional Static Random Access Memory (SRAM) cell consists of **six transistors (6T)** forming a bistable latch capable of storing one bit of data. The structure is composed of **two cross-coupled CMOS inverters** and **two access transistors** that connect the cell to the bitlines during read and write operations.
-
-### 6T SRAM Structure
-
-The 6T SRAM cell consists of:
-
-- **2 Pull-Up PMOS Transistors (P1, P2)**
-- **2 Pull-Down NMOS Transistors (N1, N2)**
-- **2 Access NMOS Transistors (N3, N4)**
-
-The cross-coupled inverters store the data, while the access transistors allow the memory cell to communicate with the bitlines.
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <img width="856" height="287" alt="Circuit Diagram" src="https://github.com/user-attachments/assets/cb2249a1-6b24-49d3-a24f-0ce22a17b51c"/><br/>
-      <small>Fig 2a. 6T-SRAM schematic diagram</small>
-    </td>
-    <td align="center">
-      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
-      <small>Fig 2b. 6T-SRAM schematic design</small>
-    </td>
-  </tr>
-</table>
-
-### Main Nodes
-
-- **Q** – Stored data node  
-- **QB (Q̅)** – Complementary data node  
-- **BL** – Bitline  
-- **BLB** – Complementary bitline  
-- **WL** – Wordline
-
-### SRAM Operations
-
-#### Hold Operation
-When the **wordline (WL) = 0**, the access transistors are OFF and the cell is isolated from the bitlines. The cross-coupled inverters maintain the stored value using positive feedback.
-
-#### Write Operation
-1. The write driver forces **BL and BLB** according to the input data.
-2 **WL is asserted (WL = 1)** enabling the access transistors.
-3. The forced bitline values overpower the internal node and change the stored data.
-
-Example:
-- BL = 1, BLB = 0 → Q = 1
-- BL = 0, BLB = 1 → Q = 0
-
-#### Read Operation
-1. Bitlines are **precharged to VDD**.
-2. **WL = 1** activates the access transistors.
-3. The internal node storing **0 discharges one bitline slightly**.
-4. The **sense amplifier detects the small voltage difference** and amplifies it to produce the output data.
-
-### Limitations of 6T SRAM
-
-Although the 6T SRAM cell is widely used, it suffers from several challenges in scaled technologies:
-
-- Read disturb problem
-- Reduced Static Noise Margin (SNM)
-- Increased leakage current
-- Sensitivity to process variations
-- Higher power consumption in large arrays
-
-Due to these limitations, alternative SRAM architectures such as **7T SRAM** are proposed to improve stability and reduce power consumption.
-
----
----
----
 
 ## Problem Statement
 
@@ -272,8 +143,13 @@ The complete SRAM system consists of the following blocks:
 - **Isolation Circuit** – separates the sensing path during write  
 - **Sense Amplifier** – amplifies the bitline voltage difference  
 
-**Figure 1. SRAM System Architecture**
-
+<table align="center">
+    <td align="center">
+      <img width="745" height="793" alt="image" src="https://github.com/user-attachments/assets/a8186097-e683-45cf-9746-0e10b08eaa83" /><br/>
+      <small> Fig. 1 SRAM system architecture
+    </td>
+</table>
+         
 ---
 
 ## Conventional 6T SRAM Cell
@@ -290,8 +166,22 @@ The cell consists of:
 
 The cross-coupled inverters maintain the stored data, while the access transistors connect the cell to **BL** and **BLB** during read and write operations.
 
-**Figure 2a. 6T SRAM Schematic Design**  
-**Figure 2b. 6T SRAM Layout**
+<table align="center">
+  <tr>
+    <td align="center">
+      <img width="856" height="287" alt="Circuit Diagram" src="https://github.com/user-attachments/assets/cb2249a1-6b24-49d3-a24f-0ce22a17b51c"/><br/>
+      <small>Fig 2a. 6T-SRAM schematic diagram</small>
+    </td>
+    <td align="center">
+      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
+      <small>Fig 2b. 6T-SRAM schematic design</small>
+    </td>
+     <td align="center">
+      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
+      <small>Fig 2b. 6T-SRAM schematic design</small>
+    </td>
+  </tr>
+</table>
 
 ### Main Nodes
 
@@ -324,12 +214,10 @@ The conventional 6T SRAM suffers from:
 These limitations motivate the use of an improved **7T SRAM architecture** for better stability and lower power.
 
 ---
----
----
 
 ## Transistor Sizing Analysis
 
-Proper transistor sizing is essential for stable SRAM operation. The sizing of pull-up, pull-down, and access transistors determines the **read stability, write ability, and overall reliability** of the memory cell. The sizing constraints are derived using **MOSFET current equations and Kirchhoff current relations**.
+Proper transistor sizing is essential for reliable SRAM operation. The dimensions of the pull-up, pull-down, and access transistors directly affect **read stability, write ability, and power consumption**. The sizing conditions are determined using **MOSFET current equations** and standard SRAM design ratios.
 
 <table align="center">
     <td align="center">
@@ -337,167 +225,6 @@ Proper transistor sizing is essential for stable SRAM operation. The sizing of p
       <small>Fig 3. SRAM sizing</small>
     </td>
 </table>
-
-### MOSFET Saturation Current Equation
-
-The drain current of a MOS transistor operating in saturation is given by:
-
-$$
-I_D = \frac{1}{2} \mu C_{ox}\left(\frac{W}{L}\right)(V_{GS}-V_T)^2
-$$
-
-Where: ( μ → Carrier mobility, Cox → Oxide capacitance per unit area, W/L → Transistor aspect ratio, VGS → Gate-to-source voltage, and VT → Threshold voltage )
-
-The parameter **β (beta)** represents the transistor strength:
-
-$$
-\beta = \mu C_{ox}\left(\frac{W}{L}\right)
-$$
-
-### Read Stability Condition
-
-During the read operation, the access transistor connects the internal storage node to the bitline.  
-To avoid flipping the stored data, the **pull-down transistor must be stronger than the access transistor**.
-
-Condition:
-
-$$
-\beta_{PD} > \beta_{AX}
-$$
-
-Where: ( βPD → Pull-down NMOS strength, and βAX → Access transistor strength )
-
-The **Cell Ratio (CR)** is defined as:
-
-$$
-CR = \frac{(W/L)_{pull-down}}{(W/L)_{access}}
-$$
-
-Typical design requirement: ` CR ≥ 1.5 `
-
-This ensures that the internal node storing logic '0' remains stable during read operation.
-
-### Write Ability Condition
-
-During write operation, the access transistor must be strong enough to overwrite the internal node.
-
-Condition:
-
-$$
-\beta_{AX} > \beta_{PU}
-$$
-
-Where: βPU → Pull-up PMOS strength  
-
-The **Pull-up Ratio (PR)** is defined as:
-
-$$
-PR = \frac{(W/L)_{access}}{(W/L)_{pull-up}}
-$$
-
-Typical requirement: `PR ≥ 1`
-
-This allows the bitline driver to successfully change the stored data.
-
-### Summary of Sizing Constraints
-
-| Parameter | Condition | Purpose |
-|----------|-----------|--------|
-| Pull-Down > Access | βPD > βAX | Read stability |
-| Access > Pull-Up | βAX > βPU | Write ability |
-| Cell Ratio (CR) | ≥ 1.5 | Prevent read disturb |
-| Pull-up Ratio (PR) | ≥ 1 | Enable successful write |
-
-### Transistor Width Configuration
-
-<table align="center">
-    <td align="center">
-          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
-      <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
-    </td>
-</table>
-
-| Transistor | Function | Width (W) |
-|-----------|----------|----------|
-| Pull-Up PMOS (P1, P2) | Maintain stored value | 400nm (Wpu)|
-| Access NMOS (N3, N4) | Connect cell to bitlines | 600nm (Wa = 1.5 x Wpu) |
-| Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um (Wpd = 2 x Wa)|
-
----
-
-## Proposed 7T SRAM Cell Architecture
-
-To improve the stability and power efficiency of the conventional 6T SRAM cell, an additional transistor is introduced, forming a **7-Transistor (7T) SRAM cell**. The extra transistor is placed in the pull-down path to control the discharge current during read and write operations.
-
-### Structure of 7T SRAM Cell
-
-The proposed 7T SRAM cell consists of:
-
-- 2 Pull-Up PMOS transistors
-- 2 Pull-Down NMOS transistors
-- 2 Access NMOS transistors
-- 1 Additional Bottom NMOS transistor [width(wb) = 1.2um]
-
-<table>
-  <tr>
-    <td align="center">
-          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5e3f31bb-4502-4a97-a01a-9976061786c7" /><br/>
-      <small>Fig 4a. Proposed 7T-SRAM schematic diagram</small>
-    </td>
-    <td align="center">
-          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
-      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
-    </td>
-  </tr>
-</table>
-
-The additional transistor acts as a **current gating device**, controlling the discharge path of the internal storage node.
-
-### Key Idea of the Proposed Design
-
-The extra NMOS transistor is connected in series with the pull-down network. This transistor is controlled by a separate control signal and helps in:
-
-- Reducing leakage current
-- Improving read stability
-- Minimizing unnecessary current flow during idle condition
-
-### Operation of 7T SRAM Cell
-
-#### Hold Operation
-When the wordline is LOW, the access transistors are OFF and the cell remains isolated from the bitlines. The cross-coupled inverters maintain the stored value through positive feedback.
-
-#### Write Operation
-1. The write driver forces the bitlines according to the input data.
-2. Wordline is activated (WL = 1).
-3. Access transistors allow the data from bitlines to overwrite the stored node.
-4. The extra transistor ensures controlled current flow during the switching process.
-
-#### Read Operation
-1. Bitlines are precharged to VDD.
-2. WL is activated to connect the cell to the bitlines.
-3. Depending on the stored data, one bitline discharges slightly.
-4. The sense amplifier detects the voltage difference and amplifies it to generate the output data.
-
-### Advantages of the 7T SRAM Cell
-
-- Improved **Static Noise Margin (SNM)**
-- Reduced **leakage power**
-- Better **read stability**
-- Lower **power consumption compared to 6T SRAM**
-
-### Design Trade-off
-
-The addition of one extra transistor increases the **cell area slightly**, but the improvement in stability and power efficiency makes the design suitable for low-power memory systems.
-
----
----
----
-
-## Transistor Sizing Analysis
-
-Proper transistor sizing is essential for reliable SRAM operation. The dimensions of the pull-up, pull-down, and access transistors directly affect **read stability, write ability, and power consumption**. The sizing conditions are determined using **MOSFET current equations** and standard SRAM design ratios.
-
-**Figure 3. SRAM Transistor Sizing Model**
 
 ### MOSFET Current Equation
 
@@ -565,13 +292,18 @@ This ensures that new data can overwrite the previous state.
 
 ### Transistor Width Configuration
 
-**Figure 3b. 6T SRAM Schematic with Transistor Sizing**
+<table align="center">
+    <td align="center">
+          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
+      <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
+    </td>
+</table>
 
-| Transistor | Function | Width |
-|-----------|----------|-------|
-| Pull-Up PMOS | Data retention | 400 nm |
-| Access NMOS | Bitline access | 600 nm |
-| Pull-Down NMOS | Read stability | 1.2 µm |
+| Transistor | Function | Width (W) |
+|-----------|----------|----------|
+| Pull-Up PMOS (P1, P2) | Maintain stored value | 400nm (Wpu)|
+| Access NMOS (N3, N4) | Connect cell to bitlines | 600nm (Wa = 1.5 x Wpu) |
+| Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um (Wpd = 2 x Wa)|
 
 ---
 
@@ -588,8 +320,22 @@ The proposed cell consists of:
 - 2 Access NMOS transistors  
 - 1 Additional bottom NMOS transistor (**1.2 µm**)  
 
-**Figure 4a. Proposed 7T SRAM Schematic Diagram**  
-**Figure 4b. Proposed 7T SRAM Layout**
+<table>
+  <tr>
+    <td align="center">
+          <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5e3f31bb-4502-4a97-a01a-9976061786c7" /><br/>
+      <small>Fig 4a. Proposed 7T-SRAM schematic diagram</small>
+    </td>
+    <td align="center">
+          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
+      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
+    </td>
+     <td align="center">
+          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
+      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
+    </td>
+  </tr>
+</table>
 
 The transistor sizing of the original 6T cell is retained, while the added bottom transistor improves stability by controlling the discharge path.
 
@@ -633,22 +379,23 @@ After precharge, one bitline discharges slightly depending on the stored data, a
 The additional transistor slightly increases the cell area, but the improvement in **stability and power efficiency** makes the 7T cell more suitable for low-power SRAM applications.
 
 ---
----
----
 
 ## Power Analysis
 
-Power consumption is an important design parameter in SRAM circuits, especially for low-power embedded systems. In this work, the power consumption of both **6T and 7T SRAM cells** is analyzed using **DC simulation**.
+Power consumption is an important design parameter in SRAM circuits, especially for low-power applications. The power performance of both **6T and 7T SRAM cells** is evaluated using simulation in **Cadence Virtuoso**.
 
-### Average Power Method
+### Average Power Equation
 
-The average power consumed by the SRAM cell is calculated using the relation:
+The average power is calculated as:
 
 $$
-Power_{avg} = V_{DD} \times I_{avg}
+P_{avg}=V_{DD}\times I_{avg}
 $$
 
-Where: ( VDD → Supply voltage applied to the SRAM cell and Iavg → Average current drawn from the supply
+where:
+
+- $V_{DD}$ = supply voltage  
+- $I_{avg}$ = average supply current  
 
 <table align="center">
   <tr>
@@ -663,11 +410,12 @@ Where: ( VDD → Supply voltage applied to the SRAM cell and Iavg → Average cu
   </tr>
 </table>
 
-### Simulation Parameters
+### Simulation Conditions
 
-Supply Voltage (VDD): 1.8 V and Technology Node: 180 nm CMOS
+- **Technology:** 180 nm CMOS  
+- **Supply Voltage:** 1.8 V  
 
-### Power Analysis Results
+### Power Results
 
 | SRAM Type | Supply Voltage | Average Current | Average Power |
 |-----------|---------------|---------------|---------------|
@@ -676,17 +424,13 @@ Supply Voltage (VDD): 1.8 V and Technology Node: 180 nm CMOS
 
 ### Observation
 
-The proposed **7T SRAM cell consumes less average current**, which directly reduces the overall power consumption.
-
-### Power Reduction
-
-The 7T SRAM design achieves approximately **30.36% reduction in power consumption** compared to the conventional 6T SRAM cell. This reduction is achieved due to the **additional transistor that controls current flow**, thereby reducing unnecessary leakage paths.
+The proposed **7T SRAM cell** shows lower current consumption and achieves nearly **30.36% reduction in power**, mainly due to the additional transistor that limits unwanted current flow.
 
 ---
 
 ## Static Noise Margin (SNM) Analysis
 
-Static Noise Margin (SNM) is an important parameter that determines the stability of an SRAM cell. It represents the **maximum noise voltage that the SRAM cell can tolerate without changing its stored state**.
+Static Noise Margin (SNM) indicates the ability of the SRAM cell to retain data in the presence of noise. It is obtained using the **butterfly curve method**.
 
 <table align="center">
     <td align="center">
@@ -709,18 +453,11 @@ SNM is typically analyzed using the **butterfly curve method**, which is obtaine
     </td>
   </tr>
 </table>
-
-### SNM Calculation
-
-SNM is defined as the side length of the largest square that can be fitted between the two inverter transfer curves.
-
-Mathematically:
+### SNM Equation
 
 $$
-SNM = \min(SNM_H, SNM_L)
+SNM=\min(SNM_H,SNM_L)
 $$
-
-Where: ( SNM_H → Static Noise Margin High and SNM_L → Static Noise Margin Low )
 
 ### SNM Results
 
@@ -729,21 +466,17 @@ Where: ( SNM_H → Static Noise Margin High and SNM_L → Static Noise Margin Lo
 | 6T SRAM | 692.53 mV | 674.375 mV | 674.375 mV |
 | 7T SRAM | 850.2 mV | 849.6 mV | 849.6 mV |
 
-### SNM Improvement
-
-The proposed **7T SRAM cell shows a significant improvement in SNM** compared to the conventional 6T SRAM. SNM Increase ≈ **25.98%**
-
 ### Observation
 
-The additional transistor in the 7T architecture improves the stability of the internal nodes during read operation, thereby increasing the noise margin and reducing the probability of read disturb.
+The proposed **7T SRAM cell** improves SNM by approximately **25.98%**, providing better read stability and stronger noise immunity.
 
 ---
 
 ## Delay Analysis
 
-To evaluate the performance of the SRAM cells, delay analysis was carried out for both **6T and 7T SRAM architectures** during read and write operations.
+Delay analysis is performed for both **read** and **write** operations to compare speed performance.
 
-### Delay Comparison Table
+### Delay Results
 
 | Parameter | Write – 6T (ps) | Write – 7T (ps) | Read – 6T (ps) | Read – 7T (ps) |
 |----------|----------------|----------------|---------------|---------------|
@@ -751,16 +484,16 @@ To evaluate the performance of the SRAM cells, delay analysis was carried out fo
 | Fall     | 241.122         | 232.655        | 71.504       | 70.832        |
 | Average  | 274.862         | 265.516        | 55.624        | 56.009       |
 
-### Observations
+### Observation
 
-- **Write Operation:** 7T SRAM shows reduced delay compared to 6T SRAM = approx 3.4%
-- **Read Operation:** 7T SRAM shows a slight increase in delay due to the additional transistor in the read path = approx 0.692%
+- **Write delay improves by 3.4%**
+- **Read delay increases slightly by 0.69%**
+
+The small read delay increase is acceptable considering the improvement in stability and power reduction.
 
 ---
 
 ## Comparison Between 6T and 7T SRAM
-
-To evaluate the effectiveness of the proposed design, a comparison is performed between the conventional **6T SRAM cell** and the proposed **7T SRAM cell** based on important design parameters such as stability, power consumption, area, and delay.
 
 | Parameter | 6T SRAM | 7T SRAM |
 |-----------|--------|--------|
@@ -777,115 +510,6 @@ To evaluate the effectiveness of the proposed design, a comparison is performed 
 
 ### Key Observations
 
-• The proposed **7T SRAM cell significantly improves stability** due to higher SNM.  
-• The additional transistor helps **reduce leakage current and power consumption**.  
-• The **trade-off is slightly increased area and write delay** due to the extra transistor.
-
-Overall, the **7T SRAM design provides better stability and power efficiency**, making it suitable for low-power memory applications.
-
----
----
----
-
-## Power Analysis
-
-Power consumption is an important design parameter in SRAM circuits, especially for low-power applications. The power performance of both **6T and 7T SRAM cells** is evaluated using simulation in **Cadence Virtuoso**.
-
-### Average Power Equation
-
-The average power is calculated as:
-
-$$
-P_{avg}=V_{DD}\times I_{avg}
-$$
-
-where:
-
-- $V_{DD}$ = supply voltage  
-- $I_{avg}$ = average supply current  
-
-**Figure 5a. 6T SRAM Power Simulation**  
-**Figure 5b. 7T SRAM Power Simulation**
-
-### Simulation Conditions
-
-- **Technology:** 180 nm CMOS  
-- **Supply Voltage:** 1.8 V  
-
-### Power Results
-
-| SRAM Type | Average Current | Average Power |
-|-----------|----------------|---------------|
-| 6T SRAM | 507.5 nA | 0.9135 µW |
-| 7T SRAM | 353.4 nA | 0.6361 µW |
-
-### Observation
-
-The proposed **7T SRAM cell** shows lower current consumption and achieves nearly **30.36% reduction in power**, mainly due to the additional transistor that limits unwanted current flow.
-
----
-
-## Static Noise Margin (SNM) Analysis
-
-Static Noise Margin (SNM) indicates the ability of the SRAM cell to retain data in the presence of noise. It is obtained using the **butterfly curve method**.
-
-**Figure 6. SRAM Butterfly Curve Principle**  
-**Figure 7a. 6T SRAM Butterfly Curve**  
-**Figure 7b. 7T SRAM Butterfly Curve**
-
-### SNM Equation
-
-$$
-SNM=\min(SNM_H,SNM_L)
-$$
-
-### SNM Results
-
-| SRAM Type | SNM |
-|-----------|------|
-| 6T SRAM | 674.375 mV |
-| 7T SRAM | 849.6 mV |
-
-### Observation
-
-The proposed **7T SRAM cell** improves SNM by approximately **25.98%**, providing better read stability and stronger noise immunity.
-
----
-
-## Delay Analysis
-
-Delay analysis is performed for both **read** and **write** operations to compare speed performance.
-
-### Delay Results
-
-| Parameter | Write Delay | Read Delay |
-|-----------|-------------|------------|
-| 6T SRAM | 274.862 ps | 55.624 ps |
-| 7T SRAM | 265.516 ps | 56.009 ps |
-
-### Observation
-
-- **Write delay improves by 3.4%**
-- **Read delay increases slightly by 0.69%**
-
-The small read delay increase is acceptable considering the improvement in stability and power reduction.
-
----
-
-## Comparison Between 6T and 7T SRAM
-
-| Parameter | 6T SRAM | 7T SRAM |
-|-----------|---------|---------|
-| Transistors | 6 | 7 |
-| SNM | 674.375 mV | 849.6 mV |
-| Power | 0.9135 µW | 0.6361 µW |
-| Leakage | Higher | Lower |
-| Area | Smaller | Slightly larger |
-| Write Delay | 274.862 ps | 265.516 ps |
-| Read Delay | 55.624 ps | 56.009 ps |
-
-### Key Observations
-
 - Improved **stability**
 - Lower **power consumption**
 - Reduced **leakage current**
@@ -894,127 +518,6 @@ The small read delay increase is acceptable considering the improvement in stabi
 
 Overall, the proposed **7T SRAM cell** provides a better balance of **power, stability, and performance** for low-power memory applications.
 
----
----
----
-
-## Read and Write Operation Verification of 7T-SRAM Cell
-
-To verify the correct functionality of the SRAM design, transient simulations were performed to analyze the read and write operations. The objective of this test is to confirm that the SRAM cell correctly stores, retains, and retrieves data based on the control signals.
-
-### Write Operation
-
-During the write operation, the data input is forced onto the bitlines through the write driver and stored in the SRAM cell.
-Operation conditions: `WE = 1, WL = 1 ` 
-
-Working principle:
-
-• The write driver receives the input data signal (DATA_IN).  
-• Complementary signals are driven onto the bitlines: `BL = DATA, BLB = DATA̅ ` 
-• When the **wordline (WL)** becomes HIGH, the access transistors turn ON.  
-• The internal storage nodes of the cross-coupled inverter latch are overwritten by the bitline values.
-
-<table align="center">
-  <tr>
-    <td align="center">
-          <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
-      <small>Fig 8a. SRAM cell Write test circuit</small>
-    </td>
-    <td align="center">
-          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
-      <small>Fig 8b. SRAM cell Write test waveform</small>
-    </td>
-  </tr>
-</table>
-
-Result: The SRAM cell successfully captures the input data and stores it at the internal node **Q**.
-
-### Read Operation
-
-The read operation retrieves the stored data from the SRAM cell without intentionally modifying the stored value.
-
-Operation conditions: `WE = 0, WL = 1` 
-
-Working principle:
-
-• Before the read operation, both **BL and BLB are precharged to VDD**.  
-• When the wordline becomes HIGH, the access transistors connect the internal nodes to the bitlines.
-
-<table align="center">
-  <tr>
-    <td align="center">
-          <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
-      <small>Fig 9a. SRAM cell Read test circuit</small>
-    </td>
-    <td align="center">
-          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
-      <small>Fig 9b. SRAM cell Read test waveform</small>
-    </td>
-  </tr>
-</table>
-
-Depending on the stored data:
-If **Q = 1** --> BL remains HIGH while BLB discharges slightly.
-If **Q = 0** --> BL discharges slightly while BLB remains HIGH.
-
-This creates a small differential voltage between BL and BLB which is sensed by the sense amplifier.
-
----
-
-### Subthreshold Leakage Effect During Read
-
-During the read operation, a small leakage current can flow through the access transistors even when the cell is trying to hold its stored value. This occurs due to **subthreshold conduction** in MOSFETs, where a small current flows even when the transistor operates below its threshold voltage.
-
-Leakage current equation:
-
-$$
-I_{sub} \approx I_0 \cdot e^{\frac{V_{GS}-V_{TH}}{nV_T}}
-$$
-
-Where: ( VGS → Gate-to-Source Voltage, VTH → Threshold Voltage, V_T → Thermal Voltage, and n → Subthreshold slope factor )
-
-During the read operation:
-
-• The access transistor slightly pulls one of the internal nodes toward the bitline voltage.  
-• This can disturb the stored node voltage inside the SRAM cell.
-
-This phenomenon is known as **read disturb**. Proper transistor sizing ensures that:
-
-`Pull-down transistor strength > Access transistor strength`
-
-This prevents the stored data from flipping during read operation.
-
----
-
-### Verification Result
-
-The transient simulation confirms that:
-
-• Data is correctly written into the SRAM cell during the write cycle.  
-• The stored value is retained inside the cross-coupled inverter latch.  
-• During read operation, only a small differential voltage is created between BL and BLB.  
-• The sense amplifier successfully amplifies this small voltage difference to generate DATA_OUT.  
-• Proper transistor sizing prevents read disturb caused by subthreshold leakage.
-
-These results validate the correct functionality and stability of the SRAM read and write operations.
-
----
-
-## Conclusion
-
-The proposed **7T SRAM cell architecture** demonstrates clear advantages over the conventional **6T SRAM** based on the performed analysis.
-
-- **Stability (SNM):** The 7T SRAM shows a significant improvement in Static Noise Margin, indicating better resistance to read disturbance and enhanced data stability.
-- **Power Consumption:** The 7T design achieves lower average power consumption due to reduced leakage current, making it more suitable for low-power applications.
-- **Write Performance:** A noticeable improvement in write delay (~3.4%) is observed, due to better write ability enabled by the modified cell structure.
-- **Read Performance:** A very small increase in read delay (~0.7%) is observed, caused by the additional transistor in the read path. This overhead is minimal and acceptable.
-
-### Final Remark
-
-Overall, the 7T SRAM provides a better trade-off between **power, stability, and performance**, making it a more efficient and reliable choice compared to the conventional 6T SRAM design, especially for **low-power and high-stability memory applications**.
-
----
----
 ---
 
 ## Functional Verification of 7T SRAM Cell
@@ -1033,7 +536,18 @@ During hold mode, the cell retains its stored data without accessing the bitline
 - Cell is isolated from BL and BLB  
 - Cross-coupled inverters maintain stored data  
 
-**Figure 8. Hold Operation Waveform**
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
+      <small>Fig 8a. SRAM cell Write test circuit</small>
+    </td>
+    <td align="center">
+          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
+      <small>Fig 8b. SRAM cell Write test waveform</small>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -1049,8 +563,18 @@ During write mode, the input data is applied to the bitlines and stored in the c
 - Access transistors turn ON  
 - Internal nodes update to new logic state  
 
-**Figure 9a. Write Test Circuit**  
-**Figure 9b. Write Operation Waveform**
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
+      <small>Fig 8a. SRAM cell Write test circuit</small>
+    </td>
+    <td align="center">
+          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
+      <small>Fig 8b. SRAM cell Write test waveform</small>
+    </td>
+  </tr>
+</table>
 
 **Result:** The SRAM cell correctly stores the applied input data.
 
@@ -1067,8 +591,18 @@ During read mode, the stored data is sensed from the bitlines.
 - One bitline discharges slightly  
 - Sense amplifier detects the voltage difference  
 
-**Figure 10a. Read Test Circuit**  
-**Figure 10b. Read Operation Waveform**
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
+      <small>Fig 9a. SRAM cell Read test circuit</small>
+    </td>
+    <td align="center">
+          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
+      <small>Fig 9b. SRAM cell Read test waveform</small>
+    </td>
+  </tr>
+</table>
 
 **Result:** The stored data is read correctly without disturbing the cell.
 
@@ -1114,165 +648,6 @@ The proposed **7T SRAM cell** provides improved performance over the conventiona
 
 Overall, the proposed design offers a better balance of **power, stability, and performance** for low-power SRAM applications.
 
----
----
----
-
-## Peripheral Circuits of the SRAM Array
-
-In addition to the SRAM cell array, several **supporting peripheral circuits** are required to perform reliable read and write operations. These circuits control the addressing, data transfer, and signal amplification within the memory system. The major peripheral circuits used in the proposed SRAM architecture are:
-
-1. Row Decoder  
-2. Precharge Circuit  
-3. Write Driver  
-4. Sense Amplifier
-
-These circuits work together with the **16×8 SRAM array** to enable proper memory operation.
-
-### 1. Row Decoder (4×16 Decoder)
-
-The row decoder is responsible for selecting one of the multiple wordlines in the SRAM array based on the input address. For a **4-bit address input**, the decoder generates **16 wordline outputs**, ensuring that only one row of SRAM cells is activated at a time.
-
-#### Working Principle
-
-• The decoder converts the binary address into a **one-hot output signal**.  
-• Only the selected wordline becomes HIGH while others remain LOW.  
-• This activates the corresponding SRAM row during read or write operation.
-
-#### Architecture
-
-The 4×16 decoder is implemented using:
-
-• Inverter circuits  
-• 4-input AND gates
-
-<table align="center">
-  <tr>
-    <td align="center">
-          <img width="465" height="705" alt="image" src="https://github.com/user-attachments/assets/9225a0df-9bcb-46ed-8007-c81e58f94bdf" /><br/>
-      <small>Fig 10a. 4×16 Row decoder diagram</small>
-    </td>
-    <td align="center">
-          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
-      <small>Fig 10b. 4×16 Row decoder schematic design</small>
-    </td>
-  </tr>
-</table>
-
-<table align="center">
-    <td align="center">
-          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
-      <small>Fig 11. 4×16 Row decoder output waveform</small>
-    </td>
-</table>
-
-### 2. Precharge Circuit
-
-The precharge circuit prepares the bitlines before every read operation.
-
-#### Working Principle
-
-• When **PC = 0**, the precharge transistors charge both **BL and BLB to VDD**.  
-• The equalization transistor ensures both bitlines remain at the same voltage level.  
-• This ensures accurate sensing during the read operation.
-
-Precharging the bitlines reduces sensing delay and improves reliability of the memory read process.
-
-<table>
-  <tr>
-    <td align="center">
-          <img width="349" height="287" alt="image" src="https://github.com/user-attachments/assets/bd585699-d465-4ddf-9acc-7d1f204d292a" /><br/>
-      <small>Fig 12a. Precharge cell diagram</small>
-    </td>
-    <td align="center">
-          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
-      <small>Fig 12b. Precharge cell schematic design</small>
-    </td>
-  </tr>
-</table>
-
-<table>
-    <td align="center">
-          <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
-      <small>Fig 13. Precharge cell output waveform</small>
-    </td>
-</table>
-
-### 3. Write Driver
-
-The write driver circuit is responsible for forcing data onto the bitlines during write operations.
-
-#### Working Principle
-
-• The write driver receives **DATA_IN** from the input.  
-• Based on the **Write Enable (WE)** signal, the driver sets the bitlines.
-
-Operation:
-
-• If **WE = 1**,  `BL = DATA, BLB = DATA̅  `
-• When **WL = 1**, the SRAM cell captures the data from the bitlines and stores it internally.
-
-<table align="center">
-  <tr>
-    <td align="center">
-          <img width="452" height="239" alt="image" src="https://github.com/user-attachments/assets/f782c731-c55e-4025-86aa-95b001a867a5" /><br/>
-      <small>Fig 14a. Write Driver diagram</small>
-    </td>
-    <td align="center">
-          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
-      <small>Fig 14b. Write Driver schematic design</small>
-    </td>
-  </tr>
-</table>
-
-<table align="center">
-    <td align="center">
-          <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
-      <small>Fig 15. Write Driver output waveform</small>
-    </td>
-</table>
-
-This circuit ensures strong drive capability to overwrite the previously stored value inside the SRAM cell.
-
-### 4. Sense Amplifier
-
-The sense amplifier is used to detect and amplify the small voltage difference between the bitlines during read operation.
-
-#### Working Principle
-
-• During read operation, one bitline discharges slightly depending on the stored data.  
-• This creates a small voltage difference between **BL and BLB**.  
-• The sense amplifier detects this difference and amplifies it to produce a full digital output.
-
-<table align="center">
-    <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
-    </td>
-</table>
-
-<table align="center">
-    <td align="center">
-          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
-      <small>Fig 17. Sense Amplifier output waveform</small>
-    </td>
-</table>
-
-The output is then provided as **DATA_OUT**. Sense amplifiers significantly improve the **speed and reliability of read operations** in SRAM arrays.
-
-### Integration with SRAM Array
-
-In the complete system:
-
-• The **Row Decoder** activates the required wordline.  
-• The **Precharge Circuit** prepares the bitlines before reading.  
-• The **Write Driver** writes data into the SRAM cell.  
-• The **Sense Amplifier** reads and amplifies the stored data.
-
-These peripheral circuits together enable the **efficient operation of the 16×8 SRAM array**.
-
----
----
 ---
 
 ## Peripheral Circuits of the SRAM Array
@@ -1340,8 +715,29 @@ Its operation includes:
 
 Proper decoder design improves access reliability and prevents row conflicts.
 
-**Figure:** 4×16 row decoder schematic, layout, and waveform
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="465" height="705" alt="image" src="https://github.com/user-attachments/assets/9225a0df-9bcb-46ed-8007-c81e58f94bdf" /><br/>
+      <small>Fig 10a. 4×16 Row decoder diagram</small>
+    </td>
+    <td align="center">
+          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
+      <small>Fig 10b. 4×16 Row decoder schematic design</small>
+    </td>
+     <td align="center">
+          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
+      <small>Fig 10b. 4×16 Row decoder schematic design</small>
+    </td>
+  </tr>
+</table>
 
+<table align="center">
+    <td align="center">
+          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
+      <small>Fig 11. 4×16 Row decoder output waveform</small>
+    </td>
+</table>
 ---
 
 ### 4.4 Precharge Circuit
@@ -1360,7 +756,29 @@ Transistor sizing:
 
 This sizing provides faster charging of the highly capacitive bitlines.
 
-**Figure:** Precharge circuit schematic, layout, and waveform
+<table>
+  <tr>
+    <td align="center">
+          <img width="349" height="287" alt="image" src="https://github.com/user-attachments/assets/bd585699-d465-4ddf-9acc-7d1f204d292a" /><br/>
+      <small>Fig 12a. Precharge cell diagram</small>
+    </td>
+    <td align="center">
+          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
+      <small>Fig 12b. Precharge cell schematic design</small>
+    </td>
+     <td align="center">
+          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
+      <small>Fig 12b. Precharge cell schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table>
+    <td align="center">
+          <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
+      <small>Fig 13. Precharge cell output waveform</small>
+    </td>
+</table>
 
 ---
 
@@ -1378,7 +796,29 @@ Its operation includes:
 
 Because BL and BLB are highly capacitive, stronger transistors are used for reliable writing.
 
-**Figure:** Write driver schematic, layout, and waveform
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="452" height="239" alt="image" src="https://github.com/user-attachments/assets/f782c731-c55e-4025-86aa-95b001a867a5" /><br/>
+      <small>Fig 14a. Write Driver diagram</small>
+    </td>
+    <td align="center">
+          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
+      <small>Fig 14b. Write Driver schematic design</small>
+    </td>
+     <td align="center">
+          <img width="920" height="527" alt="image" src="https://github.com/user-attachments/assets/253e979b-4ac4-42ae-b9f9-ae1dbaf1e699" /><br/>
+      <small>Fig 14b. Write Driver schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
+      <small>Fig 15. Write Driver output waveform</small>
+    </td>
+</table>
 
 ---
 
@@ -1394,7 +834,29 @@ Its function includes:
 
 Careful transistor matching is required to minimize offset errors and improve sensing accuracy.
 
-**Figure:** Sense amplifier schematic, layout, and waveform
+<table align="center">
+   <tr>
+    <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+      </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
+      <small>Fig 17. Sense Amplifier output waveform</small>
+    </td>
+</table>
 
 ---
 
@@ -1411,7 +873,30 @@ This prevents unwanted loading of the bitlines and improves system stability.
 
 Larger transistor sizing is used because the circuit directly drives capacitive bitline nodes.
 
-**Figure:** Isolation circuit schematic and layout
+<table align="center">
+   <tr>
+    <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+      </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
+      <small>Fig 17. Sense Amplifier output waveform</small>
+    </td>
+</table>
+
 
 ---
 
@@ -1428,7 +913,30 @@ Array organization:
 
 This arrangement allows structured data storage and retrieval while maintaining compact implementation.
 
-**Figure:** 16×8 SRAM array schematic and layout
+<table align="center">
+   <tr>
+    <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+      </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
+      <small>Fig 17. Sense Amplifier output waveform</small>
+    </td>
+</table>
+
 
 ---
 
@@ -1446,7 +954,29 @@ System sequence:
 
 This integration ensures proper operation of the complete SRAM memory.
 
-**Figure:** Complete integrated SRAM system
+<table align="center">
+   <tr>
+    <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+   <td align="center">
+          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+      </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
+      <small>Fig 17. Sense Amplifier output waveform</small>
+    </td>
+</table>
 
 ---
 ---
