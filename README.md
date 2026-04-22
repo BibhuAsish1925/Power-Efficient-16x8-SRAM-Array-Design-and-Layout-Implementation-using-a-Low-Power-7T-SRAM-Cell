@@ -667,7 +667,7 @@ The main peripheral blocks are:
 
 ---
 
-### 1 Inverter Circuit
+### 1. Inverter Circuit
 
 The CMOS inverter is used to generate complementary control signals required in the SRAM system. It consists of one PMOS and one NMOS transistor connected in a pull-up and pull-down configuration.
 
@@ -707,7 +707,7 @@ For proper switching, the transistor sizes are chosen as:
 
 ---
 
-### 2 4-Input AND Gate
+### 2. 4-Input AND Gate
 
 The 4-input AND gate is used in the row decoding logic to generate a HIGH output for one specific address combination.
 
@@ -741,14 +741,14 @@ The larger inverter sizing improves the drive strength required for highly capac
 
 <table align="center">
     <td align="center">
-          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
-      <small>Fig 11. 4×16 Row decoder output waveform</small>
+          <img width="1910" height="811" alt="and4" src="https://github.com/user-attachments/assets/bd5933e3-98d9-4278-a96e-e92a6c95e007" /><br/>
+      <small>Fig 11. 4-input AND gate output waveform</small>
     </td>
 </table>
 
 ---
 
-### 3 4×16 Row Decoder
+### 3. 4×16 Row Decoder
 
 The row decoder converts a **4-bit address input** into **16 wordlines**, ensuring only one row is selected at a time.
 
@@ -786,7 +786,7 @@ Proper decoder design improves access reliability and prevents row conflicts.
 
 ---
 
-### 4 Precharge Circuit
+### 4. Precharge Circuit
 
 The precharge circuit initializes both bitlines before every read operation.
 
@@ -828,7 +828,7 @@ This sizing provides faster charging of the highly capacitive bitlines.
 
 ---
 
-### 5 Write Driver
+### 5. Write Driver
 
 The write driver forces input data onto the bitlines during the write cycle.
 
@@ -868,7 +868,7 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
 
 ---
 
-### 6 Sense Amplifier
+### 6. Sense Amplifier
 
 The sense amplifier detects the small voltage difference between BL and BLB during read operation and converts it into a full digital output.
 
@@ -906,7 +906,7 @@ Careful transistor matching is required to minimize offset errors and improve se
 
 ---
 
-### 7 Isolation Circuit
+### 7. Isolation Circuit
 
 The isolation circuit controls the connection between the bitlines and the sense amplifier.
 
@@ -945,7 +945,7 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
 
 ---
 
-### 4.8 SRAM Array
+### 8. SRAM Array
 
 The individual 7T SRAM cells are arranged into a **16×8 memory array**.
 
@@ -973,7 +973,7 @@ This arrangement allows structured data storage and retrieval while maintaining 
 
 ---
 
-### 4.9 System Integration
+### 9. System Integration
 
 All peripheral blocks are integrated with the SRAM array to form the complete memory system.
 
