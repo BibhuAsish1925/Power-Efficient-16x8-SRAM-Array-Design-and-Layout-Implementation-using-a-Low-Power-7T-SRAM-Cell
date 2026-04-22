@@ -173,12 +173,12 @@ The cross-coupled inverters maintain the stored data, while the access transisto
       <small>Fig 2a. 6T-SRAM schematic diagram</small>
     </td>
     <td align="center">
-      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
+      <img width="1471" height="812" alt="6T Layout" src="https://github.com/user-attachments/assets/402118aa-e085-49eb-ae93-e8274a6da6ef" /><br/>
       <small>Fig 2b. 6T-SRAM schematic design</small>
     </td>
      <td align="center">
-      <img width="848" height="747" alt="image" src="https://github.com/user-attachments/assets/ebd971e0-6042-4440-ad49-7b1c95f4b1c3" /><br/>
-      <small>Fig 2b. 6T-SRAM schematic design</small>
+      <img width="509" height="559" alt="6T SRAM-1" src="https://github.com/user-attachments/assets/6a0f3755-291a-4255-8066-7f9627ca8fc6" /><br/>
+      <small>Fig 2c. 6T-SRAM layout</small>
     </td>
   </tr>
 </table>
