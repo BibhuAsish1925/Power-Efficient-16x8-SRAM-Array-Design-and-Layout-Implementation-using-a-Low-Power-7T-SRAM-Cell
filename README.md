@@ -173,11 +173,11 @@ The cross-coupled inverters maintain the stored data, while the access transisto
       <small>Fig 2a. 6T-SRAM schematic diagram</small>
     </td>
     <td align="center">
-      <img width="1471" height="812" alt="6T Layout" src="https://github.com/user-attachments/assets/402118aa-e085-49eb-ae93-e8274a6da6ef" /><br/>
+      <img width="2717" height="1500" alt="6T Schematic design" src="https://github.com/user-attachments/assets/9feed759-f637-410c-9dab-cf5765d4225b" /><br/>
       <small>Fig 2b. 6T-SRAM schematic design</small>
     </td>
      <td align="center">
-      <img width="509" height="559" alt="6T SRAM-1" src="https://github.com/user-attachments/assets/6a0f3755-291a-4255-8066-7f9627ca8fc6" /><br/>
+      <img width="1366" height="1500" alt="6T SRAM-1 (2)" src="https://github.com/user-attachments/assets/42ded671-19c0-49a1-a33d-91562fca2b0f" /><br/>
       <small>Fig 2c. 6T-SRAM layout</small>
     </td>
   </tr>
@@ -327,11 +327,11 @@ The proposed cell consists of:
       <small>Fig 4a. Proposed 7T-SRAM schematic diagram</small>
     </td>
     <td align="center">
-          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
+          <img width="2093" height="1500" alt="7T Schematic design" src="https://github.com/user-attachments/assets/869a598a-bbaa-4a3a-b8a6-bf68f16b356d" /><br/>
       <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
     </td>
      <td align="center">
-          <img width="940" height="522" alt="image" src="https://github.com/user-attachments/assets/cbed8738-350f-466b-9753-f43b1a45d69a" /><br/>
+          <img width="1151" height="1500" alt="7T SRAM cell layout" src="https://github.com/user-attachments/assets/7646e9a4-ccd3-4989-9ea6-624dd62961e4" /><br/>
       <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
     </td>
   </tr>
@@ -400,11 +400,11 @@ where:
 <table align="center">
   <tr>
     <td align="center">
-          <img width="766" height="491" alt="image" src="https://github.com/user-attachments/assets/6462c2f7-7b47-4c4a-9401-ae2dbb275a08" /><br/>
+          <img width="1029" height="800" alt="6T-SRAM VTC curve" src="https://github.com/user-attachments/assets/c3721968-3fc7-4e52-8e0a-c206ae93c62a" /><br/>
       <small>Fig 5a. 6T-SRAM VTC curve</small>
     </td>
     <td align="center">
-          <img width="785" height="504" alt="image" src="https://github.com/user-attachments/assets/ad465116-ec1c-4b2a-a4ed-16752ef802d0" /><br/>
+          <img width="1029" height="800" alt="7T-SRAM VTC curve" src="https://github.com/user-attachments/assets/45fd2982-6429-43ee-94d8-c9512fe4c22f" /><br/>
       <small>Fig 5b. 7T-SRAM VTC curve</small>
     </td>
   </tr>
@@ -444,15 +444,16 @@ SNM is typically analyzed using the **butterfly curve method**, which is obtaine
 <table align="center">
   <tr>
     <td align="center">
-          <img width="809" height="579" alt="image" src="https://github.com/user-attachments/assets/87f13e78-9252-4fd4-a26b-0b0cb85e075e" /><br/>
+          <img width="1000" height="800" alt="6T-SRAM butterfly curve for Stability analysis" src="https://github.com/user-attachments/assets/3b3c846e-df51-4ad3-8b6c-9fdbad3408e1" /><br/>
       <small>Fig 7a. 6T-SRAM Butterfly curve</small>
     </td>
     <td align="center">
-          <img width="796" height="579" alt="image" src="https://github.com/user-attachments/assets/95f5036c-20ca-4984-be2c-84aa1d6ece86" /><br/>
+          <img width="870" height="800" alt="7T-SRAM butterfly curve for Stability analysis" src="https://github.com/user-attachments/assets/96c66e94-b090-4a3c-9baa-10658328fb0b" /><br/>
       <small>Fig 7b. 7T-SRAM Butterfly curve</small>
     </td>
   </tr>
 </table>
+
 ### SNM Equation
 
 $$
@@ -540,11 +541,11 @@ During hold mode, the cell retains its stored data without accessing the bitline
   <tr>
     <td align="center">
           <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
-      <small>Fig 8a. SRAM cell Write test circuit</small>
+      <small>Fig 8a. 7T-SRAM cell Hold test circuit</small>
     </td>
     <td align="center">
-          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
-      <small>Fig 8b. SRAM cell Write test waveform</small>
+          <img width="1807" height="700" alt="7T-SRAM Hold test waveform" src="https://github.com/user-attachments/assets/4fca37aa-43cf-4632-9448-60486f4ef906" /><br/>
+      <small>Fig 8b. 7T-SRAM cell Hold test waveform</small>
     </td>
   </tr>
 </table>
@@ -567,11 +568,11 @@ During write mode, the input data is applied to the bitlines and stored in the c
   <tr>
     <td align="center">
           <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
-      <small>Fig 8a. SRAM cell Write test circuit</small>
+      <small>Fig 8a. 7T-SRAM cell Write test circuit</small>
     </td>
     <td align="center">
-          <img width="946" height="477" alt="image" src="https://github.com/user-attachments/assets/d4e91336-47c7-4e98-acb0-7ccda304e7d0" /><br/>
-      <small>Fig 8b. SRAM cell Write test waveform</small>
+          <img width="1280" height="700" alt="7T-SRAM Write test waveform" src="https://github.com/user-attachments/assets/d74fa5f6-499a-4644-9945-a3d566e41a80" /><br/>
+      <small>Fig 8b. 7T-SRAM cell Write test waveform</small>
     </td>
   </tr>
 </table>
@@ -595,11 +596,11 @@ During read mode, the stored data is sensed from the bitlines.
   <tr>
     <td align="center">
           <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
-      <small>Fig 9a. SRAM cell Read test circuit</small>
+      <small>Fig 9a. 7T-SRAM cell Read test circuit</small>
     </td>
     <td align="center">
-          <img width="946" height="482" alt="image" src="https://github.com/user-attachments/assets/e5b24404-6a1f-4db2-a636-7b66718c806e" /><br/>
-      <small>Fig 9b. SRAM cell Read test waveform</small>
+          <img width="1280" height="700" alt="7T-SRAM Read test waveform" src="https://github.com/user-attachments/assets/0af78cb0-71fc-42fe-b1d7-c93be99107e5" /><br/>
+      <small>Fig 9b. 7T-SRAM cell Read test waveform</small>
     </td>
   </tr>
 </table>
@@ -680,7 +681,29 @@ For proper switching, the transistor sizes are chosen as:
 - **NMOS = 400 nm**
 - **PMOS = 800 nm**
 
-**Figure:** Inverter schematic and layout
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="228" height="221" alt="image" src="https://github.com/user-attachments/assets/437a132f-a122-4d02-b0f0-dd2a675cef49" /><br/>
+      <small>Fig 10a. Inverter diagram</small>
+    </td>
+    <td align="center">
+          <img width="893" height="800" alt="Inverter schematic design" src="https://github.com/user-attachments/assets/ec1b5b85-29db-49a9-87ac-678793c0f061" /><br/>
+      <small>Fig 10b. Inverter schematic design</small>
+    </td>
+     <td align="center">
+          <img width="358" height="800" alt="inverter circuit layout" src="https://github.com/user-attachments/assets/6ae8a74f-9a78-416c-86d4-3218fbb6d1ac" /><br/>
+      <small>Fig 10c. Inverter schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
+      <small>Fig 11. 4×16 Row decoder output waveform</small>
+    </td>
+</table>
 
 ---
 
@@ -699,7 +722,30 @@ The logic is implemented using:
 
 The larger inverter sizing improves the drive strength required for highly capacitive wordlines.
 
-**Figure:** 4-input AND gate schematic and layout
+<table align="center">
+  <tr>
+    <td align="center">
+          <img width="228" height="221" alt="image" src="https://github.com/user-attachments/assets/437a132f-a122-4d02-b0f0-dd2a675cef49" /><br/>
+      <small>Fig 10a. 4-input AND gate diagram</small>
+    </td>
+    <td align="center">
+          <img width="1263" height="900" alt="4-input AND gate schematic" src="https://github.com/user-attachments/assets/b5e39fc0-47dc-497a-a79a-2ff234eb69ca" /><br/>
+      <small>Fig 10b. 4-input AND gate schematic design</small>
+    </td>
+     <td align="center">
+          <img width="578" height="900" alt="4-input AND gate layout" src="https://github.com/user-attachments/assets/1e6e6bd3-2122-41e4-adac-0ad82e1e3a7f" /><br/>
+      <small>Fig 10c. 4-input AND gate schematic design</small>
+    </td>
+  </tr>
+</table>
+
+<table align="center">
+    <td align="center">
+          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
+      <small>Fig 11. 4×16 Row decoder output waveform</small>
+    </td>
+</table>
+
 
 ---
 
@@ -722,12 +768,12 @@ Proper decoder design improves access reliability and prevents row conflicts.
       <small>Fig 10a. 4×16 Row decoder diagram</small>
     </td>
     <td align="center">
-          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
+          <img width="467" height="1600" alt="4×16 Row decoder schematic (2)" src="https://github.com/user-attachments/assets/a402583f-6e09-40cb-bd4d-5b5796beaf36" /><br/>
       <small>Fig 10b. 4×16 Row decoder schematic design</small>
     </td>
      <td align="center">
-          <img width="613" height="900" alt="image" src="https://github.com/user-attachments/assets/e9d085e4-446e-40a1-bcfb-b89d2895afc0" /><br/>
-      <small>Fig 10b. 4×16 Row decoder schematic design</small>
+          <img width="559" height="1600" alt="4×16 Row decoder layout" src="https://github.com/user-attachments/assets/ff52dd08-955f-4915-90f9-8fd482b83b7f" /><br/>
+      <small>Fig 10c. 4×16 Row decoder schematic design</small>
     </td>
   </tr>
 </table>
@@ -738,6 +784,7 @@ Proper decoder design improves access reliability and prevents row conflicts.
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
+
 ---
 
 ### 4.4 Precharge Circuit
@@ -763,12 +810,12 @@ This sizing provides faster charging of the highly capacitive bitlines.
       <small>Fig 12a. Precharge cell diagram</small>
     </td>
     <td align="center">
-          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
+          <img width="1506" height="900" alt="Precharge cell schematic" src="https://github.com/user-attachments/assets/6763e8a7-ec3a-4fda-b691-117d79a0a5e7" /><br/>
       <small>Fig 12b. Precharge cell schematic design</small>
     </td>
      <td align="center">
-          <img width="825" height="496" alt="image" src="https://github.com/user-attachments/assets/e7874e80-900d-4482-b14d-7f69cd101643" /><br/>
-      <small>Fig 12b. Precharge cell schematic design</small>
+          <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
+      <small>Fig 12c. Precharge cell schematic design</small>
     </td>
   </tr>
 </table>
