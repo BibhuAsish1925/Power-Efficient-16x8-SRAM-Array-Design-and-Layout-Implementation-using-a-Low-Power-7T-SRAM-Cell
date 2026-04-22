@@ -812,10 +812,6 @@ This sizing provides faster charging of the highly capacitive bitlines.
           <img width="1506" height="900" alt="Precharge cell schematic" src="https://github.com/user-attachments/assets/6763e8a7-ec3a-4fda-b691-117d79a0a5e7" /><br/>
       <small>Fig 12b. Precharge cell schematic design</small>
     </td>
-     <td align="center">
-          <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
-      <small>Fig 12c. Precharge cell layout</small>
-    </td>
   </tr>
 </table>
 
@@ -823,6 +819,18 @@ This sizing provides faster charging of the highly capacitive bitlines.
     <td align="center">
           <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
       <small>Fig 13. Precharge cell output waveform</small>
+    </td>
+</table>
+<table>
+<td align="center">
+          <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
+      <small>Fig 12c. Precharge cell layout</small>
+    </td>
+</table>
+<table>
+    <td align="center">
+          <img width="1601" height="339" alt="1x8 pc" src="https://github.com/user-attachments/assets/fefb300d-bf68-4065-8ad3-b4e9f5139a47" /><br/>
+      <small>Fig 13. 1x8 Precharge cell setup </small>
     </td>
 </table>
 
@@ -852,10 +860,6 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
           <img width="1623" height="1200" alt="Write Driver schematic design" src="https://github.com/user-attachments/assets/9748ec46-90bc-44e5-ab87-b6148adcd6ab" /><br/>
       <small>Fig 14b. Write Driver schematic design</small>
     </td>
-     <td align="center">
-          <img width="560" height="1200" alt="Write Driver layout" src="https://github.com/user-attachments/assets/380ccff8-840f-4ee7-b3d5-ca5cbec6b85e" /><br/>
-      <small>Fig 14b. Write Driver layout</small>
-    </td>
   </tr>
 </table>
 
@@ -863,6 +867,18 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
     <td align="center">
           <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
       <small>Fig 15. Write Driver output waveform</small>
+    </td>
+</table>
+<table align="center">
+<td align="center">
+          <img width="560" height="1200" alt="Write Driver layout" src="https://github.com/user-attachments/assets/380ccff8-840f-4ee7-b3d5-ca5cbec6b85e" /><br/>
+      <small>Fig 14b. Write Driver layout</small>
+    </td>
+</table>
+<table>
+    <td align="center">
+          <img width="1601" height="559" alt="1x8 write driver" src="https://github.com/user-attachments/assets/b1decd3f-5bc2-443d-a6a4-7d2528dd7770" /><br/>
+      <small>Fig 13. 1x8 Write Driver setup </small>
     </td>
 </table>
 
@@ -890,10 +906,6 @@ Careful transistor matching is required to minimize offset errors and improve se
           <img width="2188" height="1200" alt="Sense Amplifier schematic design" src="https://github.com/user-attachments/assets/dda274c3-ccf2-4a0c-9517-210198c5bdb1" /><br/>
       <small>Fig 16. Sense Amplifier schematic design</small>
     </td>
-   <td align="center">
-          <img width="550" height="1200" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/7de153fc-6dd6-4caa-8074-d0642795a3e2" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
-    </td>
       </tr>
 </table>
 
@@ -901,6 +913,18 @@ Careful transistor matching is required to minimize offset errors and improve se
     <td align="center">
           <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
       <small>Fig 17. Sense Amplifier output waveform</small>
+    </td>
+</table>
+<table align="center">
+   <td align="center">
+          <img width="550" height="1200" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/7de153fc-6dd6-4caa-8074-d0642795a3e2" /><br/>
+      <small>Fig 16. Sense Amplifier schematic design</small>
+    </td>
+</table>
+<table>
+    <td align="center">
+          <img width="1601" height="559" alt="1x8 Sense amplifier" src="https://github.com/user-attachments/assets/af02fab6-112d-48dd-9011-57702f34670e" /><br/>
+      <small>Fig 13. 1x8 Sense Amplifier setup </small>
     </td>
 </table>
 
@@ -929,10 +953,6 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
           <img width="1090" height="700" alt="Isolation Circuit schematic" src="https://github.com/user-attachments/assets/f1058ff8-8a98-4ef0-85cd-72af32e1dc17" /><br/>
       <small>Fig 16. Isolation Circuit schematic design</small>
     </td>
-   <td align="center">
-          <img width="1390" height="700" alt="Isolation Circuit layout" src="https://github.com/user-attachments/assets/75c3e48b-2448-44f7-a50d-fa2c29dead35" /><br/>
-      <small>Fig 16. Isolation Circuit layout</small>
-    </td>
       </tr>
 </table>
 
@@ -940,6 +960,18 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
     <td align="center">
           <img width="1590" height="631" alt="Isolation" src="https://github.com/user-attachments/assets/620e0228-c96a-4b16-b136-43a58d5ef2ea" /><br/>
       <small>Fig 17. Isolation Circuit output waveform</small>
+    </td>
+</table>
+<table>
+   <td align="center">
+          <img width="1390" height="700" alt="Isolation Circuit layout" src="https://github.com/user-attachments/assets/75c3e48b-2448-44f7-a50d-fa2c29dead35" /><br/>
+      <small>Fig 16. Isolation Circuit layout</small>
+    </td>
+</table>
+<table>
+    <td align="center">
+          <img width="1601" height="237" alt="1x8 Isolation" src="https://github.com/user-attachments/assets/baf13008-6b68-414d-bc86-331655d3b4d3" /><br/>
+      <small>Fig 13. 1x8 Isolation Circuit setup </small>
     </td>
 </table>
 
