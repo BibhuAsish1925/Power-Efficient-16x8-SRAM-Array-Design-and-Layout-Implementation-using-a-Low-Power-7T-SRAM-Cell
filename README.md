@@ -240,8 +240,6 @@ $$
 \beta = \mu C_{ox}\left(\frac{W}{L}\right)
 $$
 
----
-
 ### Read Stability Condition
 
 For stable read operation, the pull-down transistor must be stronger than the access transistor:
@@ -264,8 +262,6 @@ $$
 
 This prevents the stored logic ‘0’ from being disturbed during read.
 
----
-
 ### Write Ability Condition
 
 For successful writing, the access transistor must be stronger than the pull-up transistor:
@@ -287,8 +283,6 @@ PR \geq 1
 $$
 
 This ensures that new data can overwrite the previous state.
-
----
 
 ### Transistor Width Configuration
 
@@ -339,8 +333,6 @@ The proposed cell consists of:
 
 The transistor sizing of the original 6T cell is retained, while the added bottom transistor improves stability by controlling the discharge path.
 
----
-
 ### Function of Additional Transistor
 
 The extra transistor acts as a **current control device** and helps in:
@@ -349,8 +341,6 @@ The extra transistor acts as a **current control device** and helps in:
 - Improving read stability  
 - Limiting unwanted discharge  
 - Enhancing low-power performance  
-
----
 
 ### Basic Operation
 
@@ -363,16 +353,12 @@ When **WL = 1**, the bitline data overwrites the stored node while the additiona
 **Read Operation**  
 After precharge, one bitline discharges slightly depending on the stored data, and the sense amplifier detects the differential voltage.
 
----
-
 ### Advantages of 7T SRAM
 
 - Improved **SNM**
 - Lower **leakage power**
 - Better **read stability**
 - Reduced **power consumption**
-
----
 
 ### Design Trade-off
 
@@ -525,8 +511,6 @@ Overall, the proposed **7T SRAM cell** provides a better balance of **power, sta
 
 Transient simulations were performed to verify the **hold, write, and read operations** of the proposed **7T SRAM cell**.
 
----
-
 ### Hold Operation
 
 During hold mode, the cell retains its stored data without accessing the bitlines.
@@ -549,8 +533,6 @@ During hold mode, the cell retains its stored data without accessing the bitline
     </td>
   </tr>
 </table>
-
----
 
 ### Write Operation
 
@@ -579,8 +561,6 @@ During write mode, the input data is applied to the bitlines and stored in the c
 
 **Result:** The SRAM cell correctly stores the applied input data.
 
----
-
 ### Read Operation
 
 During read mode, the stored data is sensed from the bitlines.
@@ -607,8 +587,6 @@ During read mode, the stored data is sensed from the bitlines.
 
 **Result:** The stored data is read correctly without disturbing the cell.
 
----
-
 ### Subthreshold Leakage Effect
 
 A small leakage current flows through MOS transistors even below threshold voltage:
@@ -623,8 +601,6 @@ The additional transistor in the 7T cell helps:
 - Improve read stability  
 - Minimize read disturb  
 
----
-
 ### Verification Summary
 
 The simulation confirms:
@@ -634,8 +610,6 @@ The simulation confirms:
 - Reliable read operation  
 - Improved leakage control  
 - Better overall stability  
-
----
 
 ## Conclusion
 
@@ -651,7 +625,7 @@ Overall, the proposed design offers a better balance of **power, stability, and 
 
 ---
 
-## Peripheral Circuits of the SRAM Array
+## Peripheral Circuits of the SRAM Array and Integration
 
 The proposed **16×8 SRAM array** uses several peripheral circuits to ensure reliable addressing, writing, and sensing operations. Each circuit is implemented at both the **schematic and layout level** to verify complete physical realization of the memory system.
 
@@ -663,9 +637,9 @@ The main peripheral blocks are:
 - Precharge Circuit  
 - Write Driver  
 - Sense Amplifier  
-- Isolation Circuit  
-
----
+- Isolation Circuit
+- 16x8 7T-SRAM array
+- 16x8 7T-SRAM array with all Peripheral circuits integarted  
 
 ### 1. Inverter Circuit
 
@@ -704,8 +678,6 @@ For proper switching, the transistor sizes are chosen as:
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
-
----
 
 ### 2. 4-Input AND Gate
 
@@ -746,8 +718,6 @@ The larger inverter sizing improves the drive strength required for highly capac
     </td>
 </table>
 
----
-
 ### 3. 4×16 Row Decoder
 
 The row decoder converts a **4-bit address input** into **16 wordlines**, ensuring only one row is selected at a time.
@@ -783,8 +753,6 @@ Proper decoder design improves access reliability and prevents row conflicts.
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
-
----
 
 ### 4. Precharge Circuit
 
@@ -834,8 +802,6 @@ This sizing provides faster charging of the highly capacitive bitlines.
     </td>
 </table>
 
----
-
 ### 5. Write Driver
 
 The write driver forces input data onto the bitlines during the write cycle.
@@ -882,8 +848,6 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
     </td>
 </table>
 
----
-
 ### 6. Sense Amplifier
 
 The sense amplifier detects the small voltage difference between BL and BLB during read operation and converts it into a full digital output.
@@ -927,8 +891,6 @@ Careful transistor matching is required to minimize offset errors and improve se
       <small>Fig 13. 1x8 Sense Amplifier setup </small>
     </td>
 </table>
-
----
 
 ### 7. Isolation Circuit
 
@@ -975,8 +937,6 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
     </td>
 </table>
 
----
-
 ### 8. SRAM Array
 
 The individual 7T SRAM cells are arranged into a **16×8 memory array**.
@@ -1002,8 +962,6 @@ This arrangement allows structured data storage and retrieval while maintaining 
     </td>
       </tr>
 </table>
-
----
 
 ### 9. System Integration
 
