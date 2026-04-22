@@ -871,7 +871,7 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
 </table>
 <table align="center">
 <td align="center">
-          <img width="373" height="800" alt="Write Driver layout" src="https://github.com/user-attachments/assets/3a20c512-fc4d-47ec-92a9-784d95e6160c" /><br/>
+          <img width="568" height="1217" alt="Write Driver" src="https://github.com/user-attachments/assets/df176d4a-4bcd-4552-bd8c-0f84dbeb7e18" /><br/>
       <small>Fig 14b. Write Driver layout</small>
     </td>
 </table>
@@ -917,7 +917,7 @@ Careful transistor matching is required to minimize offset errors and improve se
 </table>
 <table align="center">
    <td align="center">
-          <img width="367" height="800" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/25c801d0-06f7-4e0b-aa05-418284366335" /><br/>
+          <img width="569" height="1241" alt="Sense Amplifier" src="https://github.com/user-attachments/assets/572efdd4-b815-45f1-82d8-edece9d9c2f2" /><br/>
       <small>Fig 16. Sense Amplifier layout</small>
     </td>
 </table>
