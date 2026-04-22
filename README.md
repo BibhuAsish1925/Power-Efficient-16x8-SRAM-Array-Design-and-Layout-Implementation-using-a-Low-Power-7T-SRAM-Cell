@@ -802,7 +802,7 @@ Transistor sizing:
 
 This sizing provides faster charging of the highly capacitive bitlines.
 
-<table>
+<table align="center">
   <tr>
     <td align="center">
           <img width="349" height="287" alt="image" src="https://github.com/user-attachments/assets/bd585699-d465-4ddf-9acc-7d1f204d292a" /><br/>
@@ -815,19 +815,19 @@ This sizing provides faster charging of the highly capacitive bitlines.
   </tr>
 </table>
 
-<table>
+<table align="center">
     <td align="center">
           <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
       <small>Fig 13. Precharge cell output waveform</small>
     </td>
 </table>
-<table>
+<table align="center">
 <td align="center">
           <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
       <small>Fig 12c. Precharge cell layout</small>
     </td>
 </table>
-<table>
+<table align="center">
     <td align="center">
           <img width="1601" height="339" alt="1x8 pc" src="https://github.com/user-attachments/assets/fefb300d-bf68-4065-8ad3-b4e9f5139a47" /><br/>
       <small>Fig 13. 1x8 Precharge cell setup </small>
@@ -871,11 +871,11 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
 </table>
 <table align="center">
 <td align="center">
-          <img width="560" height="1200" alt="Write Driver layout" src="https://github.com/user-attachments/assets/380ccff8-840f-4ee7-b3d5-ca5cbec6b85e" /><br/>
+          <img width="373" height="800" alt="Write Driver layout" src="https://github.com/user-attachments/assets/3a20c512-fc4d-47ec-92a9-784d95e6160c" /><br/>
       <small>Fig 14b. Write Driver layout</small>
     </td>
 </table>
-<table>
+<table align="center">
     <td align="center">
           <img width="1601" height="559" alt="1x8 write driver" src="https://github.com/user-attachments/assets/b1decd3f-5bc2-443d-a6a4-7d2528dd7770" /><br/>
       <small>Fig 13. 1x8 Write Driver setup </small>
@@ -900,7 +900,7 @@ Careful transistor matching is required to minimize offset errors and improve se
    <tr>
     <td align="center">
           <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+      <small>Fig 16. Sense Amplifier diagram</small>
     </td>
    <td align="center">
           <img width="2188" height="1200" alt="Sense Amplifier schematic design" src="https://github.com/user-attachments/assets/dda274c3-ccf2-4a0c-9517-210198c5bdb1" /><br/>
@@ -917,11 +917,11 @@ Careful transistor matching is required to minimize offset errors and improve se
 </table>
 <table align="center">
    <td align="center">
-          <img width="550" height="1200" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/7de153fc-6dd6-4caa-8074-d0642795a3e2" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+          <img width="367" height="800" alt="Sense Amplifier layout" src="https://github.com/user-attachments/assets/25c801d0-06f7-4e0b-aa05-418284366335" /><br/>
+      <small>Fig 16. Sense Amplifier layout</small>
     </td>
 </table>
-<table>
+<table align="center">
     <td align="center">
           <img width="1601" height="559" alt="1x8 Sense amplifier" src="https://github.com/user-attachments/assets/af02fab6-112d-48dd-9011-57702f34670e" /><br/>
       <small>Fig 13. 1x8 Sense Amplifier setup </small>
@@ -962,13 +962,13 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
       <small>Fig 17. Isolation Circuit output waveform</small>
     </td>
 </table>
-<table>
+<table align="center">
    <td align="center">
           <img width="1390" height="700" alt="Isolation Circuit layout" src="https://github.com/user-attachments/assets/75c3e48b-2448-44f7-a50d-fa2c29dead35" /><br/>
       <small>Fig 16. Isolation Circuit layout</small>
     </td>
 </table>
-<table>
+<table align="center">
     <td align="center">
           <img width="1601" height="237" alt="1x8 Isolation" src="https://github.com/user-attachments/assets/baf13008-6b68-414d-bc86-331655d3b4d3" /><br/>
       <small>Fig 13. 1x8 Isolation Circuit setup </small>
