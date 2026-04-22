@@ -151,6 +151,7 @@ The complete SRAM system consists of the following blocks:
 </table>
          
 ---
+---
 
 ## Conventional 6T SRAM Cell
 
@@ -213,6 +214,7 @@ The conventional 6T SRAM suffers from:
 
 These limitations motivate the use of an improved **7T SRAM architecture** for better stability and lower power.
 
+---
 ---
 
 ## Transistor Sizing Analysis
@@ -300,6 +302,7 @@ This ensures that new data can overwrite the previous state.
 | Pull-Down NMOS (N1, N2) | Strong discharge during read | 1.2um (Wpd = 2 x Wa)|
 
 ---
+---
 
 ## Proposed 7T SRAM Cell Architecture
 
@@ -364,6 +367,7 @@ After precharge, one bitline discharges slightly depending on the stored data, a
 
 The additional transistor slightly increases the cell area, but the improvement in **stability and power efficiency** makes the 7T cell more suitable for low-power SRAM applications.
 
+---
 ---
 
 ## Power Analysis
@@ -506,6 +510,7 @@ The small read delay increase is acceptable considering the improvement in stabi
 Overall, the proposed **7T SRAM cell** provides a better balance of **power, stability, and performance** for low-power memory applications.
 
 ---
+---
 
 ## Functional Verification of 7T SRAM Cell
 
@@ -534,6 +539,8 @@ During hold mode, the cell retains its stored data without accessing the bitline
   </tr>
 </table>
 
+---
+
 ### Write Operation
 
 During write mode, the input data is applied to the bitlines and stored in the cell.
@@ -561,6 +568,8 @@ During write mode, the input data is applied to the bitlines and stored in the c
 
 **Result:** The SRAM cell correctly stores the applied input data.
 
+---
+
 ### Read Operation
 
 During read mode, the stored data is sensed from the bitlines.
@@ -587,6 +596,8 @@ During read mode, the stored data is sensed from the bitlines.
 
 **Result:** The stored data is read correctly without disturbing the cell.
 
+---
+
 ### Subthreshold Leakage Effect
 
 A small leakage current flows through MOS transistors even below threshold voltage:
@@ -600,6 +611,8 @@ The additional transistor in the 7T cell helps:
 - Reduce leakage current  
 - Improve read stability  
 - Minimize read disturb  
+
+---
 
 ### Verification Summary
 
@@ -624,6 +637,7 @@ The proposed **7T SRAM cell** provides improved performance over the conventiona
 Overall, the proposed design offers a better balance of **power, stability, and performance** for low-power SRAM applications.
 
 ---
+---
 
 ## Peripheral Circuits of the SRAM Array and Integration
 
@@ -639,7 +653,9 @@ The main peripheral blocks are:
 - Sense Amplifier  
 - Isolation Circuit
 - 16x8 7T-SRAM array
-- 16x8 7T-SRAM array with all Peripheral circuits integarted  
+- 16x8 7T-SRAM array with all Peripheral circuits integarted
+
+---
 
 ### 1. Inverter Circuit
 
@@ -678,6 +694,8 @@ For proper switching, the transistor sizes are chosen as:
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
+
+---
 
 ### 2. 4-Input AND Gate
 
@@ -718,6 +736,8 @@ The larger inverter sizing improves the drive strength required for highly capac
     </td>
 </table>
 
+---
+
 ### 3. 4×16 Row Decoder
 
 The row decoder converts a **4-bit address input** into **16 wordlines**, ensuring only one row is selected at a time.
@@ -753,6 +773,8 @@ Proper decoder design improves access reliability and prevents row conflicts.
       <small>Fig 11. 4×16 Row decoder output waveform</small>
     </td>
 </table>
+
+---
 
 ### 4. Precharge Circuit
 
@@ -802,6 +824,8 @@ This sizing provides faster charging of the highly capacitive bitlines.
     </td>
 </table>
 
+---
+
 ### 5. Write Driver
 
 The write driver forces input data onto the bitlines during the write cycle.
@@ -848,6 +872,8 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
     </td>
 </table>
 
+---
+
 ### 6. Sense Amplifier
 
 The sense amplifier detects the small voltage difference between BL and BLB during read operation and converts it into a full digital output.
@@ -891,6 +917,8 @@ Careful transistor matching is required to minimize offset errors and improve se
       <small>Fig 13. 1x8 Sense Amplifier setup </small>
     </td>
 </table>
+
+---
 
 ### 7. Isolation Circuit
 
@@ -937,6 +965,8 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
     </td>
 </table>
 
+---
+
 ### 8. SRAM Array
 
 The individual 7T SRAM cells are arranged into a **16×8 memory array**.
@@ -962,6 +992,8 @@ This arrangement allows structured data storage and retrieval while maintaining 
     </td>
       </tr>
 </table>
+
+---
 
 ### 9. System Integration
 
