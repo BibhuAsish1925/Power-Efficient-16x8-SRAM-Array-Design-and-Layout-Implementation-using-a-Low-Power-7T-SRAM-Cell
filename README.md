@@ -1171,15 +1171,6 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
 - All blocks share a common **VDD and GND supply**.
 - Optimized design ensures **reduced power consumption and improved stability** compared to conventional 6T SRAM.
 
-### Figure
-
-<table align="center">
-    <td align="center">
-          <img width="876" height="1113" alt="image" src="https://github.com/user-attachments/assets/64d74b11-ec3c-48d4-8d0d-4d30052ba19c" /><br/>
-      <small>Fig 24. 16×8 7T SRAM Array schematic with Peripheral Circuits</small>
-    </td>
-</table>
-
 ---
 
 ## 16×8 7T SRAM Array Testing with Peripheral Circuits
@@ -1200,8 +1191,8 @@ The integrated SRAM system consists of:
 
 <table align="center">
     <td align="center">
-          <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
-      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
+          <img width="2315" height="1000" alt="image" src="https://github.com/user-attachments/assets/137f84b0-28bb-4a3c-8284-26b0ce754d65" /><br/>
+      <small>Fig 25. Complete SRAM array testing setup </small>
     </td>
 </table>
 
