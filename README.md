@@ -442,11 +442,11 @@ SNM is typically analyzed using the **butterfly curve method**, which is obtaine
 <table align="center">
   <tr>
     <td align="center">
-          <img width="1000" height="800" alt="6T-SRAM butterfly curve for Stability analysis" src="https://github.com/user-attachments/assets/3b3c846e-df51-4ad3-8b6c-9fdbad3408e1" /><br/>
+          <img width="668" height="645" alt="image" src="https://github.com/user-attachments/assets/756c6e8a-97e5-4fb2-9466-85f82b8ca65f" /><br/>
       <small>Fig 7a. 6T-SRAM Butterfly curve</small>
     </td>
     <td align="center">
-          <img width="870" height="800" alt="7T-SRAM butterfly curve for Stability analysis" src="https://github.com/user-attachments/assets/96c66e94-b090-4a3c-9baa-10658328fb0b" /><br/>
+          <img width="657" height="645" alt="image" src="https://github.com/user-attachments/assets/572741f3-3639-4bda-9898-aebe3e0e46b8" /><br/>
       <small>Fig 7b. 7T-SRAM Butterfly curve</small>
     </td>
   </tr>
