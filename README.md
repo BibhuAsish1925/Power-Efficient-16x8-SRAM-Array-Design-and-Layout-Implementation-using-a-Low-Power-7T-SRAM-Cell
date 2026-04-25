@@ -1060,7 +1060,7 @@ All circuits are connected to a common **VDD supply and Ground reference**.
 
 <table align="center">
     <td align="center">
-          <img width="1586" height="733" alt="image" src="https://github.com/user-attachments/assets/96c86f9b-8f8d-42c2-99e0-cc160cab3077" /><br/>
+          <img width="1910" height="811" alt="Memory" src="https://github.com/user-attachments/assets/a7ca0667-651c-4f69-959d-99681bc8c669" /><br/>
       <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
     </td>
 </table>
@@ -1073,14 +1073,14 @@ The peripheral circuits interact with the SRAM cell as follows:
 
 1. **Precharge Circuit** - Before every read operation, the precharge circuit charges both bitlines to logic HIGH.
 
-Condition: `PC = 0 → BL = 1 and BLB = 1`
+Condition: `PC = 0 → BL = 1 and BLB = 1, WE = 0, SAE = 1, ISO = 0`
 
 This ensures both bitlines start from the same voltage level.
 
 <table align="center">
     <td align="center">
-          <img width="1565" height="488" alt="image" src="https://github.com/user-attachments/assets/32d7310c-44a2-4d2e-83d0-7043b7eb2b3e" /><br/>
-      <small>Fig 20. Precharge conditions</small>
+          <img width="1910" height="811" alt="Memory_pc" src="https://github.com/user-attachments/assets/06273a96-3e02-4d59-96c0-ab9d9bb850f6" /><br/>
+      <small>Fig 20. Single-Bit 7T-SRAM Cell Precharge conditions</small>
     </td>
 </table>
 
@@ -1094,21 +1094,21 @@ This prepares the bitlines with the input data value.
 
 <table align="center">
     <td align="center">
-          <img width="1565" height="433" alt="image" src="https://github.com/user-attachments/assets/d21a93b5-390c-49a2-b9a8-cbc75f29c8e5" /><br/>
-      <small>Fig 21. write enable condition</small>
+          <img width="1910" height="811" alt="Memory_we" src="https://github.com/user-attachments/assets/84947627-550b-4877-b07b-2813d0140802" /><br/>
+      <small>Fig 21. Single-Bit 7T-SRAM Cell Write Enable condition</small>
     </td>
 </table>
 
 3. **Write Operation**
 
-When both write enable and wordline signals are active: `WE = 1, WL = 1 `
+When both write enable and wordline signals are active: `WE = 1, WL = 1, PC = 1, SAE = 0, ISO = 1`
 
 The SRAM cell captures the input data from the bitlines and stores it in the internal latch.
 
 <table align="center">
     <td align="center">
-          <img width="1565" height="389" alt="image" src="https://github.com/user-attachments/assets/897f3477-cde5-4652-b60e-c518f8f78040" /><br/>
-      <small>Fig 22. Write conditions</small>
+          <img width="1910" height="811" alt="Memory_we_wl" src="https://github.com/user-attachments/assets/0c28dad2-0753-4f7c-ab38-75f39d4aebcd" /><br/>
+      <small>Fig 22. Single-Bit 7T-SRAM Cell Write conditions</small>
     </td>
 </table> 
 
@@ -1116,14 +1116,14 @@ Result: `Q = DATA_IN`
 
 4. **Read Operation**
 
-For read operation: `WE = 0, WL = 1`
+For read operation: `WE = 0, WL = 1, PC = 1, SAE = 1, ISO = 0`
 
 The SRAM cell connects to the bitlines and transfers the stored data. BL reflects the stored value of node Q.
 
 <table align="center">
     <td align="center">
-          <img width="1565" height="573" alt="image" src="https://github.com/user-attachments/assets/d2a29a8c-d068-4dc8-8b77-a46c6fc5bf60" /><br/>
-      <small>Fig 23. Read condition</small>
+          <img width="1910" height="811" alt="Memory_web_wl" src="https://github.com/user-attachments/assets/e78add3e-1141-40f5-83d9-d8eba7130740" /><br/>
+      <small>Fig 23. Single-Bit 7T-SRAM Cell Read condition </small>
     </td>
 </table> 
 
@@ -1136,6 +1136,7 @@ The transient waveform confirms that:
 • The precharge circuit correctly charges the bitlines.  
 • The write driver successfully writes input data into the SRAM cell.  
 • The stored data remains stable inside the latch.  
+• The isolation circuit successfully isolates write and read phase.  
 • The read operation retrieves the stored value correctly.  
 • The sense amplifier produces a clean digital output signal.
 
@@ -1149,6 +1150,7 @@ The successful integration of the **7T SRAM cell with peripheral circuits** veri
 
 This validates the feasibility of implementing the **complete SRAM array using the proposed 7T SRAM cell design**.
 
+---
 ---
 
 ## 16×8 7T SRAM Array with Peripheral Circuits
@@ -1208,7 +1210,7 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
     </td>
 </table>
 
----.
+---
 
 ## 16×8 7T SRAM Array Testing with Peripheral Circuits
 
@@ -1257,6 +1259,8 @@ The array operation is controlled using:
 
 ### Precharge Phase
 
+**Condition:** `WE = 0, PC = 0, WL = not required, SAE = 0, ISO = 1`
+
 Before every read cycle:
 
 - **PC = 0** turns ON the precharge transistors  
@@ -1269,7 +1273,7 @@ This prepares the bitlines for accurate sensing.
 
 ### Write Operation
 
-**Condition:** `WE = 1, SAE = 0, ISO = 1`
+**Condition:** `WE = 1, PC = 1, WL = enable, SAE = 0, ISO = 1`
 
 - The decoder activates the selected row  
 - The write driver applies complementary data on **BL** and **BLB**
@@ -1282,7 +1286,7 @@ The waveform confirms that the selected row stores the applied data while the ou
 
 ### Read Operation
 
-**Condition:** `WE = 0, SAE = 1, ISO = 0`
+**Condition:** `WE = 0, PC = 1, WL = enable, SAE = 1, ISO = 0`
 
 - The selected wordline is enabled
 - One bitline discharges slightly based on stored data
