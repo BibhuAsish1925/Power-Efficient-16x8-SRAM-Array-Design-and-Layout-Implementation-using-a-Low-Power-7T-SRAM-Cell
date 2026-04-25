@@ -1208,100 +1208,7 @@ A **16×8 SRAM array** is designed using the proposed **low-power 7T SRAM cell a
     </td>
 </table>
 
----
-
-## 16×8 7T SRAM Array Testing with Peripheral Circuits
-
-To validate the complete SRAM architecture, the **16×8 7T SRAM array integrated with all peripheral circuits** is tested under different operating conditions.
-
-### Test Setup
-
-The complete system includes:
-• 4×16 Row Decoder (address selection)  
-• Write Drivers (data input control)  
-• Precharge Circuit (bitline initialization)  
-• 16×8 7T SRAM Cell Array  
-• Sense Amplifier (read operation)  
-
-<table align="center">
-    <td align="center">
-          <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
-      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
-    </td>
-</table>
-
-Control signals used:
-• Address Inputs: A[3:0]  
-• Data Inputs: A[7:0] 
-• Wordline (WL)  
-• Write Enable (WE), Write Enable Bar (WEB)  
-• Precharge Signal (PC)  
-• Sense Amplifier Enable (SAE)  
-
-### Input Conditions
-| Signal | Description | Value |
-|-------|------------|------|
-| VDD   | Supply Voltage | ___ |
-| Address | Row Selection | ___ |
-| DATA_IN | Input Data | ___ |
-| WE / WEB | Write Control | ___ |
-| PC | Precharge Control | ___ |
-| SAE | Sense Amplifier Enable | ___ |
-
-### Write Operation (Array Level)
-
-Condition: `WE = 1, WL = 1`  
-
-Working:
-• Selected row is activated by the decoder  
-• Write driver forces data onto BL and BLB  
-• Entire selected word (8 bits) is written simultaneously  
-
-📌 **Observation:**  
-(To be filled after simulation)
-
----
-
-### Read Operation (Array Level)
-
-Condition: `WE = 0, WL = 1`  
-
-Working:
-• Bitlines are precharged to VDD  
-• Selected row discharges BL/BLB based on stored data  
-• Sense amplifier detects and amplifies the output  
-
-📌 **Observation:**  
-(To be filled after simulation)
-
-### Waveform Results
-
-> Add simulation waveforms here:
-- Bitline (BL, BLB)
-- Wordline (WL)
-- DATA_IN
-- DATA_OUT
-- Control Signals (WE, PC, SAE)
-
-### Performance Metrics
-| Parameter | Value |
-|----------|------|
-| Read Delay | ___ |
-| Write Delay | ___ |
-| Power Consumption | ___ |
-| SNM (if measured) | ___ |
-
-### Observations
-• (To be filled after testing)  
-• (Example: Correct row selection verified)  
-• (Example: Data integrity maintained during read/write)  
-
-### Conclusion
-The 16×8 SRAM array with peripheral circuits demonstrates correct functionality in terms of **row selection, read/write operations, and signal amplification**. Detailed performance metrics and waveform validation will further confirm system reliability.
-
----
----
----
+---.
 
 ## 16×8 7T SRAM Array Testing with Peripheral Circuits
 
@@ -1311,6 +1218,7 @@ The complete **16×8 7T SRAM array** was tested after integrating the row decode
 
 The integrated SRAM system consists of:
 
+- Inverter
 - 4×16 Row Decoder  
 - Write Driver  
 - Precharge Circuit  
@@ -1318,7 +1226,12 @@ The integrated SRAM system consists of:
 - Sense Amplifier  
 - 16×8 7T SRAM Cell Array  
 
-**Figure:** 16×8 SRAM array schematic with peripheral circuits
+<table align="center">
+    <td align="center">
+          <img width="627" height="1186" alt="image" src="https://github.com/user-attachments/assets/739270ee-b8df-4e70-966c-8a34c8b9d480" /><br/>
+      <small>Fig 25. 16×8 7T SRAM Array schematic with Peripheral Circuits Symbolically</small>
+    </td>
+</table>
 
 ### Control Signals
 
@@ -1326,10 +1239,19 @@ The array operation is controlled using:
 
 - **A[3:0]** – row address  
 - **DATA_IN[7:0]** – input data  
-- **WE / WEB** – write control  
+- **WE / WEB** – write control (gives out **BL / BLB**)
 - **PC** – precharge control  
 - **ISO** – isolation control  
 - **SAE** – sense amplifier enable  
+
+---
+
+<table align="center">
+    <td align="center">
+          <img width="1500" height="1026" alt="Complete SRAM array transient waveform" src="https://github.com/user-attachments/assets/4da7e501-93da-4fc5-9260-aadf60027a6f" /><br/>
+      <small>Fig 25. Complete SRAM array transient waveformy</small>
+    </td>
+</table>
 
 ---
 
@@ -1384,13 +1306,10 @@ From the transient simulation waveforms, the following behavior is verified:
 
 **Figure:** Complete SRAM array transient waveform
 
----
-
 ### Conclusion
 
 The waveform analysis confirms that the proposed **16×8 7T SRAM array** operates correctly with coordinated peripheral circuit action and reliable memory performance.
 
----
 ---
 ---
 
