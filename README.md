@@ -1036,7 +1036,6 @@ This integration ensures proper operation of the complete SRAM memory.
 
 ---
 ---
----
 
 ## Single-Bit 7T-SRAM Cell Test with Peripheral Circuits
 
@@ -1053,7 +1052,7 @@ All circuits are connected to a common **VDD supply and Ground reference**.
 
 <table align="center">
     <td align="center">
-          <img width="773" height="680" alt="image" src="https://github.com/user-attachments/assets/175f3c64-419b-4c33-844b-559d7ac0ae29" /><br/>
+          <img width="832" height="1025" alt="Single-Bit 7T-SRAM Cell with Peripheral Circuits" src="https://github.com/user-attachments/assets/937fb704-54ff-4009-a999-21d7c1414ce4" /><br/>
       <small>Fig 18. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
     </td>
 </table>
