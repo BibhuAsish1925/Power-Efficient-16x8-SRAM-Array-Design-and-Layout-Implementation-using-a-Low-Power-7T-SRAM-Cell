@@ -59,42 +59,6 @@ This project presents the design and analysis of a **power-efficient 16×8 SRAM 
 
 ---
 ---
----
-
-## Contents
-
-1. [Problem Statement](#problem-statement)  
-2. [Key Features](#key-features)  
-3. [SRAM Architecture](#sram-architecture)  
-4. [Conventional 6T SRAM Cell Architecture](#conventional-6t-sram-cell-architecture)  
-   - [6T SRAM Structure](#6t-sram-structure)  
-   - [Main Nodes](#main-nodes)  
-   - [SRAM Operations](#sram-operations)  
-   - [Limitations of 6T SRAM](#limitations-of-6t-sram)  
-5. [Transistor Sizing Analysis](#transistor-sizing-analysis)  
-   - [Read Stability Condition](#read-stability-condition)  
-   - [Write Ability Condition](#write-ability-condition)  
-   - [Transistor Width Configuration](#transistor-width-configuration)  
-6. [Proposed 7T SRAM Cell Architecture](#proposed-7t-sram-cell-architecture)  
-   - [Structure of 7T SRAM Cell](#structure-of-7t-sram-cell)  
-   - [Operation of 7T SRAM Cell](#operation-of-7t-sram-cell)  
-   - [Advantages of the 7T SRAM Cell](#advantages-of-the-7t-sram-cell)  
-7. [Power Analysis](#power-analysis)  
-8. [Static Noise Margin (SNM) Analysis](#static-noise-margin-snm-analysis)  
-9. [Delay Analysis](#delay-analysis)  
-10. [Comparison Between 6T and 7T SRAM](#comparison-between-6t-and-7t-sram)  
-11. [Read and Write Verification of 7T SRAM Cell](#read-and-write-verification-of-7t-sram-cell)  
-12. [Peripheral Circuits of the SRAM Array](#peripheral-circuits-of-the-sram-array)  
-   - [Row Decoder](#row-decoder)  
-   - [Precharge Circuit](#precharge-circuit)  
-   - [Write Driver](#write-driver)  
-   - [Isolation Circuit](#isolation-circuit)  
-   - [Sense Amplifier](#sense-amplifier)  
-13. [16×8 7T SRAM Array Testing](#16x8-7t-sram-array-testing)  
-14. [Layout Design and Physical Verification](#layout-design-and-physical-verification)  
-15. [Conclusion](#conclusion)  
-
----
 
 ## Problem Statement
 
