@@ -537,7 +537,7 @@ During hold mode, the cell retains its stored data without accessing the bitline
 <table align="center">
   <tr>
     <td align="center">
-          <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
+          <img width="1393" height="609" alt="hold test setup (wl=0)" src="https://github.com/user-attachments/assets/65f9b2de-6392-4c87-bb03-13b24d612a3c" /><br/>
       <small>Fig 8a. 7T-SRAM cell Hold test circuit</small>
     </td>
     <td align="center">
