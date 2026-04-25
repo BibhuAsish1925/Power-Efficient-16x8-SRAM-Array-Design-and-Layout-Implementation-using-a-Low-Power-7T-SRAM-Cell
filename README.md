@@ -248,7 +248,11 @@ $$
 
 ### Read Stability Condition
 
-For stable read operation, the pull-down transistor must be stronger than the access transistor:
+During read operation:
+1. Bitlines are precharged to VDD
+2. Wordline becomes WL = 1
+
+If stored value is Q = 0, QB = 1. Then BL tries to pull node Q upward through the access transistor. And this can accidentally flip the stored value. To prevent this `Pull−down strength > Access strength`
 
 $$
 \beta_{PD} > \beta_{AX}
@@ -272,7 +276,10 @@ This prevents the stored logic ‘0’ from being disturbed during read.
 
 ### Write Ability Condition
 
-For successful writing, the access transistor must be stronger than the pull-up transistor:
+During write operation, we must force the cell to flip.
+
+Example: Old data = 1 --> New data = 0
+The bitline must override the pull-up PMOS. Thus `Access strength > Pull−up strength`
 
 $$
 \beta_{AX} > \beta_{PU}
