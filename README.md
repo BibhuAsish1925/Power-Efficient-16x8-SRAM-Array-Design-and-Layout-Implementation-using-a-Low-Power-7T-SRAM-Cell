@@ -270,7 +270,7 @@ This ensures that new data can overwrite the previous state.
 <table align="center">
     <td align="center">
           <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5de5035b-d497-4670-bde7-b527375591dc" /><br/>
-      <small>Fig 3b. 6T-SRAM schematic design (same as 2b)</small>
+      <small>Fig 4. 6T-SRAM schematic design (same as 2b)</small>
     </td>
 </table>
 
@@ -300,15 +300,15 @@ The proposed cell consists of:
   <tr>
     <td align="center">
           <img width="941" height="521" alt="image" src="https://github.com/user-attachments/assets/5e3f31bb-4502-4a97-a01a-9976061786c7" /><br/>
-      <small>Fig 4a. Proposed 7T-SRAM schematic diagram</small>
+      <small>Fig 5a. Proposed 7T-SRAM schematic diagram</small>
     </td>
     <td align="center">
           <img width="2093" height="1500" alt="7T Schematic design" src="https://github.com/user-attachments/assets/869a598a-bbaa-4a3a-b8a6-bf68f16b356d" /><br/>
-      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
+      <small>Fig 5b. Proposed 7T-SRAM schematic design</small>
     </td>
      <td align="center">
           <img width="1151" height="1500" alt="7T SRAM cell layout" src="https://github.com/user-attachments/assets/7646e9a4-ccd3-4989-9ea6-624dd62961e4" /><br/>
-      <small>Fig 4b. Proposed 7T-SRAM schematic design</small>
+      <small>Fig 5b. Proposed 7T-SRAM schematic design</small>
     </td>
   </tr>
 </table>
@@ -370,11 +370,11 @@ where:
   <tr>
     <td align="center">
           <img width="1029" height="800" alt="6T-SRAM VTC curve" src="https://github.com/user-attachments/assets/c3721968-3fc7-4e52-8e0a-c206ae93c62a" /><br/>
-      <small>Fig 5a. 6T-SRAM VTC curve</small>
+      <small>Fig 6a. 6T-SRAM VTC curve</small>
     </td>
     <td align="center">
           <img width="1006" height="800" alt="7T-SRAM VTC curve (2)" src="https://github.com/user-attachments/assets/e914d85d-c8d4-44e4-8451-588d62d2290b" /><br/>
-      <small>Fig 5b. 7T-SRAM VTC curve</small>
+      <small>Fig 6b. 7T-SRAM VTC curve</small>
     </td>
   </tr>
 </table>
@@ -404,7 +404,7 @@ Static Noise Margin (SNM) indicates the ability of the SRAM cell to retain data 
 <table align="center">
     <td align="center">
           <img width="503" height="432" alt="image" src="https://github.com/user-attachments/assets/1a94eb25-2291-447c-8f1f-d7217f17423f" /><br/>
-      <small>Fig 6. SRAM butterfly curve</small>
+      <small>Fig 7. SRAM butterfly curve</small>
     </td>
 </table>
 
@@ -536,11 +536,11 @@ During write mode, the input data is applied to the bitlines and stored in the c
   <tr>
     <td align="center">
           <img width="711" height="477" alt="image" src="https://github.com/user-attachments/assets/1658c19f-ef3f-4bc9-a83e-565525990bb7" /><br/>
-      <small>Fig 8a. 7T-SRAM cell Write test circuit</small>
+      <small>Fig 9a. 7T-SRAM cell Write test circuit</small>
     </td>
     <td align="center">
           <img width="1280" height="700" alt="7T-SRAM Write test waveform" src="https://github.com/user-attachments/assets/d74fa5f6-499a-4644-9945-a3d566e41a80" /><br/>
-      <small>Fig 8b. 7T-SRAM cell Write test waveform</small>
+      <small>Fig 9b. 7T-SRAM cell Write test waveform</small>
     </td>
   </tr>
 </table>
@@ -564,11 +564,11 @@ During read mode, the stored data is sensed from the bitlines.
   <tr>
     <td align="center">
           <img width="711" height="482" alt="image" src="https://github.com/user-attachments/assets/f06020e2-8531-4afe-9d46-67f7e45fa458" /><br/>
-      <small>Fig 9a. 7T-SRAM cell Read test circuit</small>
+      <small>Fig 10a. 7T-SRAM cell Read test circuit</small>
     </td>
     <td align="center">
           <img width="1280" height="700" alt="7T-SRAM Read test waveform" src="https://github.com/user-attachments/assets/0af78cb0-71fc-42fe-b1d7-c93be99107e5" /><br/>
-      <small>Fig 9b. 7T-SRAM cell Read test waveform</small>
+      <small>Fig 10b. 7T-SRAM cell Read test waveform</small>
     </td>
   </tr>
 </table>
@@ -654,15 +654,15 @@ For proper switching, the transistor sizes are chosen as:
   <tr>
     <td align="center">
           <img width="228" height="221" alt="image" src="https://github.com/user-attachments/assets/437a132f-a122-4d02-b0f0-dd2a675cef49" /><br/>
-      <small>Fig 10a. Inverter diagram</small>
+      <small>Fig 11a. Inverter diagram</small>
     </td>
     <td align="center">
           <img width="893" height="800" alt="Inverter schematic design" src="https://github.com/user-attachments/assets/ec1b5b85-29db-49a9-87ac-678793c0f061" /><br/>
-      <small>Fig 10b. Inverter schematic design</small>
+      <small>Fig 11b. Inverter schematic design</small>
     </td>
      <td align="center">
           <img width="358" height="800" alt="inverter circuit layout" src="https://github.com/user-attachments/assets/6ae8a74f-9a78-416c-86d4-3218fbb6d1ac" /><br/>
-      <small>Fig 10c. Inverter layout</small>
+      <small>Fig 11c. Inverter layout</small>
     </td>
   </tr>
 </table>
@@ -688,15 +688,15 @@ The larger inverter sizing improves the drive strength required for highly capac
   <tr>
     <td align="center">
           <img width="912" height="586" alt="4 Input AND gate" src="https://github.com/user-attachments/assets/158adc80-37d5-4e89-9faa-ad34ae2c8b5f" /><br/>
-      <small>Fig 10a. 4-input AND gate diagram</small>
+      <small>Fig 12a. 4-input AND gate diagram</small>
     </td>
     <td align="center">
           <img width="1263" height="900" alt="4-input AND gate schematic" src="https://github.com/user-attachments/assets/b5e39fc0-47dc-497a-a79a-2ff234eb69ca" /><br/>
-      <small>Fig 10b. 4-input AND gate schematic design</small>
+      <small>Fig 12b. 4-input AND gate schematic design</small>
     </td>
      <td align="center">
           <img width="578" height="900" alt="4-input AND gate layout" src="https://github.com/user-attachments/assets/1e6e6bd3-2122-41e4-adac-0ad82e1e3a7f" /><br/>
-      <small>Fig 10c. 4-input AND gate layout</small>
+      <small>Fig 12c. 4-input AND gate layout</small>
     </td>
   </tr>
 </table>
@@ -704,7 +704,7 @@ The larger inverter sizing improves the drive strength required for highly capac
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="and4" src="https://github.com/user-attachments/assets/bd5933e3-98d9-4278-a96e-e92a6c95e007" /><br/>
-      <small>Fig 11. 4-input AND gate output waveform</small>
+      <small>Fig 12d. 4-input AND gate output waveform</small>
     </td>
 </table>
 
@@ -726,15 +726,15 @@ Proper decoder design improves access reliability and prevents row conflicts.
   <tr>
     <td align="center">
           <img width="465" height="705" alt="image" src="https://github.com/user-attachments/assets/9225a0df-9bcb-46ed-8007-c81e58f94bdf" /><br/>
-      <small>Fig 10a. 4×16 Row decoder diagram</small>
+      <small>Fig 13a. 4×16 Row decoder diagram</small>
     </td>
     <td align="center">
           <img width="467" height="1600" alt="4×16 Row decoder schematic (2)" src="https://github.com/user-attachments/assets/a402583f-6e09-40cb-bd4d-5b5796beaf36" /><br/>
-      <small>Fig 10b. 4×16 Row decoder schematic design</small>
+      <small>Fig 13b. 4×16 Row decoder schematic design</small>
     </td>
      <td align="center">
           <img width="559" height="1600" alt="4×16 Row decoder layout" src="https://github.com/user-attachments/assets/ff52dd08-955f-4915-90f9-8fd482b83b7f" /><br/>
-      <small>Fig 10c. 4×16 Row decoder layout</small>
+      <small>Fig 13c. 4×16 Row decoder layout</small>
     </td>
   </tr>
 </table>
@@ -742,7 +742,7 @@ Proper decoder design improves access reliability and prevents row conflicts.
 <table align="center">
     <td align="center">
           <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
-      <small>Fig 11. 4×16 Row decoder output waveform</small>
+      <small>Fig 13d. 4×16 Row decoder output waveform</small>
     </td>
 </table>
 
@@ -768,11 +768,11 @@ This sizing provides faster charging of the highly capacitive bitlines.
   <tr>
     <td align="center">
           <img width="349" height="287" alt="image" src="https://github.com/user-attachments/assets/bd585699-d465-4ddf-9acc-7d1f204d292a" /><br/>
-      <small>Fig 12a. Precharge cell diagram</small>
+      <small>Fig 14a. Precharge cell diagram</small>
     </td>
     <td align="center">
           <img width="1506" height="900" alt="Precharge cell schematic" src="https://github.com/user-attachments/assets/6763e8a7-ec3a-4fda-b691-117d79a0a5e7" /><br/>
-      <small>Fig 12b. Precharge cell schematic design</small>
+      <small>Fig 14b. Precharge cell schematic design</small>
     </td>
   </tr>
 </table>
@@ -780,19 +780,19 @@ This sizing provides faster charging of the highly capacitive bitlines.
 <table align="center">
     <td align="center">
           <img width="825" height="389" alt="image" src="https://github.com/user-attachments/assets/ea729828-24f7-425c-9053-798ae6c84ec9" /><br/>
-      <small>Fig 13. Precharge cell output waveform</small>
+      <small>Fig 14c. Precharge cell output waveform</small>
     </td>
 </table>
 <table align="center">
 <td align="center">
           <img width="1586" height="900" alt="Precharge cell layout" src="https://github.com/user-attachments/assets/ff3795fb-7cea-4ce7-b770-78f31172b25e" /><br/>
-      <small>Fig 12c. Precharge cell layout</small>
+      <small>Fig 14d. Precharge cell layout</small>
     </td>
 </table>
 <table align="center">
     <td align="center">
           <img width="1601" height="339" alt="1x8 pc" src="https://github.com/user-attachments/assets/fefb300d-bf68-4065-8ad3-b4e9f5139a47" /><br/>
-      <small>Fig 13. 1x8 Precharge cell setup </small>
+      <small>Fig 14e. 1x8 Precharge cell setup </small>
     </td>
 </table>
 
@@ -816,11 +816,11 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
   <tr>
     <td align="center">
           <img width="452" height="239" alt="image" src="https://github.com/user-attachments/assets/f782c731-c55e-4025-86aa-95b001a867a5" /><br/>
-      <small>Fig 14a. Write Driver diagram</small>
+      <small>Fig 15a. Write Driver diagram</small>
     </td>
     <td align="center">
           <img width="1623" height="1200" alt="Write Driver schematic design" src="https://github.com/user-attachments/assets/9748ec46-90bc-44e5-ab87-b6148adcd6ab" /><br/>
-      <small>Fig 14b. Write Driver schematic design</small>
+      <small>Fig 15b. Write Driver schematic design</small>
     </td>
   </tr>
 </table>
@@ -828,19 +828,19 @@ Because BL and BLB are highly capacitive, stronger transistors are used for reli
 <table align="center">
     <td align="center">
           <img width="917" height="354" alt="image" src="https://github.com/user-attachments/assets/677995fa-b9e2-4d46-83ae-4dbca3e97681" /><br/>
-      <small>Fig 15. Write Driver output waveform</small>
+      <small>Fig 15c. Write Driver output waveform</small>
     </td>
 </table>
 <table align="center">
 <td align="center">
           <img width="568" height="1217" alt="Write Driver" src="https://github.com/user-attachments/assets/df176d4a-4bcd-4552-bd8c-0f84dbeb7e18" /><br/>
-      <small>Fig 14b. Write Driver layout</small>
+      <small>Fig 15d. Write Driver layout</small>
     </td>
 </table>
 <table align="center">
     <td align="center">
           <img width="1601" height="559" alt="1x8 write driver" src="https://github.com/user-attachments/assets/b1decd3f-5bc2-443d-a6a4-7d2528dd7770" /><br/>
-      <small>Fig 13. 1x8 Write Driver setup </small>
+      <small>Fig 15e. 1x8 Write Driver setup </small>
     </td>
 </table>
 
@@ -862,11 +862,11 @@ Careful transistor matching is required to minimize offset errors and improve se
    <tr>
     <td align="center">
           <img width="1180" height="843" alt="Sense Amplifier" src="https://github.com/user-attachments/assets/a2403e61-eca2-4947-9757-82063156012b" /><br/>
-      <small>Fig 16. Sense Amplifier diagram</small>
+      <small>Fig 16a. Sense Amplifier diagram</small>
     </td>
    <td align="center">
           <img width="2188" height="1200" alt="Sense Amplifier schematic design" src="https://github.com/user-attachments/assets/dda274c3-ccf2-4a0c-9517-210198c5bdb1" /><br/>
-      <small>Fig 16. Sense Amplifier schematic design</small>
+      <small>Fig 16b. Sense Amplifier schematic design</small>
     </td>
       </tr>
 </table>
@@ -874,19 +874,19 @@ Careful transistor matching is required to minimize offset errors and improve se
 <table align="center">
     <td align="center">
           <img width="818" height="308" alt="image" src="https://github.com/user-attachments/assets/f6b9e495-bc87-45f1-b288-0493369e10cf" /><br/>
-      <small>Fig 17. Sense Amplifier output waveform</small>
+      <small>Fig 16c. Sense Amplifier output waveform</small>
     </td>
 </table>
 <table align="center">
    <td align="center">
           <img width="569" height="1241" alt="Sense Amplifier" src="https://github.com/user-attachments/assets/572efdd4-b815-45f1-82d8-edece9d9c2f2" /><br/>
-      <small>Fig 16. Sense Amplifier layout</small>
+      <small>Fig 16d. Sense Amplifier layout</small>
     </td>
 </table>
 <table align="center">
     <td align="center">
           <img width="1601" height="559" alt="1x8 Sense amplifier" src="https://github.com/user-attachments/assets/af02fab6-112d-48dd-9011-57702f34670e" /><br/>
-      <small>Fig 13. 1x8 Sense Amplifier setup </small>
+      <small>Fig 16e. 1x8 Sense Amplifier setup </small>
     </td>
 </table>
 
@@ -909,11 +909,11 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
    <tr>
     <td align="center">
           <img width="805" height="822" alt="Isolation cell" src="https://github.com/user-attachments/assets/e3771aa6-a2bf-4386-9930-acf5a225f4f7" /><br/>
-      <small>Fig 16. Isolation Circuit diagram</small>
+      <small>Fig 17a. Isolation Circuit diagram</small>
     </td>
    <td align="center">
           <img width="1090" height="700" alt="Isolation Circuit schematic" src="https://github.com/user-attachments/assets/f1058ff8-8a98-4ef0-85cd-72af32e1dc17" /><br/>
-      <small>Fig 16. Isolation Circuit schematic design</small>
+      <small>Fig 17b. Isolation Circuit schematic design</small>
     </td>
       </tr>
 </table>
@@ -921,19 +921,19 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
 <table align="center">
     <td align="center">
           <img width="1590" height="631" alt="Isolation" src="https://github.com/user-attachments/assets/620e0228-c96a-4b16-b136-43a58d5ef2ea" /><br/>
-      <small>Fig 17. Isolation Circuit output waveform</small>
+      <small>Fig 17c. Isolation Circuit output waveform</small>
     </td>
 </table>
 <table align="center">
    <td align="center">
           <img width="1390" height="700" alt="Isolation Circuit layout" src="https://github.com/user-attachments/assets/75c3e48b-2448-44f7-a50d-fa2c29dead35" /><br/>
-      <small>Fig 16. Isolation Circuit layout</small>
+      <small>Fig 17d. Isolation Circuit layout</small>
     </td>
 </table>
 <table align="center">
     <td align="center">
           <img width="1601" height="237" alt="1x8 Isolation" src="https://github.com/user-attachments/assets/baf13008-6b68-414d-bc86-331655d3b4d3" /><br/>
-      <small>Fig 13. 1x8 Isolation Circuit setup </small>
+      <small>Fig 17e. 1x8 Isolation Circuit setup </small>
     </td>
 </table>
 
@@ -956,11 +956,11 @@ This arrangement allows structured data storage and retrieval while maintaining 
    <tr>
    <td align="center">
           <img width="763" height="1500" alt="16x8 7T SRAM Array" src="https://github.com/user-attachments/assets/40f7df68-6eb6-42f3-a9dc-0b85cb89babf" /><br/>
-      <small>Fig 16. 16x8 7T SRAM Array schematic design</small>
+      <small>Fig 18a. 16x8 7T SRAM Array schematic design</small>
     </td>
    <td align="center">
           <img width="524" height="1500" alt="16x8 7T SRAM Array layout" src="https://github.com/user-attachments/assets/43abe6ac-0392-4fa5-90e0-74a33b387421" /><br/>
-      <small>Fig 16. 16x8 7T SRAM Array layout</small>
+      <small>Fig 18b. 16x8 7T SRAM Array layout</small>
     </td>
       </tr>
 </table>
@@ -985,15 +985,15 @@ This integration ensures proper operation of the complete SRAM memory.
    <tr>
       <td align="center">
           <img width="797" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated schematic design" src="https://github.com/user-attachments/assets/aa069191-b77d-44d6-8c04-9aef95218194" /><br/>
-      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic design</small>
+      <small>Fig 19a. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic design</small>
     </td>
    <td align="center">
           <img width="765" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated schematic block design" src="https://github.com/user-attachments/assets/d6c0618e-6973-462f-8680-ba1e665aeb63" /><br/>
-      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic block design</small>
+      <small>Fig 19b. 16x8 7T SRAM Array with all Peripheraral circuits integrated schematic block design</small>
     </td>
    <td align="center">
           <img width="744" height="1800" alt="16x8 7T SRAM Array with all Peripheraral circuits integrated layout" src="https://github.com/user-attachments/assets/e8f88623-20f6-47ec-85eb-506e6a7bae57" /><br/>
-      <small>Fig 16. 16x8 7T SRAM Array with all Peripheraral circuits integrated layout </small>
+      <small>Fig 19c. 16x8 7T SRAM Array with all Peripheraral circuits integrated layout </small>
     </td>
       </tr>
 </table>
@@ -1017,14 +1017,14 @@ All circuits are connected to a common **VDD supply and Ground reference**.
 <table align="center">
     <td align="center">
           <img width="832" height="1025" alt="Single-Bit 7T-SRAM Cell with Peripheral Circuits" src="https://github.com/user-attachments/assets/937fb704-54ff-4009-a999-21d7c1414ce4" /><br/>
-      <small>Fig 18. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
+      <small>Fig 20. Single-Bit 7T-SRAM Cell with Peripheral Circuits</small>
     </td>
 </table>
 
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="Memory" src="https://github.com/user-attachments/assets/a7ca0667-651c-4f69-959d-99681bc8c669" /><br/>
-      <small>Fig 19. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
+      <small>Fig 20a. Single-Bit 7T-SRAM Cell with Peripheral Circuits output waveform</small>
     </td>
 </table>
 
@@ -1043,7 +1043,7 @@ This ensures both bitlines start from the same voltage level.
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="Memory_pc" src="https://github.com/user-attachments/assets/06273a96-3e02-4d59-96c0-ab9d9bb850f6" /><br/>
-      <small>Fig 20. Single-Bit 7T-SRAM Cell Precharge conditions</small>
+      <small>Fig 20b. Single-Bit 7T-SRAM Cell Precharge conditions</small>
     </td>
 </table>
 
@@ -1058,7 +1058,7 @@ This prepares the bitlines with the input data value.
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="Memory_we" src="https://github.com/user-attachments/assets/84947627-550b-4877-b07b-2813d0140802" /><br/>
-      <small>Fig 21. Single-Bit 7T-SRAM Cell Write Enable condition</small>
+      <small>Fig 20c. Single-Bit 7T-SRAM Cell Write Enable condition</small>
     </td>
 </table>
 
@@ -1071,7 +1071,7 @@ The SRAM cell captures the input data from the bitlines and stores it in the int
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="Memory_we_wl" src="https://github.com/user-attachments/assets/0c28dad2-0753-4f7c-ab38-75f39d4aebcd" /><br/>
-      <small>Fig 22. Single-Bit 7T-SRAM Cell Write conditions</small>
+      <small>Fig 20c. Single-Bit 7T-SRAM Cell Write conditions</small>
     </td>
 </table> 
 
@@ -1086,7 +1086,7 @@ The SRAM cell connects to the bitlines and transfers the stored data. BL reflect
 <table align="center">
     <td align="center">
           <img width="1910" height="811" alt="Memory_web_wl" src="https://github.com/user-attachments/assets/e78add3e-1141-40f5-83d9-d8eba7130740" /><br/>
-      <small>Fig 23. Single-Bit 7T-SRAM Cell Read condition </small>
+      <small>Fig 20d. Single-Bit 7T-SRAM Cell Read condition </small>
     </td>
 </table> 
 
@@ -1185,7 +1185,7 @@ The integrated SRAM system consists of:
 <table align="center">
     <td align="center">
           <img width="2315" height="1000" alt="image" src="https://github.com/user-attachments/assets/137f84b0-28bb-4a3c-8284-26b0ce754d65" /><br/>
-      <small>Fig 25. Complete SRAM array testing setup </small>
+      <small>Fig 21. Complete SRAM array testing setup </small>
     </td>
 </table>
 
@@ -1205,7 +1205,7 @@ The array operation is controlled using:
 <table align="center">
     <td align="center">
           <img width="1500" height="1026" alt="Complete SRAM array transient waveform" src="https://github.com/user-attachments/assets/4da7e501-93da-4fc5-9260-aadf60027a6f" /><br/>
-      <small>Fig 25. Complete SRAM array transient waveformy</small>
+      <small>Fig 21a. Complete SRAM array transient waveformy</small>
     </td>
 </table>
 
