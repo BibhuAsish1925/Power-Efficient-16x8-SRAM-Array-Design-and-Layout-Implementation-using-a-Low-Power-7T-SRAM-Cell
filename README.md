@@ -373,7 +373,7 @@ where:
       <small>Fig 5a. 6T-SRAM VTC curve</small>
     </td>
     <td align="center">
-          <img width="1029" height="800" alt="7T-SRAM VTC curve" src="https://github.com/user-attachments/assets/45fd2982-6429-43ee-94d8-c9512fe4c22f" /><br/>
+          <img width="1006" height="800" alt="7T-SRAM VTC curve (2)" src="https://github.com/user-attachments/assets/e914d85d-c8d4-44e4-8451-588d62d2290b" /><br/>
       <small>Fig 5b. 7T-SRAM VTC curve</small>
     </td>
   </tr>
