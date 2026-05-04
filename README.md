@@ -687,7 +687,7 @@ The larger inverter sizing improves the drive strength required for highly capac
 <table align="center">
   <tr>
     <td align="center">
-          <img width="228" height="221" alt="image" src="https://github.com/user-attachments/assets/437a132f-a122-4d02-b0f0-dd2a675cef49" /><br/>
+          <img width="912" height="586" alt="4 Input AND gate" src="https://github.com/user-attachments/assets/158adc80-37d5-4e89-9faa-ad34ae2c8b5f" /><br/>
       <small>Fig 10a. 4-input AND gate diagram</small>
     </td>
     <td align="center">
