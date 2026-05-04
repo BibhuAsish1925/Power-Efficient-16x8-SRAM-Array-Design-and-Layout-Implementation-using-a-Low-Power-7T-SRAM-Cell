@@ -908,7 +908,7 @@ Larger transistor sizing is used because the circuit directly drives capacitive 
 <table align="center">
    <tr>
     <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+          <img width="805" height="822" alt="Isolation cell" src="https://github.com/user-attachments/assets/e3771aa6-a2bf-4386-9930-acf5a225f4f7" /><br/>
       <small>Fig 16. Isolation Circuit diagram</small>
     </td>
    <td align="center">
