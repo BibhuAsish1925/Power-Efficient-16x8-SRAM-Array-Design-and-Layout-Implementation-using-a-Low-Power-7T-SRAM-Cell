@@ -667,13 +667,6 @@ For proper switching, the transistor sizes are chosen as:
   </tr>
 </table>
 
-<table align="center">
-    <td align="center">
-          <img width="1052" height="434" alt="image" src="https://github.com/user-attachments/assets/8c367f36-a6ef-43ed-9ba5-62d8d7e8c430" /><br/>
-      <small>Fig 11. 4×16 Row decoder output waveform</small>
-    </td>
-</table>
-
 ---
 
 ### 2. 4-Input AND Gate
