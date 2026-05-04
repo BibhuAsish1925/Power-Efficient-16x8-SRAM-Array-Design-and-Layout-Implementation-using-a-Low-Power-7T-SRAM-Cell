@@ -861,7 +861,7 @@ Careful transistor matching is required to minimize offset errors and improve se
 <table align="center">
    <tr>
     <td align="center">
-          <img width="815" height="473" alt="image" src="https://github.com/user-attachments/assets/48b36d1e-63a5-49e8-8041-e843c050190f" /><br/>
+          <img width="1180" height="843" alt="Sense Amplifier" src="https://github.com/user-attachments/assets/a2403e61-eca2-4947-9757-82063156012b" /><br/>
       <small>Fig 16. Sense Amplifier diagram</small>
     </td>
    <td align="center">
