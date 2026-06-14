@@ -1320,12 +1320,16 @@ The following blocks were completed at layout level:
 ### Physical Verification
 
 Two verification steps were performed:
+- **DRC:** Confirms that the layout satisfies fabrication design rules.
+- **LVS:** Confirms that the extracted layout matches the original schematic.
 
-**DRC:**  
-Confirms that the layout satisfies fabrication design rules.
-
-**LVS:**  
-Confirms that the extracted layout matches the original schematic.
+<table align="center">
+    <td align="center">
+          <img width="684" height="621" alt="Screenshot from 2026-04-10 13-35-05" src="https://github.com/user-attachments/assets/5d58c4f0-73b1-4034-b0db-ee96aea1bc39" />
+<br/>
+      <small>Fig 22. Complete SRAM array layout DRC & LVS check successfully</small>
+    </td>
+</table>
 
 ### Result
 
